@@ -1,5 +1,6 @@
 *
 !*.c
+!*.c,v
 !Makefile
 !.gitignore
 !/RCS
