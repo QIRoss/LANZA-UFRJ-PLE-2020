@@ -1,10 +1,33 @@
-#Universidade Federal do Rio de Janeiro
+head	1.1;
+access;
+symbols;
+locks
+	lucasqueiroz:1.1; strict;
+comment	@# @;
+
+
+1.1
+date	2020.08.25.12.42.19;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@first ci.
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#Universidade Federal do Rio de Janeiro
 #Escola Politecnica
 #Departamento de Eletronica de Computacao
 #EEL270 - Computacao II - Turma 2020/4
 #Prof. Marcelo Luiz Drumond Lanza
 #Autor: Lucas de Queiroz dos Reis
-
 
 CC = gcc
 LD = gcc
@@ -27,6 +50,6 @@ all: $(ALL)
 aula01: $(AULA01)
 
 aula_0101: $(AULA0101OBJS)
-	$(LD) $(LFLAGS) -o $@ $(AULA0101OBJS)
+	$(LD) $(LFLAGS) -o $@@ $(AULA0101OBJS)
 clean:
-	rm -f *.0 $(ALL)
+	rm -f *.0 $(ALL)@
