@@ -4,7 +4,11 @@
 #EEL270 - Computacao II - Turma 2020/4
 #Prof. Marcelo Luiz Drumond Lanza
 #Autor: Lucas de Queiroz dos Reis
+#Description: Makefile
 
+# $AUTHOR$
+# $DATE$
+# $LOG$
 
 CC = gcc
 LD = gcc
@@ -13,6 +17,8 @@ CFLAGS = -Wall
 LFLAGS = -Wall
 
 AULA0101OBJS = aula0101.o
+
+AULA01 = aula0101\
 
 EXECS = $(AULA01)\
 
@@ -28,5 +34,8 @@ aula01: $(AULA01)
 
 aula_0101: $(AULA0101OBJS)
 	$(LD) $(LFLAGS) -o $@ $(AULA0101OBJS)
+	
 clean:
-	rm -f *.0 $(ALL)
+	rm -f *.o $(ALL)
+
+# $RCSfile$
