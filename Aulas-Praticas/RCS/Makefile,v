@@ -1,10 +1,15 @@
-head	1.1;
+head	1.2;
 access;
 symbols;
 locks
-	lucasqueiroz:1.1; strict;
+	lucasqueiroz:1.2; strict;
 comment	@# @;
 
+
+1.2
+date	2020.08.25.16.31.27;	author lucasqueiroz;	state Exp;
+branches;
+next	1.1;
 
 1.1
 date	2020.08.25.12.42.19;	author lucasqueiroz;	state Exp;
@@ -17,9 +22,9 @@ desc
 @
 
 
-1.1
+1.2
 log
-@Initial revision
+@*** empty log message ***
 @
 text
 @#Universidade Federal do Rio de Janeiro
@@ -28,6 +33,11 @@ text
 #EEL270 - Computacao II - Turma 2020/4
 #Prof. Marcelo Luiz Drumond Lanza
 #Autor: Lucas de Queiroz dos Reis
+#Description: Makefile
+
+# $AUTHOR$
+# $DATE$
+# $LOG$
 
 CC = gcc
 LD = gcc
@@ -36,6 +46,8 @@ CFLAGS = -Wall
 LFLAGS = -Wall
 
 AULA0101OBJS = aula0101.o
+
+AULA01 = aula0101\
 
 EXECS = $(AULA01)\
 
@@ -51,5 +63,21 @@ aula01: $(AULA01)
 
 aula_0101: $(AULA0101OBJS)
 	$(LD) $(LFLAGS) -o $@@ $(AULA0101OBJS)
+	
 clean:
+	rm -f *.o $(ALL)
+
+# $RCSfile$@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d7 5
+d21 2
+d37 1
+d39 3
+a41 1
 	rm -f *.0 $(ALL)@

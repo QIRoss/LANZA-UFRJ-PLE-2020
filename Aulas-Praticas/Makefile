@@ -38,4 +38,4 @@ aula_0101: $(AULA0101OBJS)
 clean:
 	rm -f *.o $(ALL)
 
-# $RCSfile$
+# $RCSfile: Makefile,v $
