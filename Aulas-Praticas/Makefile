@@ -10,13 +10,13 @@
 # $DATE$
 # $LOG$
 
-CC = gcc -std=c11
+CC = gcc
 #CC = clang
 LD = gcc
 #LD = clang
 
-CFLAGS = -Wall
-LFLAGS = -Wall
+CFLAGS = -Wall -std=c11
+LFLAGS = -Wall -std=c11
 
 AULA0101OBJS = aula0101.o
 AULA0102OBJS = aula0102.o
