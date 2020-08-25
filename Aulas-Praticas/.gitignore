@@ -2,3 +2,5 @@
 !*.c
 !Makefile
 !.gitignore
+!/RCS
+!/Aulas-Praticas
