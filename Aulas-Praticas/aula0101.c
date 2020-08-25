@@ -9,8 +9,8 @@ Prof. Marcelo Luiz Drumond Lanza
 Autor: Lucas de Queiroz dos Reis
 Descricao: aula0101.c
 
-$Author$
-$Date$
+$Author: lucasqueiroz $
+$Date: 2020/08/25 18:11:13 $
 $Log
 
 */
@@ -22,4 +22,4 @@ int main(int argc,char *argv[]) {
     return 0;
 }
 
-/*$RCSfile$*/
+/*$RCSfile: aula0101.c,v $*/
