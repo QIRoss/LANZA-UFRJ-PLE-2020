@@ -80,4 +80,4 @@ clean-all:
 clean-freebsd:
 	rm -f *.o $(ALL) *-FreeBSD-*
 
-# $RCSfile$
+# $RCSfile: GNUmakefile,v $

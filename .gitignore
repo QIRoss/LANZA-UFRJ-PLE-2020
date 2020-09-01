@@ -1,7 +1,7 @@
 *
 !*.c
 !*,v
-!Makefile
+!*akefile
 !.gitignore
 !/RCS
-!/
+!/Aulas-Praticas

@@ -64,8 +64,8 @@ aula0102: $(AULA0102OBJS)
 	cp $@ $@-$(OS)-$(CC)
 
 aula0103: $(AULA0103OBJS)
-	$(LD) $(LFLAGS) -o $@ $(AULA0103OBJS)
-	cp $@ $@-$(OS)-$(CC)
+    $(LD) $(LFLAGS) -o $@ $(AULA0103OBJS)
+    cp $@ $@-$(OS)-$(CC)
 
 aula0104: $(AULA0104OBJS)
 	$(LD) $(LFLAGS) -o $@ $(AULA0104OBJS)
@@ -82,7 +82,7 @@ clean-all:
 	rm -f *.o $(ALL) *-FreeBSD-* *-Linux-*
 
 clean-freebsd:
-	rm -f *.o $(ALL) *-FreeBSD-*
+    rm -f *.o $(ALL) *-FreeBSD-*
 
 
-# $RCSfile$
+# $RCSfile: BSDmakefile,v $
