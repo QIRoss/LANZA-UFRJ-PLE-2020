@@ -4,7 +4,7 @@
 #EEL270 - Computacao II - Turma 2020/4
 #Prof. Marcelo Luiz Drumond Lanza
 #Autor: Lucas de Queiroz dos Reis
-#Description: Makefile
+#Description: BSDmakefile
 
 # $AUTHOR$
 # $DATE$
@@ -36,6 +36,10 @@ AULA0102OBJS = aula0102.o
 AULA0103OBJS = aula0103.o
 AULA0104OBJS = aula0104.o
 AULA0105OBJS = aula0105.o
+AULA0202AOBJS = aula0201a.o aula0202.o
+AULA0202BOBJS = aula0201b.o aula0202.o
+AULA0202COBJS = aula0201c.o aula0202.o
+AULA0202DOBJS = aula0201d.o aula0202.o
 
 AULA01 = aula0101\
 	aula0102\
@@ -43,7 +47,13 @@ AULA01 = aula0101\
 	aula0104\
 	aula0105\
 
-EXECS = $(AULA01)
+AULA02 = aula0202a\
+	aula0202b\
+	aula0202c\
+	aula0202d
+
+EXECS = $(AULA01)\
+		$(AULA02)
 
 ALL = $(EXECS)
 
@@ -73,6 +83,24 @@ aula0104: $(AULA0104OBJS)
 
 aula0105: $(AULA0105OBJS)
 	$(LD) $(LFLAGS) -o $@ $(AULA0105OBJS)
+	cp $@ $@-$(OS)-$(CC)
+
+aula02: $(AULA02)
+
+aula0202a: $(AULA0202AOBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0202AOJS)
+	cp $@ $@-$(OS)-$(CC)
+
+aula0202b: $(AULA0202BOBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0202BOJS)
+	cp $@ $@-$(OS)-$(CC)
+
+aula0202c: $(AULA0202COBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0202COJS)
+	cp $@ $@-$(OS)-$(CC)
+
+aula0202d: $(AULA0202DOBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0202DOJS)
 	cp $@ $@-$(OS)-$(CC)
 
 clean:
