@@ -2,14 +2,17 @@
 Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
-EEL270 - Computacao II - Turma 2019/2
+EEL270 - Computacao II - Turma 2020/4 - PLE-1
 Prof. Marcelo Luiz Drumond Lanza
 Autor: Lucas de Queiroz dos Reis
 Descricao: aula0201d.c
 
-$Author$
-$Date$
-$Log$
+$Author: lucasqueiroz $
+$Date: 2020/09/02 22:32:06 $
+$Log: aula0201d.c,v $
+Revision 1.1  2020/09/02 22:32:06  lucasqueiroz
+Initial revision
+
 */
 
 #include "aula0201.h"
@@ -23,6 +26,8 @@ CalcularMaximoDivisorComum (ull x, ull y) {
         return y;
     if (y == 0)
         return x;
+    if ((x%y) == 0)
+        return y;
     while(resto!=0){
         resto = x % y;
         x = y;
@@ -31,4 +36,4 @@ CalcularMaximoDivisorComum (ull x, ull y) {
     return x;
 }
 
-/*$RCSfile$*/
+/*$RCSfile: aula0201d.c,v $*/

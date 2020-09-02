@@ -1,8 +1,8 @@
-*
-!*.c
-!*,v
-!*akefile
-!.gitignore
-!/RCS
-!/Aulas-Praticas
-!*.h
+# *
+# !*.c
+# !*,v
+# !*akefile
+# !.gitignore
+# !/RCS
+# !/Aulas-Praticas
+# !*.h

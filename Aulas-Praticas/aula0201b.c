@@ -6,9 +6,12 @@ EEL270 - Computacao II - Turma 2020/4 - PLE-1
 Prof. Marcelo Luiz Drumond Lanza
 Autor: Lucas de Queiroz dos Reis
 Descricao: aula0201b.c
-$Author$
-$Date$
-$Log$
+$Author: lucasqueiroz $
+$Date: 2020/09/02 22:31:46 $
+$Log: aula0201b.c,v $
+Revision 1.1  2020/09/02 22:31:46  lucasqueiroz
+Initial revision
+
 */
 
 #include "aula0201.h"
@@ -30,4 +33,4 @@ CalcularMaximoDivisorComum (ull x, ull y) {
     return x;
 }
 
-/*$RCSfile$*/
+/*$RCSfile: aula0201b.c,v $*/
