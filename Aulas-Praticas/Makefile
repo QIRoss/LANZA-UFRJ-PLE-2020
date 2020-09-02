@@ -58,6 +58,7 @@ aula0105: $(AULA0105OBJS)
 	$(LD) $(LFLAGS) -o $@ $(AULA0105OBJS)
 
 
+
 clean:
 	rm -f *.o $(ALL)
 

@@ -6,7 +6,6 @@ EEL270 - Computacao II - Turma 2020/4 - PLE-1
 Prof. Marcelo Luiz Drumond Lanza
 Autor: Lucas de Queiroz dos Reis
 Descricao: aula0201b.c
-
 $Author$
 $Date$
 $Log$
