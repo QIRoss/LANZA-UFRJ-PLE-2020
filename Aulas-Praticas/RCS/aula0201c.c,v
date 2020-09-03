@@ -1,9 +1,14 @@
-head	1.1;
+head	1.2;
 access;
 symbols;
 locks; strict;
 comment	@ * @;
 
+
+1.2
+date	2020.09.03.03.46.48;	author lucasqueiroz;	state Exp;
+branches;
+next	1.1;
 
 1.1
 date	2020.09.02.22.31.57;	author lucasqueiroz;	state Exp;
@@ -15,9 +20,9 @@ desc
 @@
 
 
-1.1
+1.2
 log
-@Initial revision
+@*** empty log message ***
 @
 text
 @/*
@@ -29,15 +34,18 @@ Prof. Marcelo Luiz Drumond Lanza
 Autor: Lucas de Queiroz dos Reis
 Descricao: aula0201c.c
 
-$Author$
-$Date$
-$Log$
+$Author: lucasqueiroz $
+$Date: 2020/09/02 22:31:57 $
+$Log: aula0201c.c,v $
+Revision 1.1  2020/09/02 22:31:57  lucasqueiroz
+Initial revision
+
 */
 #include "aula0201.h"
 
 ull
 CalcularMaximoDivisorComum (ull x, ull y) {
-    ull resto;
+    ull resto = 0;
     if (x == 0 && y == 0)
         return 0;
     if (x == 0)
@@ -54,4 +62,22 @@ CalcularMaximoDivisorComum (ull x, ull y) {
     return x;
 }
 
+/*$RCSfile: aula0201c.c,v $*/@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d10 6
+a15 3
+$Author$
+$Date$
+$Log$
+d21 1
+a21 1
+    ull resto;
+d38 1
+a38 1
 /*$RCSfile$*/@

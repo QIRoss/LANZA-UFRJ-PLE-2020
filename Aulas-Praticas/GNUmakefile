@@ -20,7 +20,7 @@ CC = gcc
 endif
 
 ifeq ($(cc), CLANG)
-CC = CLANG
+CC = clang
 endif
 
 LD = $(CC)

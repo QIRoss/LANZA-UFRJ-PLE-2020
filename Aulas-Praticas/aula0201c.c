@@ -8,8 +8,11 @@ Autor: Lucas de Queiroz dos Reis
 Descricao: aula0201c.c
 
 $Author: lucasqueiroz $
-$Date: 2020/09/02 22:31:57 $
+$Date: 2020/09/03 03:46:48 $
 $Log: aula0201c.c,v $
+Revision 1.2  2020/09/03 03:46:48  lucasqueiroz
+*** empty log message ***
+
 Revision 1.1  2020/09/02 22:31:57  lucasqueiroz
 Initial revision
 
@@ -18,7 +21,7 @@ Initial revision
 
 ull
 CalcularMaximoDivisorComum (ull x, ull y) {
-    ull resto;
+    ull resto = 0;
     if (x == 0 && y == 0)
         return 0;
     if (x == 0)
