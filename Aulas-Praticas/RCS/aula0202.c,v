@@ -1,9 +1,14 @@
-head	1.1;
+head	1.2;
 access;
 symbols;
 locks; strict;
 comment	@ * @;
 
+
+1.2
+date	2020.09.03.04.13.06;	author lucasqueiroz;	state Exp;
+branches;
+next	1.1;
 
 1.1
 date	2020.09.02.22.32.33;	author lucasqueiroz;	state Exp;
@@ -15,9 +20,9 @@ desc
 @@
 
 
-1.1
+1.2
 log
-@Initial revision
+@*** empty log message ***
 @
 text
 @/*
@@ -29,9 +34,12 @@ Prof. Marcelo Luiz Drumond Lanza
 Autor: Lucas de Queiroz dos Reis
 Descricao: aula0202.c
 
-$Author$
-$Date$
-$Log$
+$Author: lucasqueiroz $
+$Date: 2020/09/02 22:32:33 $
+$Log: aula0202.c,v $
+Revision 1.1  2020/09/02 22:32:33  lucasqueiroz
+Initial revision
+
 */
 
 #include <stdio.h>
@@ -61,7 +69,7 @@ main (int argc, char *argv[]){
     }
 
     numeroDois = strtoull(argv[2], &validacao2, 10);
-    if (*validacao != EOS){
+    if (*validacao2 != EOS){
         printf("Caractere invalido: \'%c\'\n", *validacao2);
         exit (ARGUMENTO_INVALIDO);
     }
@@ -73,4 +81,22 @@ main (int argc, char *argv[]){
     printf ("\nMDC %s e %s!: %llu\n\n", argv[1], argv[2],CalcularMaximoDivisorComum(numeroUm,numeroDois));
 }
 
+/*$RCSfile: aula0202.c,v $*/@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d10 6
+a15 3
+$Author$
+$Date$
+$Log$
+d45 1
+a45 1
+    if (*validacao != EOS){
+d57 1
+a57 1
 /*$RCSfile$*/@

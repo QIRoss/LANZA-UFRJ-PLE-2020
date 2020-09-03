@@ -8,8 +8,11 @@ Autor: Lucas de Queiroz dos Reis
 Descricao: aula0202.c
 
 $Author: lucasqueiroz $
-$Date: 2020/09/02 22:32:33 $
+$Date: 2020/09/03 04:13:06 $
 $Log: aula0202.c,v $
+Revision 1.2  2020/09/03 04:13:06  lucasqueiroz
+*** empty log message ***
+
 Revision 1.1  2020/09/02 22:32:33  lucasqueiroz
 Initial revision
 
@@ -42,7 +45,7 @@ main (int argc, char *argv[]){
     }
 
     numeroDois = strtoull(argv[2], &validacao2, 10);
-    if (*validacao != EOS){
+    if (*validacao2 != EOS){
         printf("Caractere invalido: \'%c\'\n", *validacao2);
         exit (ARGUMENTO_INVALIDO);
     }
