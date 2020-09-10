@@ -40,6 +40,10 @@ AULA0202AOBJS = aula0201a.o aula0202.o
 AULA0202BOBJS = aula0201b.o aula0202.o
 AULA0202COBJS = aula0201c.o aula0202.o
 AULA0202DOBJS = aula0201d.o aula0202.o
+AULA0302AOBJS = aula0301a.o aula0302.o
+AULA0302BOBJS = aula0301b.o aula0302.o
+AULA0302COBJS = aula0301c.o aula0302.o
+AULA0302DOBJS = aula0301d.o aula0302.o
 
 AULA01 = aula0101\
 	aula0102\
@@ -52,8 +56,14 @@ AULA02 = aula0202a\
 	aula0202c\
 	aula0202d
 
+AULA03 = aula0302a\
+	aula0302b\
+	aula0302c\
+	aula0302d
+
 EXECS = $(AULA01)\
-		$(AULA02)
+		$(AULA02)\
+		$(AULA03)
 
 ALL = $(EXECS)
 
@@ -101,6 +111,24 @@ aula0202c: $(AULA0202COBJS)
 
 aula0202d: $(AULA0202DOBJS)
 	$(LD) $(LFLAGS) -o $@ $(AULA0202DOJS)
+	cp $@ $@-$(OS)-$(CC)
+
+aula03: $(AULA03)
+
+aula0302a: $(AULA0302AOBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0302AOBJS)
+	cp $@ $@-$(OS)-$(CC)
+
+aula0302b: $(AULA0302BOBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0302BOBJS)
+	cp $@ $@-$(OS)-$(CC)
+
+aula0302c: $(AULA0302COBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0302COBJS)
+	cp $@ $@-$(OS)-$(CC)
+
+aula0302d: $(AULA0302DOBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0302DOBJS)
 	cp $@ $@-$(OS)-$(CC)
 
 clean:

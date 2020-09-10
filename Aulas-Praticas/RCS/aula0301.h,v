@@ -1,0 +1,43 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2020.09.10.06.07.17;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@/*Universidade Federal do Rio de Janeiro
+Escola Politecnica
+Departamento de Eletronica e de Computacao
+EEL270 - Computacao II - Turma 2020-4/PLE-1
+Prof. Marcelo Luiz Drumond Lanza
+Autor: Lucas de Queiroz dos Reis
+Descricao: aula0301.h
+
+$Author$
+$Date$
+$Log$
+*/
+
+#ifndef _AULA0301_
+#define _AULA0301_                  "@@(#)aula0301.h $Revision$"
+
+unsigned long long
+CalcularTermoSerieFibonacci (unsigned short);
+
+#endif
+/* $RCSfile$ */@
