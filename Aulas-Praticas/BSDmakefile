@@ -108,19 +108,19 @@ aula0105: $(AULA0105OBJS)
 aula02: $(AULA02)
 
 aula0202a: $(AULA0202AOBJS)
-	$(LD) $(LFLAGS) -o $@ $(AULA0202AOJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0202AOBJS)
 	cp $@ $@-$(OS)-$(CC)
 
 aula0202b: $(AULA0202BOBJS)
-	$(LD) $(LFLAGS) -o $@ $(AULA0202BOJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0202BOBJS)
 	cp $@ $@-$(OS)-$(CC)
 
 aula0202c: $(AULA0202COBJS)
-	$(LD) $(LFLAGS) -o $@ $(AULA0202COJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0202COBJS)
 	cp $@ $@-$(OS)-$(CC)
 
 aula0202d: $(AULA0202DOBJS)
-	$(LD) $(LFLAGS) -o $@ $(AULA0202DOJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0202DOBJS)
 	cp $@ $@-$(OS)-$(CC)
 
 aula03: $(AULA03)
