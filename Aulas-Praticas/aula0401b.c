@@ -5,12 +5,12 @@ Departamento de Eletronica e de Computacao
 EEL270 - Computacao II - Turma 2020/4 - PLE-1
 Prof. Marcelo Luiz Drumond Lanza
 Autor: Lucas de Queiroz dos Reis
-Descricao: aula0401a.c
+Descricao: aula0401b.c
 
 $Author: lucasqueiroz $
-$Date: 2020/09/15 20:02:46 $
-$Log: aula0401a.c,v $
-Revision 1.1  2020/09/15 20:02:46  lucasqueiroz
+$Date: 2020/09/15 20:03:01 $
+$Log: aula0401b.c,v $
+Revision 1.1  2020/09/15 20:03:01  lucasqueiroz
 Initial revision
 
 */
@@ -20,6 +20,7 @@ Initial revision
 
 long double
 CalcularExponencial (double base, int expoente){
+    double result = 1;
     if (expoente == 0){
         return 1;
     }
@@ -27,9 +28,17 @@ CalcularExponencial (double base, int expoente){
         return (INFINITY);
     }
     if (expoente > 0){
-        return base*(CalcularExponencial(base,expoente-1));
+        do {
+            result*=base;
+            expoente--;
+        } while (expoente > 0);
+        return result;
     }
-    return (1/base)*(CalcularExponencial(base,expoente+1));
+    do {
+            result*=1/base;
+            expoente++;
+        } while (expoente < 0);
+        return result;
 }
 
-/* $RCSfile: aula0401a.c,v $ */
+/* $RCSfile: aula0401b.c,v $ */
