@@ -12,21 +12,18 @@
 
 OS = `uname -s`
 
-.ifdef GCC
 CC = gcc
-LD = gcc
-.elif CLANG
+
+.ifdef CLANG
 CC = clang
-LD = clang
-.else
-CC = gcc
-LD = gcc
 .endif
+
+LD = $(CC)
+
+CFLAGS = -Wall -std=c11 -D_MY_DEBUG_
 
 .ifndef _MY_DEBUG_
 CFLAGS = -Wall -std=c11
-.else
-CFLAGS = -Wall -std=c11 -D_MY_DEBUG_
 .endif
 
 LFLAGS = -Wall -std=c11
@@ -94,8 +91,8 @@ aula0102: $(AULA0102OBJS)
 	cp $@ $@-$(OS)-$(CC)
 
 aula0103: $(AULA0103OBJS)
-    $(LD) $(LFLAGS) -o $@ $(AULA0103OBJS)
-    cp $@ $@-$(OS)-$(CC)
+	$(LD) $(LFLAGS) -o $@ $(AULA0103OBJS)
+	cp $@ $@-$(OS)-$(CC)
 
 aula0104: $(AULA0104OBJS)
 	$(LD) $(LFLAGS) -o $@ $(AULA0104OBJS)
@@ -166,7 +163,7 @@ clean-all:
 	rm -f *.o $(ALL) *-FreeBSD-* *-Linux-*
 
 clean-freebsd:
-    rm -f *.o $(ALL) *-FreeBSD-*
+	rm -f *.o $(ALL) *-FreeBSD-*
 
 
 # $RCSfile: BSDmakefile,v $
