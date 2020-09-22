@@ -27,6 +27,11 @@ LD = $(CC)
 CFLAGS = -Wall -std=c11
 LFLAGS = -Wall -std=c11
 
+AR = ar
+
+LFLAGS = -Wall -std=c11
+AFLAGS = -r
+
 AULA0101OBJS = aula0101.o
 AULA0102OBJS = aula0102.o
 AULA0103OBJS = aula0103.o
@@ -44,6 +49,11 @@ AULA0402AOBJS = aula0401a.o aula0402.o
 AULA0402BOBJS = aula0401b.o aula0402.o
 AULA0402COBJS = aula0401c.o aula0402.o
 AULA0402DOBJS = aula0401d.o aula0402.o
+AULA0502AOBJS = aula0501a.o aula0502.o
+AULA0502BOBJS = aula0501b.o aula0502.o
+AULA0502COBJS = aula0501c.o aula0502.o
+AULA0502DOBJS = aula0501d.o aula0502.o
+AULA0502EOBJS = aula0501e.o aula0502.o
 
 AULA01 = aula0101\
 	aula0102\
@@ -66,12 +76,24 @@ AULA04 = aula0402a\
 	aula0402c\
 	aula0402d
 
+AULA05 = aula0502a\
+	aula0502b\
+	aula0502c\
+	aula0502d\
+	aula0502e
+
+LIBMATEMATICAOBJS = aula0401a.o
+LIBMATEMATICA = libmatematica.a
+
 EXECS = $(AULA01)\
 		$(AULA02)\
 		$(AULA03)\
-		$(AULA04)
+		$(AULA04)\
+		$(AULA05)
 
-ALL = $(EXECS)
+LIBS = $(LIBMATEMATICA)
+
+ALL = $(EXECS) $(LIBS)
 
 #Regra implicita
 .c.o:
@@ -155,13 +177,41 @@ aula0402d: $(AULA0402DOBJS)
 	$(LD) $(LFLAGS) -o $@ $(AULA0402DOBJS)
 	cp $@ $@-$(OS)-$(CC)
 
+libmatematica.a: $(LIBMATEMATICAOBJS)
+	$(AR) $(AFLAGS) $@ $(LIBMATEMATICAOBJS)
+
+aula05: $(AULA05)
+
+aula0502a: $(AULA0502AOBJS) $(LIBMATEMATICA)
+	$(LD) $(LFLAGS) -o $@ $(AULA0502AOBJS) -L. -lmatematica
+	cp $@ $@-$(OS)-$(CC)
+
+aula0502b: $(AULA0502BOBJS) $(LIBMATEMATICA)
+	$(LD) $(LFLAGS) -o $@ $(AULA0502BOBJS) -L. -lmatematica
+	cp $@ $@-$(OS)-$(CC)
+
+aula0502c: $(AULA0502COBJS) $(LIBMATEMATICA)
+	$(LD) $(LFLAGS) -o $@ $(AULA0502COBJS) -L. -lmatematica
+	cp $@ $@-$(OS)-$(CC)
+
+aula0502d: $(AULA0502DOBJS) $(LIBMATEMATICA)
+	$(LD) $(LFLAGS) -o $@ $(AULA0502DOBJS) -L. -lmatematica
+	cp $@ $@-$(OS)-$(CC)
+
+aula0502e: $(AULA502EOBJS) $(LIBMATEMATICA)
+	$(LD) $(LFLAGS) -o $@ $(AULA0502EOBJS) -lm
+	cp $@ $@-$(OS)-$(CC)
+
 clean:
-	rm -f *.o $(ALL)
+	rm -f *.o $(ALL) $(LIBS)
 
 clean-all:
-	rm -f *.o $(ALL) *-FreeBSD-* *-Linux-*
+	rm -f *.o $(ALL) $(LIBS) *-FreeBSD-* *-Linux-*
 
 clean-freebsd:
-	rm -f *.o $(ALL) *-FreeBSD-*
+	rm -f *.o $(ALL) $(LIBS) *-FreeBSD-*
+
+clean-linux:
+	rm -f *.o $(ALL) $(LIBS) *-Linux-*
 
 # $RCSfile: GNUmakefile,v $
