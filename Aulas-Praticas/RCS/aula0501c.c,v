@@ -1,4 +1,26 @@
-/*
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2020.09.24.08.19.25;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@/*
 Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
@@ -7,12 +29,9 @@ Prof. Marcelo Luiz Drumond Lanza
 Autor: Lucas de Queiroz dos Reis
 Descricao: aula0501c.c
 
-$Author: lucasqueiroz $
-$Date: 2020/09/24 08:19:25 $
-$Log: aula0501c.c,v $
-Revision 1.1  2020/09/24 08:19:25  lucasqueiroz
-Initial revision
-
+$Author$
+$Date$
+$Log$
 */
 
 #include "aula0401.h"
@@ -38,4 +57,4 @@ CalcularSerieHarmonicaAlternada (unsigned long int input){
     return resultado;
 }
 
-/*$RCSfile: aula0501c.c,v $*/
+/*$RCSfile$*/@

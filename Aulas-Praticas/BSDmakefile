@@ -197,7 +197,7 @@ aula0502d: $(AULA0502DOBJS) $(LIBMATEMATICA)
 	$(LD) $(LFLAGS) -o $@ $(AULA0502DOBJS) -L. -lmatematica
 	cp $@ $@-$(OS)-$(CC)
 
-aula0502e: $(AULA502EOBJS) $(LIBMATEMATICA)
+aula0502e: $(AULA0502EOBJS) $(LIBMATEMATICA)
 	$(LD) $(LFLAGS) -o $@ $(AULA0502EOBJS) -lm
 	cp $@ $@-$(OS)-$(CC)
 

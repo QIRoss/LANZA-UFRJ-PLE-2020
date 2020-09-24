@@ -7,9 +7,12 @@ Prof. Marcelo Luiz Drumond Lanza
 Autor: Lucas de Queiroz dos Reis
 Descricao: aula0501d.c
 
-$Author$
-$Date$
-$Log$
+$Author: lucasqueiroz $
+$Date: 2020/09/24 08:19:32 $
+$Log: aula0501d.c,v $
+Revision 1.1  2020/09/24 08:19:32  lucasqueiroz
+Initial revision
+
 */
 
 #include "aula0401.h"
@@ -36,4 +39,4 @@ CalcularSerieHarmonicaAlternada (unsigned long int input){
     return resultado;
 }
 
-/*$RCSfile$*/
+/*$RCSfile: aula0501d.c,v $*/
