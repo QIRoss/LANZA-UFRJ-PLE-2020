@@ -12,13 +12,13 @@ $Date$
 $Log$
 */
 
-#ifndef _AULA0601_
-#define _AULA0601_                          "@(#)aula0601.h $Revision$"
+#ifndef _AULA0604_
+#define _AULA0604_                          "@(#)aula0604.h $Revision$"
 
 typedef enum {ok, erroMaiorQueDez, erroDigitoVerificadorInvalido} tipoErros;
 
 tipoErros
-GerarDigitoVerificadorPisPasep (char *, char *);
+GerarDigitoVerificadorPisPasep (char*, char*);
 
 tipoErros
 ValidarPisPasep (char *);

@@ -12,5 +12,15 @@ $Date$
 $Log$
 */
 
+#ifndef _AULA0608_
+#define _AULA0608_                          "@(#)aula0608.h $Revision$"
+
+
+typedef enum {ok} tipoErros;
+
+tipoErros
+GerarDigitoVerificadorPisPasep (char *);
+
+#endif
 
 /*$RCSfile$*/

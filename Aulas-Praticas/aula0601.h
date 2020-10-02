@@ -26,6 +26,9 @@ GerarDigitoVerificadorPisPasep (byte [TAMANHO]);
 tipoErros
 ValidarPisPasep (byte [TAMANHO]);
 
+tipoErros
+GerarPisPasep (byte *);
+
 #endif
 
 
