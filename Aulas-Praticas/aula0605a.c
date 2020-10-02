@@ -12,5 +12,21 @@ $Date$
 $Log$
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "aula0604.h"
+
+#define NUMERO_ARGUMENTOS                               11
+#define EOS                                             '\0'
+
+#define OK                                              0
+#define NUMERO_ARGUMENTOS_INVALIDO                      1
+#define CARACTERE_INVALIDO                              2
+#define OPERACAO_INVALIDA                               3
+
+int main (int argc, char *argv[]){
+   
+}
 
 /*$RCSfile$*/

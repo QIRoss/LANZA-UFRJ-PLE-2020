@@ -58,6 +58,11 @@ AULA0602AOBJS = aula0601.o aula0602a.o
 AULA0602BOBJS = aula0601.o aula0602b.o
 AULA0603AOBJS = aula0601.o aula0603a.o
 AULA0603BOBJS = aula0601.o aula0603b.o
+AULA0605AOBJS = aula0604.o aula0605a.o
+AULA0605BOBJS = aula0604.o aula0605b.o
+AULA0606AOBJS = aula0604.o aula0606a.o
+AULA0606BOBJS = aula0604.o aula0606b.o
+
 
 AULA01 = aula0101\
 	aula0102\
@@ -232,6 +237,22 @@ aula0603a: $(AULA0603AOBJS)
 
 aula0603b: $(AULA0603BOBJS)
 	$(LD) $(LFLAGS) -o $@ $(AULA0603BOBJS)
+	cp $@ $@-$(OS)-$(CC)
+
+aula0605a: $(AULA0605AOBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0605AOBJS)
+	cp $@ $@-$(OS)-$(CC)
+
+aula0605b: $(AULA0605BOBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0605BOBJS)
+	cp $@ $@-$(OS)-$(CC)
+
+aula0606a: $(AULA0606AOBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0606AOBJS)
+	cp $@ $@-$(OS)-$(CC)
+
+aula0606b: $(AULA0606BOBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0606BOBJS)
 	cp $@ $@-$(OS)-$(CC)
 
 clean:
