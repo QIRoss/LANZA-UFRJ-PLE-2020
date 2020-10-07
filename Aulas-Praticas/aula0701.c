@@ -12,12 +12,8 @@ $Date$
 $Log$
 */
 
+#include <stdio.h>
 #include "aula0701.h"
-
-#define DIMENSAO_LINHA_ESQ                  5
-#define DIMENSAO_COLUNA_ESQ                 3
-#define DIMENSAO_LINHA_DIR                  3
-#define DIMENSAO_COLUNA_DIR                 4
 
 tipoErros
 MultiplicarMatrizes (
@@ -27,6 +23,13 @@ MultiplicarMatrizes (
     ){
 
     unsigned indexI=0, indexJ=0, indexK=0;
+
+    for(indexI=0;indexI < DIMENSAO_LINHA_ESQ; indexI++){
+        for(indexJ=0;indexJ < DIMENSAO_COLUNA_DIR; indexJ++){
+            mRes[indexI][indexJ] = 0;
+        }
+    }
+
     for(indexI=0;indexI < DIMENSAO_LINHA_ESQ;indexI++){
         for(indexJ=0; indexJ < DIMENSAO_COLUNA_DIR;indexJ++){
             for(indexK=0; indexK < DIMENSAO_COLUNA_ESQ; indexK++){

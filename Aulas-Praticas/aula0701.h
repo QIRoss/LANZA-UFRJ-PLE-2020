@@ -15,6 +15,11 @@ $Log$
 #ifndef _AULA0701_
 #define _AULA0701_                  "@(#)aula0701.h $Revision$"
 
+#define DIMENSAO_LINHA_ESQ                  5
+#define DIMENSAO_COLUNA_ESQ                 3
+#define DIMENSAO_LINHA_DIR                  3
+#define DIMENSAO_COLUNA_DIR                 4
+
 typedef enum{ok} tipoErros;
 
 tipoErros

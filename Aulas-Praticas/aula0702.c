@@ -22,10 +22,7 @@ $Log$
 #define EOS                             '\0'
 #define NUMERO_ARGUMENTOS               28
 
-#define DIMENSAO_LINHA_ESQ                  5
-#define DIMENSAO_COLUNA_ESQ                 3
-#define DIMENSAO_LINHA_DIR                  3
-#define DIMENSAO_COLUNA_DIR                 4
+
 
 #define ARGUMENTO_INVALIDO              1
 #define NUMERO_ARGUMENTOS_INVALIDO      2
@@ -34,7 +31,7 @@ $Log$
 int main (int argc, char *argv[]){
     tipoErros check;
     char *validacao;
-    unsigned indexArgs=0, indexI=0, indexJ=0;
+    unsigned auxiliar=1,indiceLinha=0, indiceColuna=0;
     float mLeft[DIMENSAO_LINHA_ESQ][DIMENSAO_COLUNA_ESQ], 
     mRight[DIMENSAO_LINHA_DIR][DIMENSAO_COLUNA_DIR], 
     mRes[DIMENSAO_LINHA_ESQ][DIMENSAO_COLUNA_DIR];
@@ -44,27 +41,24 @@ int main (int argc, char *argv[]){
         exit (NUMERO_ARGUMENTOS_INVALIDO);
     }
 
-    for(indexArgs = 1;indexArgs < NUMERO_ARGUMENTOS;indexArgs++){
-        if (indexArgs < 16){
-            for(indexI = 0; indexI < DIMENSAO_LINHA_ESQ; indexI++){
-                for(indexJ = 0; indexJ < DIMENSAO_COLUNA_ESQ; indexJ++){
-                    mLeft[indexI][indexJ] = strtof(argv[indexArgs],*validacao);
-                    if (*validacao != EOS){
-                        printf("Argumento Invalido, caractere encontrado %c\n", *validacao);
-                        exit(ARGUMENTO_INVALIDO);
-                    }
-                }
+    for(indiceLinha = 0; indiceLinha < DIMENSAO_LINHA_ESQ; indiceLinha++){
+        for(indiceColuna = 0; indiceColuna < DIMENSAO_COLUNA_ESQ; indiceColuna++){
+            mLeft[indiceLinha][indiceColuna] = strtof(argv[auxiliar],&validacao);
+            if(*validacao != EOS){
+                printf("Caractere invalido, programa aceita somente numeros e \"- \"\n");
+                exit(ARGUMENTO_INVALIDO);
             }
-        } else {
-            for(indexI = 0; indexI < DIMENSAO_LINHA_DIR; indexI++){
-                for(indexJ = 0; indexJ < DIMENSAO_COLUNA_DIR; indexJ++){
-                    mRight[indexI][indexJ] = strtof(argv[indexArgs],*validacao);
-                    if (*validacao != EOS){
-                        printf("Argumento Invalido, caractere encontrado %c\n", *validacao);
-                        exit(ARGUMENTO_INVALIDO);
-                    }
-                }
+            auxiliar++;
+        }
+    }
+    for(indiceLinha = 0; indiceLinha < DIMENSAO_LINHA_DIR; indiceLinha++){
+        for(indiceColuna = 0; indiceColuna < DIMENSAO_COLUNA_DIR; indiceColuna++){
+            mRight[indiceLinha][indiceColuna] = strtof(argv[auxiliar],&validacao);
+            if(*validacao != EOS){
+                printf("Caractere invalido, programa aceita somente numeros e \"- \"\n");
+                exit(ARGUMENTO_INVALIDO);
             }
+            auxiliar++;
         }
     }
 
@@ -74,8 +68,12 @@ int main (int argc, char *argv[]){
         exit(ERRO_MULTIPLICANDO_MATRIZES);
     }
 
-    for(;;){}
-
+    for(indiceLinha = 0; indiceLinha < DIMENSAO_LINHA_ESQ;indiceLinha++){
+        for(indiceColuna = 0; indiceColuna < DIMENSAO_COLUNA_DIR; indiceColuna++){
+            printf("|\t%.3f\t|",mRes[indiceLinha][indiceColuna]);
+        }
+        printf("\n");
+    }
     
     return OK;
 }

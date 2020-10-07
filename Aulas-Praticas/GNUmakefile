@@ -64,7 +64,8 @@ AULA0606AOBJS = aula0604.o aula0606a.o
 AULA0606BOBJS = aula0604.o aula0606b.o
 AULA0607OBJS = aula0601.o aula0607.o
 AULA0609OBJS = aula0608.o aula0609.o
-AULA0610OBJS = aula0608.o aula0610.o 
+AULA0610OBJS = aula0608.o aula0610.o
+AULA0702OBJS = aula0701.o aula0702.o
 
 
 AULA01 = aula0101\
@@ -106,6 +107,7 @@ AULA06 = aula0602a\
 	aula0609\
 	aula0610\
 
+AULA07 = aula0702\
 
 LIBMATEMATICAOBJS = aula0401a.o
 LIBMATEMATICA = libmatematica.a
@@ -115,7 +117,8 @@ EXECS = $(AULA01)\
 		$(AULA03)\
 		$(AULA04)\
 		$(AULA05)\
-		$(AULA06)
+		$(AULA06)\
+		$(AULA07)
 
 LIBS = $(LIBMATEMATICA)
 
@@ -273,6 +276,14 @@ aula0609: $(AULA0609OBJS)
 aula0610: $(AULA0610OBJS)
 	$(LD) $(LFLAGS) -o $@ $(AULA0610OBJS)
 	cp $@ $@-$(OS)-$(CC)
+
+aula07: $(AULA07)
+
+aula0702: $(AULA0702OBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0702OBJS)
+	cp $@ $@-$(OS)-$(CC)
+
+
 
 clean:
 	rm -f *.o $(ALL) $(LIBS)
