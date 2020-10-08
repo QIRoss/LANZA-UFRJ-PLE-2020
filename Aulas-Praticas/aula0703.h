@@ -16,7 +16,15 @@ $Log$
 #ifndef _AULA0703_
 #define _AULA0703_                      "@(#)aula0703.h $Revision$"
 
+#ifdef __linux__
+#define _XOPEN_SOURCE 600
 #include <unistd.h>
+#undef _XOPEN_SOURCE
+#endif
+
+#ifdef __FreeBSD__
+#include <unistd.h>
+#endif
 
 #define APAGADO                         '0'
 #define ACESO                           '1'
@@ -26,6 +34,8 @@ $Log$
 typedef enum {ok, abscissaInvalida, ordenadaInvalida} tipoErros;
 
 typedef enum {apagado, aceso} tipoPixel;
+
+typedef unsigned int useconds_t;
 
 tipoErros
 MostrarMonitor (tipoPixel monitor [NUMERO_MAXIMO_LINHAS ] [NUMERO_MAXIMO_COLUNAS ], unsigned numeroMaximoLinhas, unsigned numeroMaximoColunas, useconds_t tempoEspera);

@@ -15,7 +15,16 @@ $Log$
 #include "aula0703.h"
 
 #include <stdio.h>
+
+#ifdef __linux__
+#define _XOPEN_SOURCE 600
 #include <unistd.h>
+#undef _XOPEN_SOURCE
+#endif
+
+#ifdef __FreeBSD__
+#include <unistd.h>
+#endif
 
 tipoErros
 MostrarMonitor (tipoPixel monitor [NUMERO_MAXIMO_LINHAS ] [NUMERO_MAXIMO_COLUNAS ], unsigned numeroMaximoLinhas, unsigned numeroMaximoColunas, useconds_t tempoEspera){
@@ -57,11 +66,13 @@ LimparMonitor (tipoPixel monitor [NUMERO_MAXIMO_LINHAS ][ NUMERO_MAXIMO_COLUNAS]
 tipoErros
 DesenharRetangulo (tipoPixel monitor [NUMERO_MAXIMO_LINHAS ][ NUMERO_MAXIMO_COLUNAS], unsigned numeroMaximoLinhas, unsigned numeroMaximoColunas, unsigned linhaCantoSuperior, unsigned colunaCantoSuperior, unsigned linhaCantoInferior, unsigned colunaCantoInferior, useconds_t tempoEspera){
     unsigned indiceLinha, indiceColuna;
-    for(indiceLinha = /**/; indiceLinha < /**/; indiceLinha++){
-
+    for(indiceLinha = linhaCantoSuperior-1; indiceLinha < linhaCantoInferior; indiceLinha++){
+        monitor[indiceLinha][colunaCantoSuperior-1]= aceso;
+        monitor[indiceLinha][colunaCantoInferior]= aceso;
     }
-    for(indiceColuna = /**/; indiceColuna < /**/; indiceColuna++){
-        
+    for(indiceColuna = colunaCantoSuperior-1; indiceColuna < colunaCantoInferior; indiceColuna++){
+        monitor[linhaCantoSuperior-1][indiceColuna] = aceso;
+        monitor[linhaCantoInferior-1][indiceColuna] = aceso;
     }
     return ok;
 }

@@ -66,6 +66,7 @@ AULA0607OBJS = aula0601.o aula0607.o
 AULA0609OBJS = aula0608.o aula0609.o
 AULA0610OBJS = aula0608.o aula0610.o
 AULA0702OBJS = aula0701.o aula0702.o
+AULA0704OBJS = aula0703.o aula0704.o
 
 
 AULA01 = aula0101\
@@ -108,6 +109,7 @@ AULA06 = aula0602a\
 	aula0610\
 
 AULA07 = aula0702\
+	aula0704\
 
 LIBMATEMATICAOBJS = aula0401a.o
 LIBMATEMATICA = libmatematica.a
@@ -283,7 +285,9 @@ aula0702: $(AULA0702OBJS)
 	$(LD) $(LFLAGS) -o $@ $(AULA0702OBJS)
 	cp $@ $@-$(OS)-$(CC)
 
-
+aula0704: $(AULA0704OBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0704OBJS)
+	cp $@ $@-$(OS)-$(CC)
 
 clean:
 	rm -f *.o $(ALL) $(LIBS)
