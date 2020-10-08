@@ -1,18 +1,37 @@
-/*
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2020.10.08.20.36.01;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@/*
 Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
 EEL270 - Computacao II - Turma 2020/4 - PLE-1
 Prof. Marcelo Luiz Drumond Lanza
 Autor: Lucas de Queiroz dos Reis
-Descricao: aula0602a.c
+Descricao: aula0603a.c
 
-$Author: lucasqueiroz $
-$Date: 2020/10/08 20:35:28 $
-$Log: aula0602a.c,v $
-Revision 1.1  2020/10/08 20:35:28  lucasqueiroz
-Initial revision
-
+$Author$
+$Date$
+$Log$
 */
 
 #include <stdio.h>
@@ -20,7 +39,7 @@ Initial revision
 #include <string.h>
 #include "aula0601.h"
 
-#define NUMERO_ARGUMENTOS                               11
+#define NUMERO_ARGUMENTOS                               12
 #define EOS                                             '\0'
 
 #define OK                                              0
@@ -37,7 +56,7 @@ int main (int argc, char *argv[]){
         printf("Uso %s: <inteiro1> <inteiro2> ... <inteiro10> \n",argv[0]);
         exit(NUMERO_ARGUMENTOS_INVALIDO);
     }
-    for(indice=1;indice<11;indice++){
+    for(indice=1;indice<12;indice++){
         if(strlen(argv[indice])!=1){
             printf("Uso %s: somente um caractere\n",argv[0]);
         }
@@ -47,14 +66,14 @@ int main (int argc, char *argv[]){
             exit (CARACTERE_INVALIDO);
         }
     }
-    verify = GerarDigitoVerificadorPisPasep(pisPasep);
+    verify = ValidarPisPasep(pisPasep);
     if (verify == 0){
-        printf("Digito Verificador: %u\n",pisPasep[10]);
+        printf("Digito Verificador Valido.\n");
     } else {
-        printf("Operação invalida\n");
+        printf("Digito Verificador Invalido.\n");
         exit(OPERACAO_INVALIDA);
     }
     return OK;
 }
 
-/*$RCSfile: aula0602a.c,v $*/
+/*$RCSfile$*/@
