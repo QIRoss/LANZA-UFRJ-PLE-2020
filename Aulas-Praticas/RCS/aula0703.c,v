@@ -1,4 +1,26 @@
-/*
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2020.10.08.20.26.45;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@/*
 Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
@@ -7,12 +29,9 @@ Prof. Marcelo Luiz Drumond Lanza
 Autor: Lucas de Queiroz dos Reis
 Descricao: aula0703.c
 
-$Author: lucasqueiroz $
-$Date: 2020/10/08 20:26:45 $
-$Log: aula0703.c,v $
-Revision 1.1  2020/10/08 20:26:45  lucasqueiroz
-Initial revision
-
+$Author$
+$Date$
+$Log$
 */
 
 #include "aula0703.h"
@@ -94,4 +113,4 @@ PreencherPoligono (tipoPixel monitor [NUMERO_MAXIMO_LINHAS ][ NUMERO_MAXIMO_COLU
     return ok;
 }
 
-/* $RCSfile: aula0703.c,v $ */
+/* $RCSfile$ */@

@@ -1,4 +1,26 @@
-/*
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2020.10.08.20.25.37;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@/*
 Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
@@ -7,12 +29,9 @@ Prof. Marcelo Luiz Drumond Lanza
 Autor: Lucas de Queiroz dos Reis
 Descricao: aula0704.c
 
-$Author: lucasqueiroz $
-$Date: 2020/10/08 20:25:37 $
-$Log: aula0704.c,v $
-Revision 1.1  2020/10/08 20:25:37  lucasqueiroz
-Initial revision
-
+$Author$
+$Date$
+$Log$
 */
 
 #include <stdio.h>
@@ -89,4 +108,4 @@ int main (int argc, char *argv[]){
     verify = PreencherPoligono(monitor, variaveis[0], variaveis[1],variaveis[6]-1,variaveis[7]-1, tempo);
     return OK;
 }
-/* $RCSfile: aula0704.c,v $ */
+/* $RCSfile$ */@
