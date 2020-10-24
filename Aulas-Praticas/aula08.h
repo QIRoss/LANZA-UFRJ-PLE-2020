@@ -28,6 +28,15 @@ CodificarBase64 (byte *entrada, unsigned numeroBytes, char *saida);
 tipoErros
 DecodificarBase64 (char *entrada, byte *saida, unsigned *numeroBytes);
 
+tipoErros
+ConverterArquivoFormatoUnixFormatoDos (char *original, char *convertido);
+
+tipoErros
+ConverterArquivoFormatoDosFormatoUnix (char *original, char *convertido);
+
+tipoErros
+ExibirConteudoArquivo (char *);
+
 
 #endif
 

@@ -17,33 +17,42 @@ $Log$
 
 tipoErros
 CodificarBase64 (byte *entrada, unsigned numeroBytes, char *saida){
-    int mod_table[3] = {0, 2, 1};
+    unsigned mod_table[3] = {0, 2, 1};
+    unsigned lenVal = 4*((numeroBytes+2)/3);
+    unsigned *length = &lenVal;
+    unsigned index,equalChar=0,lastEqualChar=0;
 
-    *saida = 4*((numeroBytes+2)/3);
-
-    char *encoded_data = malloc(sizeof(*saida));
-
-    if (encoded_data == NULL) return tamanhoNulo;
-
-    for (int i = 0, j = 0; i < numeroBytes;) {
-        unsigned octeto_a = i < numeroBytes ? (unsigned char)entrada[i++] : 0;
-        unsigned octeto_b = i < numeroBytes ? (unsigned char)entrada[i++] : 0;
-        unsigned octeto_c = i < numeroBytes ? (unsigned char)entrada[i++] : 0;
+    if (saida == NULL) return tamanhoNulo;
+    for (int index = 0, j = 0; index < numeroBytes;) {
+        unsigned octeto_a = index < numeroBytes ? (unsigned char)entrada[index++] : 0;
+        unsigned octeto_b = index < numeroBytes ? (unsigned char)entrada[index++] : 0;
+        unsigned octeto_c = index < numeroBytes ? (unsigned char)entrada[index++] : 0;
         unsigned triple = (octeto_a << 0x10) + (octeto_b << 0x08) + octeto_c;
-        encoded_data[j++] = CONJUNTO_BASE_64[(triple >> 3 * 6) & 0x3F];
-        encoded_data[j++] = CONJUNTO_BASE_64[(triple >> 2 * 6) & 0x3F];
-        encoded_data[j++] = CONJUNTO_BASE_64[(triple >> 1 * 6) & 0x3F];
-        encoded_data[j++] = CONJUNTO_BASE_64[(triple >> 0 * 6) & 0x3F];
+        saida[j++] = CONJUNTO_BASE_64[(triple >> 3 * 6) & 0x3F];
+        saida[j++] = CONJUNTO_BASE_64[(triple >> 2 * 6) & 0x3F];
+        saida[j++] = CONJUNTO_BASE_64[(triple >> 1 * 6) & 0x3F];
+        saida[j++] = CONJUNTO_BASE_64[(triple >> 0 * 6) & 0x3F];
     }
-
-    for (int i = 0; i < mod_table[numeroBytes % 3]; i++){
-        encoded_data[*saida - 1 - i] = '=';
+    for (int index = 0; index < mod_table[numeroBytes % 3]; index++){
+        saida[*length - 1 - index] = '=';
     }
-    printf("%s\n",encoded_data);
-
+    for(index=0;lastEqualChar==0;index++){
+        if(saida[index] == '=') {
+            equalChar++;
+        }
+        if((saida[index] != '=') && (equalChar > 0)){
+            saida[index] = '\0';
+            lastEqualChar++;
+        }
+    }
+    printf("%s\n",saida);
     return ok;
 }
 
-#include "aula08.h"
+tipoErros
+DecodificarBase64 (char *entrada, byte *saida, unsigned *numeroBytes){
+    
+    return 0;
+}
 
 /*$RCSfile$*/
