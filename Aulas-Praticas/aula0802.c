@@ -51,9 +51,17 @@ int main(int argc,char *argv[]){
     byte input[2*numeroBytes];
     *saida = &valorDaSaida;
     for(index = 2;index<argc;index++){
-        if(argv[index][0] )
-        input[byteLoader++] = argv[index][0];
-        input[byteLoader++] = argv[index][1];
+        if(!((argv[index][0] >= 'A' && argv[index][0] <= 'Z') ||
+        (argv[index][0] >= 'a' && argv[index][0] <= 'z') || 
+        (argv[index][0] >= '0' && argv[index][0] <= '9') || 
+        (argv[index][0] == '+') ||
+        (argv[index][0] == '/'))){
+            printf("CARACTERE NAO CONDIZ COM BASE64\n");
+            exit(CARACTERE_INVALIDO);
+        } else {
+            input[byteLoader++] = argv[index][0];
+            input[byteLoader++] = argv[index][1];
+        }
     }
     input[byteLoader]=EOS;
     inputLen = strlen((const char *) input);
