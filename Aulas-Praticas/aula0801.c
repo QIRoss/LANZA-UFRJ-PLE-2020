@@ -12,6 +12,7 @@ $Log$
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "aula08.h"
 
@@ -45,14 +46,33 @@ CodificarBase64 (byte *entrada, unsigned numeroBytes, char *saida){
             lastEqualChar++;
         }
     }
-    printf("%s\n",saida);
     return ok;
 }
 
 tipoErros
-DecodificarBase64 (char *entrada, byte *saida, unsigned *numeroBytes){
+DecodificarBase64 (char *entrada, byte *saida, unsigned numeroBytes){
+    unsigned sexteto_a, sexteto_b, sexteto_c, sexteto_d;
+    char *tabelaReversa = malloc(256);
+    for (int index = 0; index < 64; index++){
+        tabelaReversa[(byte) CONJUNTO_BASE_64[index]] = index;
+    }
+    if (numeroBytes % 4 != 0) return tamanhoNulo;
+    unsigned output_length = numeroBytes / 4 * 3;
     
-    return 0;
+    if (saida == NULL) return tamanhoNulo;
+
+    for (int index = 0, j = 0; index < numeroBytes;) {
+        unsigned sexteto_a = entrada[index] == '=' ? 0 & index++ : tabelaReversa[entrada[index++]];
+        unsigned sexteto_b = entrada[index] == '=' ? 0 & index++ : tabelaReversa[entrada[index++]];
+        unsigned sexteto_c = entrada[index] == '=' ? 0 & index++ : tabelaReversa[entrada[index++]];
+        unsigned sexteto_d = entrada[index] == '=' ? 0 & index++ : tabelaReversa[entrada[index++]];
+        unsigned triple = (sexteto_a << 3 * 6)+(sexteto_b << 2 * 6)+(sexteto_c << 1 * 6)+(sexteto_d << 0 * 6);
+        if (j < output_length) saida[j++] = (triple >> 2 * 8) & 0xFF;
+        if (j < output_length) saida[j++] = (triple >> 1 * 8) & 0xFF;
+        if (j < output_length) saida[j++] = (triple >> 0 * 8) & 0xFF;
+    }
+    free(tabelaReversa);
+    return ok;
 }
 
 /*$RCSfile$*/

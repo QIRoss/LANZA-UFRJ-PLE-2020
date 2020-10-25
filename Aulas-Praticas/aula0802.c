@@ -24,10 +24,16 @@ $Log$
 
 #define NUMERO_ARGUMENTOS_INVALIDO                  1
 #define ARGUMENTO_INVALIDO                          2
+#define CARACTERE_INVALIDO                          3
+#define ERRO_ENCODE_DECODE                          4
 
 int main(int argc,char *argv[]){
     unsigned numeroBytes,inputLen,index,byteLoader=0;
+    tipoErros verify;
     char *validacao,*saida;
+    char valorDaSaida;
+    byte valorNovaSaida=0;
+    byte* novaSaida = &valorNovaSaida;
 
     if(argc < MINIMO_ARGUMENTOS){
         printf("Uso %s: <n Bytes> <n Argumentos Byte>\n",argv[0]);
@@ -43,17 +49,26 @@ int main(int argc,char *argv[]){
         exit(ARGUMENTO_INVALIDO);
     }
     byte input[2*numeroBytes];
+    *saida = &valorDaSaida;
     for(index = 2;index<argc;index++){
+        if(argv[index][0] )
         input[byteLoader++] = argv[index][0];
         input[byteLoader++] = argv[index][1];
     }
     input[byteLoader]=EOS;
-    char valorDaSaida[2*inputLen];
-    *saida = valorDaSaida;
     inputLen = strlen((const char *) input);
-    CodificarBase64(input,inputLen,saida);
+    verify = CodificarBase64(input,inputLen,saida);
+    if(verify != 0){
+        printf("ERRO AO CODIFICAR BASE64!\n");
+        exit(ERRO_ENCODE_DECODE);
+    }
     printf("%s\n",saida);
-
+    verify = DecodificarBase64(saida,novaSaida,strlen(saida));
+    if(verify != 0){
+        printf("ERRO AO DECODIFICAR BASE64!\n");
+        exit(ERRO_ENCODE_DECODE);
+    }
+    printf("%s\n",novaSaida);
     return OK;
 }
 

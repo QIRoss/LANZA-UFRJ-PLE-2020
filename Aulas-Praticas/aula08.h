@@ -26,7 +26,7 @@ tipoErros
 CodificarBase64 (byte *entrada, unsigned numeroBytes, char *saida);
 
 tipoErros
-DecodificarBase64 (char *entrada, byte *saida, unsigned *numeroBytes);
+DecodificarBase64 (char *entrada, byte *saida, unsigned numeroBytes);
 
 tipoErros
 ConverterArquivoFormatoUnixFormatoDos (char *original, char *convertido);
