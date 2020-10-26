@@ -18,7 +18,7 @@ $Log$
 #define OK                              0
 
 int main(int argc,char *argv[]){
-    ConverterArquivoFormatoDosFormatoUnix("source.txt","destination.txt");
+    ConverterArquivoFormatoDosFormatoUnix("destination.txt","destinationInv.txt");
     return OK;
 }
 

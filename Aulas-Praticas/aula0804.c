@@ -61,8 +61,8 @@ ConverterArquivoFormatoDosFormatoUnix (char *original, char *convertido){
         fgets(buffer, 1024,toRead);
         length = strlen(buffer);
         if(buffer[length] == '\0' && buffer[length-1] == '\n' && buffer[length-2] == '\r'){
-            buffer[length-3] = '\n';
-            buffer[length-2] = '\0';
+            buffer[length-2] = '\n';
+            buffer[length-1] = '\0';
         }
         fprintf(toWrite,"%s", buffer);
     }
