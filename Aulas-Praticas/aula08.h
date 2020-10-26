@@ -18,7 +18,7 @@
 
 #define CONJUNTO_BASE_64              "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"  
 
-typedef enum{ok, tamanhoNulo} tipoErros;
+typedef enum{ok, tamanhoNulo, arquivoInvalido} tipoErros;
 
 typedef unsigned char byte;
 

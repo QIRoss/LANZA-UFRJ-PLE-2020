@@ -11,6 +11,15 @@ $Date$
 $Log$
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include "aula08.h"
 
+#define OK                              0
+
+int main(int argc,char *argv[]){
+    ConverterArquivoFormatoDosFormatoUnix("source.txt","destination.txt");
+    return OK;
+}
 
 /*$RCSfile$*/
