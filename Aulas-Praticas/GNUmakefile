@@ -68,6 +68,7 @@ AULA0610OBJS = aula0608.o aula0610.o
 AULA0702OBJS = aula0701.o aula0702.o
 AULA0704OBJS = aula0703.o aula0704.o
 AULA0802OBJS = aula0801.o aula0802.o
+AULA0803OBJS = aula0801.o aula0803.o
 
 
 AULA01 = aula0101\
@@ -113,6 +114,7 @@ AULA07 = aula0702\
 	aula0704\
 
 AULA08 = aula0802\
+	aula0803\
 	
 
 LIBMATEMATICAOBJS = aula0401a.o
@@ -301,6 +303,10 @@ aula08: $(AULA08)
 
 aula0802: $(AULA0802OBJS)
 	$(LD) $(LFLAGS) -o $@ $(AULA0802OBJS)
+	cp $@ $@-$(OS)-$(CC)
+
+aula0803: $(AULA0803OBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0803OBJS)
 	cp $@ $@-$(OS)-$(CC)
 
 clean:

@@ -32,8 +32,6 @@ int main(int argc,char *argv[]){
     tipoErros verify;
     char *validacao,*saida;
     char valorDaSaida;
-    byte valorNovaSaida=0;
-    byte* novaSaida = &valorNovaSaida;
 
     if(argc < MINIMO_ARGUMENTOS){
         printf("Uso %s: <n Bytes> <n Argumentos Byte>\n",argv[0]);
@@ -71,12 +69,6 @@ int main(int argc,char *argv[]){
         exit(ERRO_ENCODE_DECODE);
     }
     printf("%s\n",saida);
-    verify = DecodificarBase64(saida,novaSaida,strlen(saida));
-    if(verify != 0){
-        printf("ERRO AO DECODIFICAR BASE64!\n");
-        exit(ERRO_ENCODE_DECODE);
-    }
-    printf("%s\n",novaSaida);
     return OK;
 }
 
