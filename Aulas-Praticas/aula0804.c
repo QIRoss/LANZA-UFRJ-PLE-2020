@@ -13,6 +13,8 @@ $Log$
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
 
 #include "aula08.h"
 
@@ -22,7 +24,17 @@ ConverterArquivoFormatoUnixFormatoDos (char *original, char *convertido){
     char buffer[1026];
     unsigned length=0;
     if(convertido == NULL){
-        // mkstemp(convertido);
+        return arquivoInvalido;
+        // incompleto para mkstemp e compor a string com time_t
+        // time_t rawtime;
+        // struct tm * timeinfo;
+        // time ( &rawtime );
+        // timeinfo = localtime ( &rawtime );
+        // newName = strcat(original,"backup-AAAAMMDD_hhmmss");
+        // printf("%s\n",newName);
+        // ret = rename(original, newName);
+        // filedes = mkstemp("somenameXXXXXX");
+        // *convertido = &filedes;
     }
     toRead = fopen(original, "r");
     toWrite = fopen(convertido, "w");
@@ -46,12 +58,26 @@ ConverterArquivoFormatoUnixFormatoDos (char *original, char *convertido){
 
 tipoErros
 ConverterArquivoFormatoDosFormatoUnix (char *original, char *convertido){
+    // int filedes = -1;
+    // unsigned ret;
     FILE *toRead, *toWrite;
     toRead = fopen(original, "r");
+    toWrite = fopen(convertido, "w");
+    // char *newName;
     char buffer[1024];
     unsigned length=0;
     if(convertido == NULL){
-        // mkstemp(convertido);
+        return arquivoInvalido;
+        // incompleto para mkstemp e compor a string com time_t
+        // time_t rawtime;
+        // struct tm * timeinfo;
+        // time ( &rawtime );
+        // timeinfo = localtime ( &rawtime );
+        // newName = strcat(original,"backup-AAAAMMDD_hhmmss");
+        // printf("%s\n",newName);
+        // ret = rename(original, newName);
+        // filedes = mkstemp("somenameXXXXXX");
+        // *convertido = &filedes;
     }
     toWrite = fopen(convertido, "w");
     if(toRead == NULL){

@@ -15,10 +15,19 @@ $Log$
 #include <stdlib.h>
 #include "aula08.h"
 
-#define OK                              0
+#define OK                                      0
+#define NUMERO_ARGUMENTOS                       2
+
+#define NUMERO_ARGUMENTOS_INVALIDO              1
 
 int main(int argc,char *argv[]){
-    ConverterArquivoFormatoUnixFormatoDos("source.txt","destination.txt");
+
+    if(!(argc == NUMERO_ARGUMENTOS || argc == NUMERO_ARGUMENTOS+1)){
+        printf("Uso %s: <Argumento a ser lido> <Argumento opcional de destino>\n",argv[0]);
+        exit(NUMERO_ARGUMENTOS_INVALIDO);
+    }
+
+    ConverterArquivoFormatoUnixFormatoDos(argv[1],argv[2]);
     return OK;
 }
 
