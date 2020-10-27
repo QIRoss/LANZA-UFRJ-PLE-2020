@@ -1,17 +1,37 @@
-/* Universidade Federal do Rio de Janeiro
+head	1.1;
+access;
+symbols;
+locks
+	lucasqueiroz:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2020.10.27.05.52.27;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@/* Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
 EEL270 - Computacao II - Turma 2020/4 - PLE-1
 Prof. Marcelo Luiz Drumond Lanza
 Autor: Lucas de Queiroz dos Reis
-Descricao: aula0806.c
+Descricao: aula0805.c
 
-$Author: lucasqueiroz $
-$Date: 2020/10/27 05:52:46 $
-$Log: aula0806.c,v $
-Revision 1.1  2020/10/27 05:52:46  lucasqueiroz
-Initial revision
-
+$Author$
+$Date$
+$Log$
 */
 
 #include <stdio.h>
@@ -30,8 +50,8 @@ int main(int argc,char *argv[]){
         exit(NUMERO_ARGUMENTOS_INVALIDO);
     }
 
-    ConverterArquivoFormatoDosFormatoUnix(argv[1],argv[2]);
+    ConverterArquivoFormatoUnixFormatoDos(argv[1],argv[2]);
     return OK;
 }
 
-/*$RCSfile: aula0806.c,v $*/
+/*$RCSfile$*/@

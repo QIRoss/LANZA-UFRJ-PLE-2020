@@ -1,17 +1,36 @@
-/* Universidade Federal do Rio de Janeiro
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2020.10.27.05.51.51;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@/* Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
 EEL270 - Computacao II - Turma 2020/4 - PLE-1
 Prof. Marcelo Luiz Drumond Lanza
 Autor: Lucas de Queiroz dos Reis
-Descricao: aula0803.c
+Descricao: aula0802.c
 
-$Author: lucasqueiroz $
-$Date: 2020/10/27 05:52:03 $
-$Log: aula0803.c,v $
-Revision 1.1  2020/10/27 05:52:03  lucasqueiroz
-Initial revision
-
+$Author$
+$Date$
+$Log$
 */
 
 #include <stdio.h>
@@ -35,8 +54,6 @@ int main(int argc,char *argv[]){
     tipoErros verify;
     char *validacao,*saida;
     char valorDaSaida;
-    byte valorNovaSaida=0;
-    byte* novaSaida = &valorNovaSaida;
 
     if(argc < MINIMO_ARGUMENTOS){
         printf("Uso %s: <n Bytes> <n Argumentos Byte>\n",argv[0]);
@@ -74,13 +91,7 @@ int main(int argc,char *argv[]){
         exit(ERRO_ENCODE_DECODE);
     }
     printf("%s\n",saida);
-    verify = DecodificarBase64(saida,novaSaida,strlen(saida));
-    if(verify != 0){
-        printf("ERRO AO DECODIFICAR BASE64!\n");
-        exit(ERRO_ENCODE_DECODE);
-    }
-    printf("%s\n",novaSaida);
     return OK;
 }
 
-/*$RCSfile: aula0803.c,v $*/
+/*$RCSfile$*/@

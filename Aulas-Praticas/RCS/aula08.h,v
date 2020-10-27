@@ -1,4 +1,26 @@
-// /* Universidade Federal do Rio de Janeiro
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2020.10.27.05.51.26;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@// /* Universidade Federal do Rio de Janeiro
 // Escola Politecnica
 // Departamento de Eletronica e de Computacao
 // EEL270 - Computacao II - Turma 2020/4 - PLE-1
@@ -6,18 +28,15 @@
 // Autor: Lucas de Queiroz dos Reis
 // Descricao: aula08.h
 
-// $Author: lucasqueiroz $
-// $Date: 2020/10/27 05:51:26 $
-// $Log: aula08.h,v $
-// Revision 1.1  2020/10/27 05:51:26  lucasqueiroz
-// Initial revision
-//
+// $Author$
+// $Date$
+// $Log$
 // */
 #include <stdlib.h>
 #include <memory.h>
 
 #ifndef _AULA08_H_
-#define _AULA08_H_                      "@(#)aula08.h $Revision: 1.1 $"
+#define _AULA08_H_                      "@@(#)aula08.h $Revision$"
 
 #define CONJUNTO_BASE_64              "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"  
 
@@ -43,4 +62,4 @@ ExibirConteudoArquivo (char *);
 
 #endif
 
-/*$RCSfile: aula08.h,v $*/
+/*$RCSfile$*/@

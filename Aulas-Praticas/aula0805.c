@@ -6,9 +6,12 @@ Prof. Marcelo Luiz Drumond Lanza
 Autor: Lucas de Queiroz dos Reis
 Descricao: aula0805.c
 
-$Author$
-$Date$
-$Log$
+$Author: lucasqueiroz $
+$Date: 2020/10/27 05:52:27 $
+$Log: aula0805.c,v $
+Revision 1.1  2020/10/27 05:52:27  lucasqueiroz
+Initial revision
+
 */
 
 #include <stdio.h>
@@ -31,4 +34,4 @@ int main(int argc,char *argv[]){
     return OK;
 }
 
-/*$RCSfile$*/
+/*$RCSfile: aula0805.c,v $*/
