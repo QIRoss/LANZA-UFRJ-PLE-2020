@@ -1,4 +1,26 @@
- /*
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2020.10.29.20.36.33;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@ /*
 Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
@@ -7,21 +29,18 @@ Prof. Marcelo Luiz Drumond Lanza
 Author: Lucas de Queiroz dos Reis
 Description: umlFunctions.h
 
-$Author: lucasqueiroz $
-$Date: 2020/10/29 20:36:33 $
-$Log: umlFunctions.h,v $
-Revision 1.1  2020/10/29 20:36:33  lucasqueiroz
-Initial revision
-
+$Author$
+$Date$
+$Log$
 */
 #include "umlTypes.h"
 
 #ifndef UML_FUNCTIONS_H
-#define UML_FUNCTIONS_H              "@(#)umlFunctions.h $Revision: 1.1 $"
+#define UML_FUNCTIONS_H              "@@(#)umlFunctions.h $Revision$"
 
 umlLanguageType
 UmlGetLanguageIndex (char *);
 
 #endif
 
-/*$RCSfile: umlFunctions.h,v $*/
+/*$RCSfile$*/@

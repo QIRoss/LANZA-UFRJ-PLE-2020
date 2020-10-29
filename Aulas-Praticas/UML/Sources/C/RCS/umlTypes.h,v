@@ -1,4 +1,26 @@
- /*
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2020.10.29.20.34.52;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@ /*
 Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
@@ -7,19 +29,16 @@ Prof. Marcelo Luiz Drumond Lanza
 Author: Lucas de Queiroz dos Reis
 Description: umlTypes.h
 
-$Author: lucasqueiroz $
-$Date: 2020/10/29 20:34:52 $
-$Log: umlTypes.h,v $
-Revision 1.1  2020/10/29 20:34:52  lucasqueiroz
-Initial revision
-
+$Author$
+$Date$
+$Log$
 */
 
 #ifndef UML_TYPES_H
-#define UML_TYPES_H                 "@(#)umlTypes.h $Revision: 1.1 $"
+#define UML_TYPES_H                 "@@(#)umlTypes.h $Revision$"
 
 typedef enum{umlEnglish=0,umlPortuguese=1,umlLanguagesAmount = 2}umlLanguageType;
 
 #endif
 
-/*$RCSfile: umlTypes.h,v $*/
+/*$RCSfile$*/@

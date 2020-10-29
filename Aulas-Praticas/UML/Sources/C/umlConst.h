@@ -12,10 +12,22 @@ $Date$
 $Log$
 */
 
+#include "umlTypes.h"
+#include "umlErrors.h"
+#include "umlUserInterface.h"
+
 #ifndef UML_CONST_H
 #define UML_CONST_H             "@(#)umlConst.h $Revision$"
 
+#define UML_PORTUGUESE          "umlPortuguese"
+#define UML_ENGLISH             "umlEnglish"
 
+#define UML_LANGUAGES_AMOUNT    umlLanguagesAmount
+#define UML_ERRORS_AMOUNT       umlErrorsAmount
+#define UML_STRINGS_AMOUNT      umlStringsAmount
+
+#define UML_OK                  0
+#define UML_EOS                 '\0'
 
 #endif
 

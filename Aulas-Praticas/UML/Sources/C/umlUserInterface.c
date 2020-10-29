@@ -13,35 +13,51 @@ $Log$
 */
 
 #include "umlUserInterface.h"
+#include "umlConst.h"
+#include "umlTypes.h"
 
-umlCliUserInterfaceMessages[][] = 
+char*
+umlCliUserInterfaceMessages[UML_LANGUAGES_AMOUNT][UML_STRINGS_AMOUNT] = 
 {
     {
-
+        "Unknown Message."
     },
     {
-
+        "Mensagem desconhecida."
     }
 };
 
-umlWebUserInterfaceMessages[][] =
+char*
+umlWebUserInterfaceMessages[UML_LANGUAGES_AMOUNT][UML_STRINGS_AMOUNT] =
 {
     {
-
+        "Unknown Message."
     },
     {
-
+        "Mensagem desconhecida."
     }
 };
 
 char *
-UmlGetCliUserInterfaceMessage (umlUserInterfaceMessageNumberType, umlLanguageType){
-
+UmlGetCliUserInterfaceMessage (umlUserInterfaceMessageNumberType umlMessageNumber, umlLanguageType umlLanguage){
+    if (umlLanguage < 0 || umlLanguage >= umlLanguagesAmount ){
+        umlLanguage = 0 ;
+    }
+    if(umlMessageNumber < 0 || umlMessageNumber>=umlStringsAmount){
+        return umlCliUserInterfaceMessages[umlLanguage][umlStringsAmount-1];
+    }
+    return umlCliUserInterfaceMessages[umlLanguage][umlMessageNumber];
 }
 
 char *
-UmlGetWebUserInterfaceMessage (umlUserInterfaceMessageNumberType, umlLanguageType){
-
+UmlGetWebUserInterfaceMessage (umlUserInterfaceMessageNumberType umlMessageNumber, umlLanguageType umlLanguage){
+    if (umlLanguage < 0 || umlLanguage >= umlLanguagesAmount ){
+        umlLanguage = 0 ;
+    }
+    if(umlMessageNumber < 0 || umlMessageNumber>=umlStringsAmount){
+        return umlCliUserInterfaceMessages[umlLanguage][umlStringsAmount-1];
+    }
+    return umlCliUserInterfaceMessages[umlLanguage][umlMessageNumber];
 }
 
 /*$RCSfile$*/

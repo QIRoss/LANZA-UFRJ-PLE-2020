@@ -12,10 +12,12 @@ $Date$
 $Log$
 */
 
+#include "umlTypes.h"
+
 #ifndef UML_USER_INTERFACE_H
 #define UML_USER_INTERFACE_H    "@(#)umlUserInterface.h $Revision$"
 
-typedef umlUserInterfaceMessageNumberType;
+typedef enum{unknownMessage,umlStringsAmount} umlUserInterfaceMessageNumberType;
 
 char *
 UmlGetCliUserInterfaceMessage (umlUserInterfaceMessageNumberType, umlLanguageType);

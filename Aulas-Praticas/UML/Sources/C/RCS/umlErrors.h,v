@@ -1,4 +1,26 @@
-/*
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2020.10.29.22.32.39;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@/*
 Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
@@ -7,18 +29,15 @@ Prof. Marcelo Luiz Drumond Lanza
 Author: Lucas de Queiroz dos Reis
 Description: umlErrors.h
 
-$Author: lucasqueiroz $
-$Date: 2020/10/29 22:32:39 $
-$Log: umlErrors.h,v $
-Revision 1.1  2020/10/29 22:32:39  lucasqueiroz
-Initial revision
-
+$Author$
+$Date$
+$Log$
 */
 
 #include "umlTypes.h"
 
 #ifndef UML_ERRORS_H
-#define UML_ERRORS_H    "@(#)umlErrors.h $Revision: 1.1 $"
+#define UML_ERRORS_H    "@@(#)umlErrors.h $Revision$"
 
 typedef enum{umlOk,umlErrorsAmount} umlErrorType;
 
@@ -29,4 +48,4 @@ char *
 UmlGetWebErrorMessage (umlErrorType, umlLanguageType);
 
 #endif
-/*$RCSfile: umlErrors.h,v $*/
+/*$RCSfile$*/@
