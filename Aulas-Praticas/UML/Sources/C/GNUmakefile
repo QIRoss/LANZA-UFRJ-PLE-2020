@@ -37,12 +37,30 @@ UMLTESTGETCLIERRORMESSAGEOBJ = umlErrors.o umlTestGetCliErrorMessage.o
 UMLTESTGETWEBERRORMESSAGEOBJ = umlErrors.o umlTestGetWebErrorMessage.o
 UMLTESTGETCLIUSERINTERFACEMESSAGEOBJ = umlUserInterface.o umlTestGetCliUserInterfaceMessage.o
 UMLTESTGETWEBUSERINTERFACEMESSAGEOBJ = umlUserInterface.o umlTestGetWebUserInterfaceMessage.o
+UMLTESTCHECKSTRINGFIELDOBJ = umlFunctions.o umlTestCheckStringField.o
+UMLTESTCHECKNICKNAMEOBJ = umlFunctions.o umlTestCheckNickname.o
+UMLTESTCHECKEMAILOBJ = umlFunctions.o umlTestCheckEmail.o
+UMLTESTCREATERANDOMSTRINGOBJ = umlFunctions.o umlTestCreateRandomString.o
+UMLTESTCREATENICKNAMEOBJ = umlFunctions.o umlTestCreateNickname.o
+UMLTESTGETCRYPTALGORITHMOBJ	= umlFunctions.o umlTestGetCryptAlgorithm.o
+UMLTESTENCODEPASSWORDWITHSPECIFICALGORITHMOBJ = umlFunctions.o umlTestEncodePasswordWithSpecificAlgorithm.o
+UMLTESTENCODEPASSWORDWITHSPECIFICSALTOBJ = umlFunctions.o umlTestEncodePasswordWithSpecificSalt.o
+UMLTESTCHECKPASSWORDOBJ = umlFunctions.o umlTestCheckPassword.o
 
 UMLTESTS = umltestgetlanguageindex\
 	umltestgetclierrormessage\
 	umltestgetweberrormessage\
 	umltestgetcliuserinterfacemessage\
 	umltestgetwebuserinterfacemessage\
+	umltestcheckstringfield\
+	umltestchecknickname\
+	umltestcheckemail\
+	umltestcreaterandomstring\
+	umltestcreatenickname\
+	umltestgetcryptalgorithm\
+	umltestencodepasswordwithspecificalgorithm\
+	umltestencodepasswordwithspecificsalt\
+	umltestcheckpassword\
 
 EXECS = $(UMLTESTS)
 
@@ -76,6 +94,41 @@ umltestgetwebuserinterfacemessage: $(UMLTESTGETWEBUSERINTERFACEMESSAGEOBJ)
 	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETWEBUSERINTERFACEMESSAGEOBJ)
 	cp $@ $@-$(OS)-$(CC)
 
+umltestcheckstringfield: $(UMLTESTCHECKSTRINGFIELDOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKSTRINGFIELDOBJ)
+	cp $@ $@-$(OS)-$(CC)
+
+umltestchecknickname: $(UMLTESTCHECKNICKNAMEOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKNICKNAMEOBJ)
+	cp $@ $@-$(OS)-$(CC)
+
+umltestcheckemail: $(UMLTESTCHECKEMAILOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKEMAILOBJ)
+	cp $@ $@-$(OS)-$(CC)
+
+umltestcreaterandomstring: $(UMLTESTCREATERANDOMSTRINGOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTCREATERANDOMSTRINGOBJ)
+	cp $@ $@-$(OS)-$(CC)
+
+umltestcreatenickname: $(UMLTESTCREATENICKNAMEOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTCREATENICKNAMEOBJ)
+	cp $@ $@-$(OS)-$(CC)
+
+umltestgetcryptalgorithm: $(UMLTESTGETCRYPTALGORITHMOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETCRYPTALGORITHMOBJ)
+	cp $@ $@-$(OS)-$(CC)
+
+umltestencodepasswordwithspecificalgorithm: $(UMLTESTENCODEPASSWORDWITHSPECIFICALGORITHMOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTENCODEPASSWORDWITHSPECIFICALGORITHMOBJ)
+	cp $@ $@-$(OS)-$(CC)
+
+umltestencodepasswordwithspecificsalt: $(UMLTESTENCODEPASSWORDWITHSPECIFICSALTOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTENCODEPASSWORDWITHSPECIFICSALTOBJ)
+	cp $@ $@-$(OS)-$(CC)
+
+umltestcheckpassword: $(UMLTESTCHECKPASSWORDOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKPASSWORDOBJ)
+	cp $@ $@-$(OS)-$(CC)
 
 
 
