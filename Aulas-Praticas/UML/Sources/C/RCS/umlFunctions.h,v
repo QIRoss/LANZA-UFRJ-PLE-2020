@@ -1,10 +1,15 @@
-head	1.1;
+head	1.2;
 access;
 symbols;
 locks
-	lucasqueiroz:1.1; strict;
+	lucasqueiroz:1.2; strict;
 comment	@ * @;
 
+
+1.2
+date	2020.10.30.23.21.55;	author lucasqueiroz;	state Exp;
+branches;
+next	1.1;
 
 1.1
 date	2020.10.29.20.36.33;	author lucasqueiroz;	state Exp;
@@ -16,9 +21,9 @@ desc
 @@
 
 
-1.1
+1.2
 log
-@Initial revision
+@*** empty log message ***
 @
 text
 @ /*
@@ -30,18 +35,74 @@ Prof. Marcelo Luiz Drumond Lanza
 Author: Lucas de Queiroz dos Reis
 Description: umlFunctions.h
 
-$Author$
-$Date$
-$Log$
+$Author: lucasqueiroz $
+$Date: 2020/10/29 20:36:33 $
+$Log: umlFunctions.h,v $
+Revision 1.1  2020/10/29 20:36:33  lucasqueiroz
+Initial revision
+
 */
 #include "umlTypes.h"
+#include <stdio.h>
 
 #ifndef UML_FUNCTIONS_H
-#define UML_FUNCTIONS_H              "@@(#)umlFunctions.h $Revision$"
+#define UML_FUNCTIONS_H              "@@(#)umlFunctions.h $Revision: 1.1 $"
 
 umlLanguageType
 UmlGetLanguageIndex (char *);
 
+umlErrorType
+UmlGetAbsoluteFileName (char *, char *, char *);
+
+umlErrorType
+UmlCheckStringField (char *, char *,  size_t, size_t);
+
+umlErrorType
+UmlCheckNickname (char *, char *, size_t, size_t);
+
+umlErrorType
+UmlCheckEmail (char *, char *, size_t, size_t);
+
+umlErrorType
+UmlCreateRandomString (char *, size_t, char *);
+
+umlErrorType
+UmlCreateNickname (char *, char *, char *);
+
+// umlErrorType
+// UmlGetCryptAlgorithm (char *, umlCryptAlgorithms *, char *);
+
+// umlErrorType
+// UmlEncodePasswordWithSpecificAlgorithm (char *, umlCryptAlgorithms, char *);
+
+umlErrorType
+UmlEncodePasswordWithSpecificSalt (char *, char *, char *);
+
+umlErrorType
+UmlCheckPassword (char *, char *);
+
+
+
 #endif
 
+/*$RCSfile: umlFunctions.h,v $*/@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d10 6
+a15 3
+$Author$
+$Date$
+$Log$
+d18 1
+d21 1
+a21 1
+#define UML_FUNCTIONS_H              "@@(#)umlFunctions.h $Revision$"
+d26 32
+d60 1
+a60 1
 /*$RCSfile$*/@

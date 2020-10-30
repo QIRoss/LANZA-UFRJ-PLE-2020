@@ -46,6 +46,8 @@ $Log$
 #define UML_ABSOLUTE_PATH_MAX_LENGTH    PATH_MAX
 #define UML_FILENAME_MAX_LENGTH         NAME_MAX
 
+#define UML_TEST_CHECKSTRINGFIELD_ARGC  5
+
 #endif
 
 /*$RCSfile$*/

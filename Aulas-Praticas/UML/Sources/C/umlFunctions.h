@@ -8,16 +8,20 @@ Author: Lucas de Queiroz dos Reis
 Description: umlFunctions.h
 
 $Author: lucasqueiroz $
-$Date: 2020/10/29 20:36:33 $
+$Date: 2020/10/30 23:21:55 $
 $Log: umlFunctions.h,v $
+Revision 1.2  2020/10/30 23:21:55  lucasqueiroz
+*** empty log message ***
+
 Revision 1.1  2020/10/29 20:36:33  lucasqueiroz
 Initial revision
 
 */
 #include "umlTypes.h"
+#include <stdio.h>
 
 #ifndef UML_FUNCTIONS_H
-#define UML_FUNCTIONS_H              "@(#)umlFunctions.h $Revision: 1.1 $"
+#define UML_FUNCTIONS_H              "@(#)umlFunctions.h $Revision: 1.2 $"
 
 umlLanguageType
 UmlGetLanguageIndex (char *);
@@ -40,11 +44,11 @@ UmlCreateRandomString (char *, size_t, char *);
 umlErrorType
 UmlCreateNickname (char *, char *, char *);
 
-umlErrorType
-UmlGetCryptAlgorithm (char *, umlCryptAlgorithms *, char *);
+// umlErrorType
+// UmlGetCryptAlgorithm (char *, umlCryptAlgorithms *, char *);
 
-umlErrorType
-UmlEncodePasswordWithSpecificAlgorithm (char *, umlCryptAlgorithms, char *);
+// umlErrorType
+// UmlEncodePasswordWithSpecificAlgorithm (char *, umlCryptAlgorithms, char *);
 
 umlErrorType
 UmlEncodePasswordWithSpecificSalt (char *, char *, char *);

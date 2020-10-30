@@ -8,8 +8,11 @@ Author: Lucas de Queiroz dos Reis
 Description: umlFunctions.c
 
 $Author: lucasqueiroz $
-$Date: 2020/10/29 21:23:40 $
+$Date: 2020/10/30 23:22:19 $
 $Log: umlFunctions.c,v $
+Revision 1.2  2020/10/30 23:22:19  lucasqueiroz
+*** empty log message ***
+
 Revision 1.1  2020/10/29 21:23:40  lucasqueiroz
 Initial revision
 
