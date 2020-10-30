@@ -24,10 +24,16 @@ char *
 umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
 {
     {
-        "Ok"
+        "Ok",
+        "Path null",
+        "Filename null",
+        "Absolute Filename null"
     },
     {
-        "Sucesso"
+        "Sucesso",
+        "Caminho nulo",
+        "Nome de arquivo nulo"
+        "Nome do arquivo e caminho absoluto nulo"
     }
 };
 
@@ -35,10 +41,16 @@ char *
 umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
 {
     {
-        "Ok"
+        "Ok",
+        "Path null",
+        "Filename null",
+        "Absolute Filename null"
     },
     {
-        "Sucesso"
+        "Sucesso",
+        "Caminho nulo",
+        "Nome de arquivo nulo"
+        "Nome do arquivo e caminho absoluto nulo"
     }
 };
 

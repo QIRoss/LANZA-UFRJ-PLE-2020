@@ -1,9 +1,15 @@
-head	1.1;
+head	1.2;
 access;
 symbols;
-locks; strict;
+locks
+	lucasqueiroz:1.2; strict;
 comment	@ * @;
 
+
+1.2
+date	2020.10.30.19.10.21;	author lucasqueiroz;	state Exp;
+branches;
+next	1.1;
 
 1.1
 date	2020.10.29.20.34.52;	author lucasqueiroz;	state Exp;
@@ -15,9 +21,9 @@ desc
 @@
 
 
-1.1
+1.2
 log
-@Initial revision
+@*** empty log message ***
 @
 text
 @ /*
@@ -29,16 +35,41 @@ Prof. Marcelo Luiz Drumond Lanza
 Author: Lucas de Queiroz dos Reis
 Description: umlTypes.h
 
-$Author$
-$Date$
-$Log$
+$Author: lucasqueiroz $
+$Date: 2020/10/29 20:34:52 $
+$Log: umlTypes.h,v $
+Revision 1.1  2020/10/29 20:34:52  lucasqueiroz
+Initial revision
+
 */
 
 #ifndef UML_TYPES_H
-#define UML_TYPES_H                 "@@(#)umlTypes.h $Revision$"
+#define UML_TYPES_H                 "@@(#)umlTypes.h $Revision: 1.1 $"
 
 typedef enum{umlEnglish=0,umlPortuguese=1,umlLanguagesAmount = 2}umlLanguageType;
 
+typedef unsigned long long umlUserIdentifierType;
+typedef unsigned long long umlUserProfileType;
+
 #endif
 
+/*$RCSfile: umlTypes.h,v $*/@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d10 6
+a15 3
+$Author$
+$Date$
+$Log$
+d19 1
+a19 1
+#define UML_TYPES_H                 "@@(#)umlTypes.h $Revision$"
+d23 3
+d28 1
+a28 1
 /*$RCSfile$*/@

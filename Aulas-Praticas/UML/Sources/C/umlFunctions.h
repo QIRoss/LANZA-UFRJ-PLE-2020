@@ -22,6 +22,12 @@ Initial revision
 umlLanguageType
 UmlGetLanguageIndex (char *);
 
+umlErrorType
+UmlGetAbsoluteFileName (char *, char *, char *);
+
+umlErrorType
+UmlCheckStringField (char *, char *,  size_t, size_t);
+
 #endif
 
 /*$RCSfile: umlFunctions.h,v $*/

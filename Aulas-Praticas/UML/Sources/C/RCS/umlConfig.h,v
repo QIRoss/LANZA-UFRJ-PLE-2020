@@ -1,4 +1,27 @@
-/*
+head	1.1;
+access;
+symbols;
+locks
+	lucasqueiroz:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2020.10.30.19.08.26;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@/*
 Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
@@ -7,17 +30,14 @@ Prof. Marcelo Luiz Drumond Lanza
 Author: Lucas de Queiroz dos Reis
 Description: umlConfig.h
 
-$Author: lucasqueiroz $
-$Date: 2020/10/30 19:08:26 $
-$Log: umlConfig.h,v $
-Revision 1.1  2020/10/30 19:08:26  lucasqueiroz
-Initial revision
-
+$Author$
+$Date$
+$Log$
 */
 
 
 #ifndef UML_CONFIG_H
-#define UML_CONFIG_H                            "@(#)umlConfig.h $Revision: 1.1 $"
+#define UML_CONFIG_H                            "@@(#)umlConfig.h $Revision$"
 
 #ifndef UML_WEB_SERVER_URL
 #define UML_WEB_SERVER_URL                      "http://www02.del.ufrj.br/~marcelo.lanza/UML"
@@ -57,4 +77,4 @@ Initial revision
 
 #endif /* #ifndef UML_CONFIG_H */
 
-/*$RCSfile: umlConfig.h,v $*/
+/*$RCSfile$*/@
