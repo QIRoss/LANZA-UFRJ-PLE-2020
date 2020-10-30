@@ -33,12 +33,16 @@ LFLAGS = -Wall -std=c11
 AFLAGS = -r
 
 UMLTESTGETLANGUAGEINDEXOBJ = umlFunctions.o umlTestGetLanguageIndex.o
-UMLTESTGETCLIERRORMESSAGE = umlErrors.o umlTestGetCliErrorMessage.o
-UMLTESTGETWEBERRORMESSAGE = umlErrors.o umlTestGetWebErrorMessage.o
+UMLTESTGETCLIERRORMESSAGEOBJ = umlErrors.o umlTestGetCliErrorMessage.o
+UMLTESTGETWEBERRORMESSAGEOBJ = umlErrors.o umlTestGetWebErrorMessage.o
+UMLTESTGETCLIUSERINTERFACEMESSAGEOBJ = umlUserInterface.o umlTestGetCliUserInterfaceMessage.o
+UMLTESTGETWEBUSERINTERFACEMESSAGEOBJ = umlUserInterface.o umlTestGetWebUserInterfaceMessage.o
 
 UMLTESTS = umltestgetlanguageindex\
 	umltestgetclierrormessage\
-	umltestgetweberrormessage
+	umltestgetweberrormessage\
+	umltestgetcliuserinterfacemessage\
+	umltestgetwebuserinterfacemessage\
 
 EXECS = $(UMLTESTS)
 
@@ -56,13 +60,24 @@ umltestgetlanguageindex: $(UMLTESTGETLANGUAGEINDEXOBJ)
 	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETLANGUAGEINDEXOBJ)
 	cp $@ $@-$(OS)-$(CC)
 
-umltestgetclierrormessage: $(UMLTESTGETCLIERRORMESSAGE)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETCLIERRORMESSAGE)
+umltestgetclierrormessage: $(UMLTESTGETCLIERRORMESSAGEOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETCLIERRORMESSAGEOBJ)
 	cp $@ $@-$(OS)-$(CC)
 
-umltestgetweberrormessage: $(UMLTESTGETWEBERRORMESSAGE)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETWEBERRORMESSAGE)
+umltestgetweberrormessage: $(UMLTESTGETWEBERRORMESSAGEOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETWEBERRORMESSAGEOBJ)
 	cp $@ $@-$(OS)-$(CC)
+
+umltestgetcliuserinterfacemessage: $(UMLTESTGETCLIUSERINTERFACEMESSAGEOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETCLIUSERINTERFACEMESSAGEOBJ)
+	cp $@ $@-$(OS)-$(CC)
+
+umltestgetwebuserinterfacemessage: $(UMLTESTGETWEBUSERINTERFACEMESSAGEOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETWEBUSERINTERFACEMESSAGEOBJ)
+	cp $@ $@-$(OS)-$(CC)
+
+
+
 
 clean:
 	rm -f *.o $(ALL) $(LIBS)

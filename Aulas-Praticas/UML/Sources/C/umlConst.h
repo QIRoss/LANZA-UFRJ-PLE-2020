@@ -29,6 +29,12 @@ $Log$
 #define UML_OK                  0
 #define UML_EOS                 '\0'
 
+#define UML_INVALID_ARGC        1
+#define UML_INVALID_ARGUMENT    2
+#define UML_INVALID_CHARACTER   3
+#define UML_IMPOSSIBLE_POINT    4
+#define UML_NO_ERROR_FOUND      5
+
 #endif
 
 /*$RCSfile$*/

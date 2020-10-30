@@ -1,4 +1,27 @@
- /*
+head	1.1;
+access;
+symbols;
+locks
+	lucasqueiroz:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2020.10.30.18.34.13;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@ /*
 Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
@@ -7,18 +30,15 @@ Prof. Marcelo Luiz Drumond Lanza
 Author: Lucas de Queiroz dos Reis
 Description: umlUserInterface.h
 
-$Author: lucasqueiroz $
-$Date: 2020/10/30 18:34:13 $
-$Log: umlUserInterface.h,v $
-Revision 1.1  2020/10/30 18:34:13  lucasqueiroz
-Initial revision
-
+$Author$
+$Date$
+$Log$
 */
 
 #include "umlTypes.h"
 
 #ifndef UML_USER_INTERFACE_H
-#define UML_USER_INTERFACE_H    "@(#)umlUserInterface.h $Revision: 1.1 $"
+#define UML_USER_INTERFACE_H    "@@(#)umlUserInterface.h $Revision$"
 
 typedef enum{unknownMessage,umlStringsAmount} umlUserInterfaceMessageNumberType;
 
@@ -31,4 +51,4 @@ UmlGetWebUserInterfaceMessage (umlUserInterfaceMessageNumberType, umlLanguageTyp
 
 #endif
 
-/*$RCSfile: umlUserInterface.h,v $*/
+/*$RCSfile$*/@

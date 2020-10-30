@@ -1,18 +1,39 @@
- /*
+head	1.1;
+access;
+symbols;
+locks
+	lucasqueiroz:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2020.10.30.18.35.14;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@co -l umlTestGetWebUserInterfacemessage.c
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@ /*
 Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
 EEL270 - Computacao II - Turma 2020/4 - PLE-1
 Prof. Marcelo Luiz Drumond Lanza
 Author: Lucas de Queiroz dos Reis
-Description: umlTestGetCliUserInterfaceMessage.c
+Description: umlTestGetWebUserInterfaceMessage.c
 
-$Author: lucasqueiroz $
-$Date: 2020/10/30 18:34:46 $
-$Log: umlTestGetCliUserInterfaceMessage.c,v $
-Revision 1.1  2020/10/30 18:34:46  lucasqueiroz
-Initial revision
-
+$Author$
+$Date$
+$Log$
 */
 
 #include <stdio.h>
@@ -48,4 +69,4 @@ int main(int argc,char *argv[]){
     return UML_OK;
 }
 
-/*$RCSfile: umlTestGetCliUserInterfaceMessage.c,v $*/
+/*$RCSfile$*/@
