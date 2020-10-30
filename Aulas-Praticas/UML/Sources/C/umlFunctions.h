@@ -28,6 +28,32 @@ UmlGetAbsoluteFileName (char *, char *, char *);
 umlErrorType
 UmlCheckStringField (char *, char *,  size_t, size_t);
 
+umlErrorType
+UmlCheckNickname (char *, char *, size_t, size_t);
+
+umlErrorType
+UmlCheckEmail (char *, char *, size_t, size_t);
+
+umlErrorType
+UmlCreateRandomString (char *, size_t, char *);
+
+umlErrorType
+UmlCreateNickname (char *, char *, char *);
+
+umlErrorType
+UmlGetCryptAlgorithm (char *, umlCryptAlgorithms *, char *);
+
+umlErrorType
+UmlEncodePasswordWithSpecificAlgorithm (char *, umlCryptAlgorithms, char *);
+
+umlErrorType
+UmlEncodePasswordWithSpecificSalt (char *, char *, char *);
+
+umlErrorType
+UmlCheckPassword (char *, char *);
+
+
+
 #endif
 
 /*$RCSfile: umlFunctions.h,v $*/

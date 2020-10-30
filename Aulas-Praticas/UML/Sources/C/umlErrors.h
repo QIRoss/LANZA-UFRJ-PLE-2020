@@ -21,7 +21,8 @@ Initial revision
 #define UML_ERRORS_H    "@(#)umlErrors.h $Revision: 1.1 $"
 
 typedef enum{umlOk,umlPathNull,umlFilenameNull,umlAbsoluteFilenameNull,
-        umlInvalidFilenameLength,umlInvalidPathLength,umlErrorsAmount} umlErrorType;
+        umlInvalidFilenameLength,umlInvalidPathLength,checkStringStringNull,
+        validateSetNull,umlInvalidSize,umlInvalidChar,umlErrorsAmount} umlErrorType;
 
 char *
 UmlGetCliErrorMessage (umlErrorType, umlLanguageType);

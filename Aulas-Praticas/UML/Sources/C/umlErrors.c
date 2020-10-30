@@ -27,13 +27,25 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Ok",
         "Path null",
         "Filename null",
-        "Absolute Filename null"
+        "Absolute Filename null",
+        "Invalid Filename Length",
+        "Invalid Path Length",
+        "String from checkString null",
+        "Validation set is null",
+        "Invalid length for field",
+        "Invalid character for field"
     },
     {
         "Sucesso",
         "Caminho nulo",
-        "Nome de arquivo nulo"
-        "Nome do arquivo e caminho absoluto nulo"
+        "Nome de arquivo nulo",
+        "Nome do arquivo e caminho absoluto nulo",
+        "Comprimento de nome de arquivo invalido",
+        "Comprimento de caminho de invalido",
+        "String da funcao checkString nula",
+        "validation set nulo",
+        "comprimento invalido para campo",
+        "caractere invalido para campo"
     }
 };
 
@@ -44,13 +56,25 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Ok",
         "Path null",
         "Filename null",
-        "Absolute Filename null"
+        "Absolute Filename null",
+        "Invalid Filename Length",
+        "Invalid Path Length",
+        "String from checkString null",
+        "Validation set is null",
+        "Invalid length for field",
+        "Invalid character for field"
     },
     {
         "Sucesso",
         "Caminho nulo",
         "Nome de arquivo nulo"
-        "Nome do arquivo e caminho absoluto nulo"
+        "Nome do arquivo e caminho absoluto nulo",
+        "Comprimento de nome de arquivo invalido",
+        "Comprimento de caminho de invalido",
+        "String da funcao checkString nula",
+        "validation set nulo",
+        "comprimento invalido para campo",
+        "caractere invalido para campo"
     }
 };
 

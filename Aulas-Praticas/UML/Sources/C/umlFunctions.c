@@ -63,8 +63,34 @@ UmlGetAbsoluteFileName(char *umlPath, char *umlFilename, char *umlAbsoluteFilena
 }
 
 umlErrorType
-UmlCheckStringField (char *, char *,  size_t, size_t){
-    
+UmlCheckStringField (char *umlString, char *umlValidateSet, size_t umlMinLength, size_t umlMaxLength){
+    unsigned umlLenght;
+    unsigned umlIndexString;
+    unsigned umlIndexSet;
+    unsigned umlIsValid=0;
+
+    if(!umlString){
+        return checkStringStringNull;
+    }
+    if(!umlValidateSet){
+        return validateSetNull;
+    }
+    umlLenght = strlen(umlString);
+    if(umlMinLength > umlLenght || umlLenght > umlMaxLength){
+        return umlInvalidSize;
+    }
+    for(umlIndexString=0; umlString[umlIndexString]!=UML_EOS; umlIndexString++){
+        umlIsValid=0;
+        for(umlIndexSet=0; umlValidateSet[umlIndexSet]!=UML_EOS; umlIndexSet++){
+            if (umlString[umlIndexString] == umlValidateSet[umlIndexSet]){
+                umlIsValid=1;
+            }
+        }
+        if(umlIsValid==0){
+            return umlInvalidChar;
+        }
+    }
+    return umlOk;
 }
 
 /*$RCSfile: umlFunctions.c,v $*/
