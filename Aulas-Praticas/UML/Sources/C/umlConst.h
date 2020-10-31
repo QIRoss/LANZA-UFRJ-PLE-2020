@@ -47,6 +47,7 @@ $Log$
 #define UML_FILENAME_MAX_LENGTH         NAME_MAX
 
 #define UML_TEST_CHECKSTRINGFIELD_ARGC  5
+#define UML_TEST_NICKNAME_ARGC          5
 
 #endif
 

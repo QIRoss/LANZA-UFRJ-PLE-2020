@@ -1,18 +1,38 @@
- /*
+head	1.1;
+access;
+symbols;
+locks
+	lucasqueiroz:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2020.10.30.23.58.23;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@ /*
 Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
 EEL270 - Computacao II - Turma 2020/4 - PLE-1
 Prof. Marcelo Luiz Drumond Lanza
 Author: Lucas de Queiroz dos Reis
-Description: umlTestCheckStringField.c
+Description: umlTestCheckNickname.c
 
-$Author: lucasqueiroz $
-$Date: 2020/10/30 23:19:33 $
-$Log: umlTestCheckStringField.c,v $
-Revision 1.1  2020/10/30 23:19:33  lucasqueiroz
-Initial revision
-
+$Author$
+$Date$
+$Log$
 */
 
 #include <stdio.h>
@@ -27,7 +47,7 @@ int main(int argc,char *argv[]){
     size_t maxSize=0;
     char *validate;
     umlErrorType verify;
-    if(UML_TEST_CHECKSTRINGFIELD_ARGC != argc){
+    if(UML_TEST_NICKNAME_ARGC != argc){
         printf("Use %s: <string> <valid chars set> <min length> <max length> \n",argv[0]);
         exit(UML_INVALID_ARGC);
     }
@@ -41,10 +61,10 @@ int main(int argc,char *argv[]){
         printf("Invalid argument.\n");
         exit(UML_INVALID_ARGUMENT);
     }
-    verify = UmlCheckStringField(argv[1],argv[2],minSize,maxSize);
+    verify = UmlCheckNickname(argv[1],argv[2],minSize,maxSize);
     printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
     printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
     return UML_OK;
 }
 
-/*$RCSfile: umlTestCheckStringField.c,v $*/
+/*$RCSfile$*/@

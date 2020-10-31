@@ -8,8 +8,11 @@ Author: Lucas de Queiroz dos Reis
 Description: umlFunctions.c
 
 $Author: lucasqueiroz $
-$Date: 2020/10/30 23:22:19 $
+$Date: 2020/10/31 00:01:40 $
 $Log: umlFunctions.c,v $
+Revision 1.3  2020/10/31 00:01:40  lucasqueiroz
+*** empty log message ***
+
 Revision 1.2  2020/10/30 23:22:19  lucasqueiroz
 *** empty log message ***
 
@@ -67,22 +70,22 @@ UmlGetAbsoluteFileName(char *umlPath, char *umlFilename, char *umlAbsoluteFilena
 
 umlErrorType
 UmlCheckStringField (char *umlString, char *umlValidateSet, size_t umlMinLength, size_t umlMaxLength){
-    unsigned umlLenght;
+    unsigned umlLength;
     unsigned umlIndexString;
     unsigned umlIndexSet;
     unsigned umlIsValid=0;
 
     if(!umlString){
-        return checkStringStringNull;
+        return stringNull;
     }
     if(!umlValidateSet){
         return validateSetNull;
     }
-    umlLenght = strlen(umlString);
-    if(umlMinLength > umlLenght || umlLenght > umlMaxLength){
+    umlLength = strlen(umlString);
+    if(umlMinLength > umlLength || umlLength > umlMaxLength){
         return umlInvalidSize;
     }
-    for(umlIndexString=0; umlString[umlIndexString]!=UML_EOS; umlIndexString++){
+    for(umlIndexString=0; umlString[umlIndexString] !=UML_EOS; umlIndexString++){
         umlIsValid=0;
         for(umlIndexSet=0; umlValidateSet[umlIndexSet]!=UML_EOS; umlIndexSet++){
             if (umlString[umlIndexString] == umlValidateSet[umlIndexSet]){
@@ -92,6 +95,44 @@ UmlCheckStringField (char *umlString, char *umlValidateSet, size_t umlMinLength,
         if(umlIsValid==0){
             return umlInvalidChar;
         }
+    }
+    return umlOk;
+}
+
+umlErrorType
+UmlCheckNickname (char *umlString, char *umlValidateSet, size_t umlMinLength, size_t umlMaxLength){
+    unsigned umlLength;
+    unsigned umlIndexString;
+    unsigned umlIndexSet;
+    unsigned umlIsValid=0;
+    unsigned umlDot=0;
+
+    if(!umlString){
+        return stringNull;
+    }
+    if(!umlValidateSet){
+        return validateSetNull;
+    }
+    umlLength = strlen(umlString);
+    if(umlMinLength>umlLength || umlLength>umlMaxLength){
+        return umlInvalidSize;
+    }
+    for(umlIndexString=0;umlString[umlIndexString] != UML_EOS;umlIndexString++){
+        umlIsValid=0;
+        for(umlIndexSet=0;umlValidateSet[umlIndexSet] !=UML_EOS;umlIndexSet++){
+            if (umlString[umlIndexString]==umlValidateSet[umlIndexSet]){
+                umlIsValid=1;
+            }
+        }
+        if (umlString[umlIndexString]=='.'){
+            umlDot++;
+
+        } else if(umlIsValid==0){
+            return umlInvalidChar;
+        }
+    }
+    if (umlDot!=1){
+        return umlNoDotNickname;
     }
     return umlOk;
 }
