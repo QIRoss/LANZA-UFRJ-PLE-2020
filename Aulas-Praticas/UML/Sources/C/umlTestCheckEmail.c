@@ -7,9 +7,12 @@ Prof. Marcelo Luiz Drumond Lanza
 Author: Lucas de Queiroz dos Reis
 Description: umlTestCheckEmail.c
 
-$Author$
-$Date$
-$Log$
+$Author: lucasqueiroz $
+$Date: 2020/10/31 20:02:26 $
+$Log: umlTestCheckEmail.c,v $
+Revision 1.1  2020/10/31 20:02:26  lucasqueiroz
+Initial revision
+
 */
 
 #include <stdio.h>
@@ -24,7 +27,7 @@ int main(int argc,char *argv[]){
     size_t maxSize=0;
     char *validate;
     umlErrorType verify;
-    if(UML_TEST_NICKNAME_ARGC != argc){
+    if(UML_TEST_CHECK_EMAIL_ARGC != argc){
         printf("Use %s: <string> <valid chars set> <min length> <max length> \n",argv[0]);
         exit(UML_INVALID_ARGC);
     }
@@ -44,4 +47,4 @@ int main(int argc,char *argv[]){
     return UML_OK;
 }
 
-/*$RCSfile$*/
+/*$RCSfile: umlTestCheckEmail.c,v $*/

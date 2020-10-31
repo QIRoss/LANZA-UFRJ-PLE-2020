@@ -1,10 +1,15 @@
-head	1.1;
+head	1.2;
 access;
 symbols;
 locks
-	lucasqueiroz:1.1; strict;
+	lucasqueiroz:1.2; strict;
 comment	@ * @;
 
+
+1.2
+date	2020.10.31.20.02.13;	author lucasqueiroz;	state Exp;
+branches;
+next	1.1;
 
 1.1
 date	2020.10.30.23.58.23;	author lucasqueiroz;	state Exp;
@@ -16,9 +21,9 @@ desc
 @@
 
 
-1.1
+1.2
 log
-@Initial revision
+@*** empty log message ***
 @
 text
 @ /*
@@ -30,9 +35,12 @@ Prof. Marcelo Luiz Drumond Lanza
 Author: Lucas de Queiroz dos Reis
 Description: umlTestCheckNickname.c
 
-$Author$
-$Date$
-$Log$
+$Author: lucasqueiroz $
+$Date: 2020/10/30 23:58:23 $
+$Log: umlTestCheckNickname.c,v $
+Revision 1.1  2020/10/30 23:58:23  lucasqueiroz
+Initial revision
+
 */
 
 #include <stdio.h>
@@ -43,14 +51,43 @@ $Log$
 #include "umlTypes.h"
 
 int main(int argc,char *argv[]){
+    umlErrorType verify;
+    if(UML_TEST_NICKNAME_ARGC != argc){
+        printf(
+            "Use %s: <string> <valid chars set>\n",
+            argv[0]);
+        exit(UML_INVALID_ARGC);
+    }
+    verify = UmlCheckNickname(
+        argv[1],argv[2],
+        UML_CHECK_NICKNAME_MIN_LENGTH,UML_CHECK_NICKNAME_MAX_LENGTH);
+    printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
+    printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
+    return UML_OK;
+}
+
+/*$RCSfile: umlTestCheckNickname.c,v $*/@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d10 6
+a15 3
+$Author$
+$Date$
+$Log$
+a25 3
     size_t minSize=0;
     size_t maxSize=0;
     char *validate;
-    umlErrorType verify;
-    if(UML_TEST_NICKNAME_ARGC != argc){
+d28 3
+a30 1
         printf("Use %s: <string> <valid chars set> <min length> <max length> \n",argv[0]);
-        exit(UML_INVALID_ARGC);
-    }
+d33 3
+a35 11
     minSize = (size_t) strtoul(argv[3],&validate,10);
     if(*validate != UML_EOS){
         printf("Invalid argument.\n");
@@ -62,9 +99,6 @@ int main(int argc,char *argv[]){
         exit(UML_INVALID_ARGUMENT);
     }
     verify = UmlCheckNickname(argv[1],argv[2],minSize,maxSize);
-    printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
-    printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
-    return UML_OK;
-}
-
+d41 1
+a41 1
 /*$RCSfile$*/@
