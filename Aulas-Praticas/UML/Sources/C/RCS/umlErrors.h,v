@@ -1,10 +1,15 @@
-head	1.1;
+head	1.2;
 access;
 symbols;
 locks
-	lucasqueiroz:1.1; strict;
+	lucasqueiroz:1.2; strict;
 comment	@ * @;
 
+
+1.2
+date	2020.10.31.20.59.11;	author lucasqueiroz;	state Exp;
+branches;
+next	1.1;
 
 1.1
 date	2020.10.29.22.32.39;	author lucasqueiroz;	state Exp;
@@ -16,9 +21,9 @@ desc
 @@
 
 
-1.1
+1.2
 log
-@Initial revision
+@*** empty log message ***
 @
 text
 @/*
@@ -30,17 +35,26 @@ Prof. Marcelo Luiz Drumond Lanza
 Author: Lucas de Queiroz dos Reis
 Description: umlErrors.h
 
-$Author$
-$Date$
-$Log$
+$Author: lucasqueiroz $
+$Date: 2020/10/29 22:32:39 $
+$Log: umlErrors.h,v $
+Revision 1.1  2020/10/29 22:32:39  lucasqueiroz
+Initial revision
+
 */
 
 #include "umlTypes.h"
 
 #ifndef UML_ERRORS_H
-#define UML_ERRORS_H    "@@(#)umlErrors.h $Revision$"
+#define UML_ERRORS_H    "@@(#)umlErrors.h $Revision: 1.1 $"
 
-typedef enum{umlOk,umlErrorsAmount} umlErrorType;
+typedef enum{umlOk,umlPathNull,umlFilenameNull,umlAbsoluteFilenameNull,
+        umlInvalidFilenameLength,umlInvalidPathLength,stringNull,
+        validateSetNull,umlInvalidSize,umlInvalidChar,umlNoDotNickname,
+        umlNameBeforeAtTooLong,umlNameAfterAtTooLong,umlNoAtOnMail,
+        umlOutputNull,umlFullNameNull,umlFirstNameNull,umlSecondNameNull,
+        umlNameTooLong,umlInvalidSpaceBarsNumber,umlErrorsAmount
+        } umlErrorType;
 
 char *
 UmlGetCliErrorMessage (umlErrorType, umlLanguageType);
@@ -49,4 +63,25 @@ char *
 UmlGetWebErrorMessage (umlErrorType, umlLanguageType);
 
 #endif
+/*$RCSfile: umlErrors.h,v $*/@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d10 6
+a15 3
+$Author$
+$Date$
+$Log$
+d21 1
+a21 1
+#define UML_ERRORS_H    "@@(#)umlErrors.h $Revision$"
+d23 7
+a29 1
+typedef enum{umlOk,umlErrorsAmount} umlErrorType;
+d38 1
+a38 1
 /*$RCSfile$*/@

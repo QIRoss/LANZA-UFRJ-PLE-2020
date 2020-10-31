@@ -1,10 +1,15 @@
-head	1.1;
+head	1.2;
 access;
 symbols;
 locks
-	lucasqueiroz:1.1; strict;
+	lucasqueiroz:1.2; strict;
 comment	@ * @;
 
+
+1.2
+date	2020.10.31.20.58.42;	author lucasqueiroz;	state Exp;
+branches;
+next	1.1;
 
 1.1
 date	2020.10.31.20.02.54;	author lucasqueiroz;	state Exp;
@@ -16,9 +21,9 @@ desc
 @@
 
 
-1.1
+1.2
 log
-@Initial revision
+@*** empty log message ***
 @
 text
 @ /*
@@ -30,9 +35,12 @@ Prof. Marcelo Luiz Drumond Lanza
 Author: Lucas de Queiroz dos Reis
 Description: umlConst.h
 
-$Author$
-$Date$
-$Log$
+$Author: lucasqueiroz $
+$Date: 2020/10/31 20:02:54 $
+$Log: umlConst.h,v $
+Revision 1.1  2020/10/31 20:02:54  lucasqueiroz
+Initial revision
+
 */
 
 #include "umlTypes.h"
@@ -48,7 +56,7 @@ $Log$
 #endif
 
 #ifndef UML_CONST_H
-#define UML_CONST_H                     "@@(#)umlConst.h $Revision$"
+#define UML_CONST_H                     "@@(#)umlConst.h $Revision: 1.1 $"
 
 #define UML_PORTUGUESE                  "umlPortuguese"
 #define UML_ENGLISH                     "umlEnglish"
@@ -57,26 +65,72 @@ $Log$
 #define UML_ERRORS_AMOUNT               umlErrorsAmount
 #define UML_STRINGS_AMOUNT              umlStringsAmount
 
+#define UML_OK                                  0
+#define UML_EOS                                 '\0'
+
+#define UML_INVALID_ARGC                        1
+#define UML_INVALID_ARGUMENT                    2
+#define UML_INVALID_CHARACTER                   3
+#define UML_IMPOSSIBLE_POINT                    4
+#define UML_NO_ERROR_FOUND                      5
+ 
+#define UML_ABSOLUTE_PATH_MAX_LENGTH            PATH_MAX
+#define UML_FILENAME_MAX_LENGTH                 NAME_MAX
+
+#define UML_TEST_CHECKSTRINGFIELD_ARGC          5
+#define UML_TEST_NICKNAME_ARGC                  3
+#define UML_TEST_CHECK_EMAIL_ARGC               5
+#define UML_TEST_CREATE_RANDOM_STRING_ARGC      3
+#define UML_TEST_CREATE_NICKNAME_ARGC           2
+
+#define UML_NICKNAME_MIN_LENGTH                 3
+#define UML_NICKNAME_MAX_LENGTH                 65
+
+#define UML_FULLNAME_MAX_LENGTH                 65
+
+
+#endif
+
+/*$RCSfile: umlConst.h,v $*/@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d10 6
+a15 3
+$Author$
+$Date$
+$Log$
+d31 1
+a31 1
+#define UML_CONST_H                     "@@(#)umlConst.h $Revision$"
+d40 2
+a41 2
 #define UML_OK                          0
 #define UML_EOS                         '\0'
-
+d43 5
+a47 5
 #define UML_INVALID_ARGC                1
 #define UML_INVALID_ARGUMENT            2
 #define UML_INVALID_CHARACTER           3
 #define UML_IMPOSSIBLE_POINT            4
 #define UML_NO_ERROR_FOUND              5
- 
+d49 11
+a59 2
 #define UML_ABSOLUTE_PATH_MAX_LENGTH    PATH_MAX
 #define UML_FILENAME_MAX_LENGTH         NAME_MAX
-
+d61 1
+a61 4
 #define UML_TEST_CHECKSTRINGFIELD_ARGC  5
 #define UML_TEST_NICKNAME_ARGC          3
 #define UML_TEST_CHECK_EMAIL_ARGC       5
 #define UML_CREATE_RANDOM_STRING_ARGC   3
-
+a62 2
 #define UML_CHECK_NICKNAME_MIN_LENGTH   3
 #define UML_CHECK_NICKNAME_MAX_LENGTH   65
-
-#endif
-
+d66 1
+a66 1
 /*$RCSfile$*/@

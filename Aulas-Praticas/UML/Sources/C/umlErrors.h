@@ -8,8 +8,11 @@ Author: Lucas de Queiroz dos Reis
 Description: umlErrors.h
 
 $Author: lucasqueiroz $
-$Date: 2020/10/29 22:32:39 $
+$Date: 2020/10/31 20:59:11 $
 $Log: umlErrors.h,v $
+Revision 1.2  2020/10/31 20:59:11  lucasqueiroz
+*** empty log message ***
+
 Revision 1.1  2020/10/29 22:32:39  lucasqueiroz
 Initial revision
 
@@ -18,13 +21,15 @@ Initial revision
 #include "umlTypes.h"
 
 #ifndef UML_ERRORS_H
-#define UML_ERRORS_H    "@(#)umlErrors.h $Revision: 1.1 $"
+#define UML_ERRORS_H    "@(#)umlErrors.h $Revision: 1.2 $"
 
 typedef enum{umlOk,umlPathNull,umlFilenameNull,umlAbsoluteFilenameNull,
         umlInvalidFilenameLength,umlInvalidPathLength,stringNull,
         validateSetNull,umlInvalidSize,umlInvalidChar,umlNoDotNickname,
         umlNameBeforeAtTooLong,umlNameAfterAtTooLong,umlNoAtOnMail,
-        umlOutputNull,umlErrorsAmount} umlErrorType;
+        umlOutputNull,umlFullNameNull,umlFirstNameNull,umlSecondNameNull,
+        umlNameTooLong,umlInvalidSpaceBarsNumber,umlErrorsAmount
+        } umlErrorType;
 
 char *
 UmlGetCliErrorMessage (umlErrorType, umlLanguageType);

@@ -1,10 +1,15 @@
-head	1.1;
+head	1.2;
 access;
 symbols;
 locks
-	lucasqueiroz:1.1; strict;
+	lucasqueiroz:1.2; strict;
 comment	@ * @;
 
+
+1.2
+date	2020.10.31.20.58.57;	author lucasqueiroz;	state Exp;
+branches;
+next	1.1;
 
 1.1
 date	2020.10.29.22.32.17;	author lucasqueiroz;	state Exp;
@@ -16,9 +21,9 @@ desc
 @@
 
 
-1.1
+1.2
 log
-@Initial revision
+@*** empty log message ***
 @
 text
 @ /*
@@ -30,9 +35,12 @@ Prof. Marcelo Luiz Drumond Lanza
 Author: Lucas de Queiroz dos Reis
 Description: umlErrors.c
 
-$Author$
-$Date$
-$Log$
+$Author: lucasqueiroz $
+$Date: 2020/10/29 22:32:17 $
+$Log: umlErrors.c,v $
+Revision 1.1  2020/10/29 22:32:17  lucasqueiroz
+Initial revision
+
 */
 
 #include <stdio.h>
@@ -44,10 +52,48 @@ char *
 umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
 {
     {
-        "Ok"
+        "Ok",
+        "Path null",
+        "Filename null",
+        "Absolute Filename null",
+        "Invalid Filename Length",
+        "Invalid Path Length",
+        "String null",
+        "Validation set is null",
+        "Invalid length for field",
+        "Invalid character for field",
+        "No dot on nickname (maybe more dots too)",
+        "Name before @@ too long",
+        "Name after @@ too long",
+        "No @@ on mail",
+        "Output null",
+        "Fullname null",
+        "First Name null",
+        "Second Name null",
+        "Name too long",
+        "More or less space bars on fullname than it should be"
     },
     {
-        "Sucesso"
+        "Sucesso",
+        "Caminho nulo",
+        "Nome de arquivo nulo",
+        "Nome do arquivo e caminho absoluto nulo",
+        "Comprimento de nome de arquivo invalido",
+        "Comprimento de caminho de invalido",
+        "String nula",
+        "validation set nulo",
+        "comprimento invalido para campo",
+        "caractere invalido para campo",
+        "Nenhum ponto no nickname (talvez mais que um)",
+        "Nome antes do @@ muito longo",
+        "Nome depois do @@ muito longo",
+        "Nenhum @@ no email",
+        "Output nulo",
+        "Nome completo nulo",
+        "Primeiro nome nulo",
+        "Segundo nome nulo",
+        "Nome muito longo",
+        "Mais ou menos barras de espaco no nome completo do que deveria"
     }
 };
 
@@ -55,10 +101,48 @@ char *
 umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
 {
     {
-        "Ok"
+        "Ok",
+        "Path null",
+        "Filename null",
+        "Absolute Filename null",
+        "Invalid Filename Length",
+        "Invalid Path Length",
+        "String null",
+        "Validation set is null",
+        "Invalid length for field",
+        "Invalid character for field",
+        "No dot on nickname (maybe more dots too)",
+        "Name before @@ too long",
+        "Name after @@ too long",
+        "No @@ on mail",
+        "Output null",
+        "Fullname null",
+        "First Name null",
+        "Second Name null",
+        "Name too long",
+        "More or less space bars on fullname than it should be"
     },
     {
-        "Sucesso"
+        "Sucesso",
+        "Caminho nulo",
+        "Nome de arquivo nulo"
+        "Nome do arquivo e caminho absoluto nulo",
+        "Comprimento de nome de arquivo invalido",
+        "Comprimento de caminho de invalido",
+        "String nula",
+        "validation set nulo",
+        "comprimento invalido para campo",
+        "caractere invalido para campo",
+        "Nenhum ponto no nickname (talvez mais que um)",
+        "Nome antes do @@ muito longo",
+        "Nome depois do @@ muito longo",
+        "Nenhum @@ no email",
+        "Output nulo",
+        "Nome completo nulo",
+        "Primeiro nome nulo",
+        "Segundo nome nulo",
+        "Nome muito longo",
+        "Mais ou menos barras de espaco no nome completo do que deveria"
     }
 };
 
@@ -90,4 +174,31 @@ UmlGetWebErrorMessage (umlErrorType umlErrorCode, umlLanguageType umlLanguageCho
     return umlWebErrorMessages[umlLanguageChosen][umlErrorCode];
 }
 
+/*$RCSfile: umlErrors.c,v $*/@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d10 6
+a15 3
+$Author$
+$Date$
+$Log$
+d27 20
+a46 1
+        "Ok"
+d49 20
+a68 1
+        "Sucesso"
+d76 20
+a95 1
+        "Ok"
+d98 20
+a117 1
+        "Sucesso"
+d149 1
+a149 1
 /*$RCSfile$*/@

@@ -8,8 +8,11 @@ Author: Lucas de Queiroz dos Reis
 Description: umlFunctions.c
 
 $Author: lucasqueiroz $
-$Date: 2020/10/31 00:01:40 $
+$Date: 2020/10/31 20:59:24 $
 $Log: umlFunctions.c,v $
+Revision 1.4  2020/10/31 20:59:24  lucasqueiroz
+*** empty log message ***
+
 Revision 1.3  2020/10/31 00:01:40  lucasqueiroz
 *** empty log message ***
 
@@ -202,6 +205,54 @@ UmlCreateRandomString (char *umlValidateSet, size_t umlLength, char *umlOutput){
     }
     umlBuffer[umlIndex]=UML_EOS;
     strcpy(umlOutput,umlBuffer);
+    return umlOk;
+}
+
+umlErrorType
+UmlCreateNickname(char *umlFullName , char *umlFirstName , char *umlSecondName){
+    unsigned umlNameSize;
+    unsigned umlIndex;
+    unsigned umlSpace=0;
+    char umlCopy[UML_NICKNAME_MAX_LENGTH];
+    char *umlWord;
+    if(!umlFullName){
+        return umlFullNameNull;
+    }
+    if(!umlFirstName){
+        return umlFirstNameNull;
+    }
+    if(!umlSecondName){
+        return umlSecondNameNull;
+    }
+    umlNameSize=strlen(umlFullName);
+    if (umlNameSize>UML_FULLNAME_MAX_LENGTH){
+        return umlNameTooLong;
+    }
+    strcpy(umlCopy,umlFullName);
+    umlWord = strtok(umlCopy , " " );
+
+    for(umlIndex=0;umlIndex<umlNameSize;umlIndex++){
+        if(umlFullName[umlIndex]==' ' && umlFullName[umlIndex-1]!=' ')
+        umlSpace++;
+    }
+    if(umlSpace==0){
+        return umlInvalidSpaceBarsNumber;
+    }
+    char *umlNameArray[umlSpace+1];
+    umlIndex=0;
+    while(umlWord!=NULL){
+        umlNameArray[umlIndex]=umlWord;
+        umlWord = strtok(NULL," ");
+        umlIndex++;
+    }
+    snprintf(umlFirstName,UML_NICKNAME_MAX_LENGTH+1,"%s.%s",
+        umlNameArray[0],umlNameArray[umlSpace]);
+    if(umlSpace==1){
+        umlSecondName[0]=UML_EOS;
+    } else {
+        snprintf(umlSecondName,UML_NICKNAME_MAX_LENGTH+1,"%s.%s",
+        umlNameArray[0],umlNameArray[umlSpace-1]);
+    }
     return umlOk;
 }
 

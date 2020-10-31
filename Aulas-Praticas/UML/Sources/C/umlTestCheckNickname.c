@@ -8,8 +8,11 @@ Author: Lucas de Queiroz dos Reis
 Description: umlTestCheckNickname.c
 
 $Author: lucasqueiroz $
-$Date: 2020/10/31 20:02:13 $
+$Date: 2020/10/31 20:59:41 $
 $Log: umlTestCheckNickname.c,v $
+Revision 1.3  2020/10/31 20:59:41  lucasqueiroz
+*** empty log message ***
+
 Revision 1.2  2020/10/31 20:02:13  lucasqueiroz
 *** empty log message ***
 
@@ -35,7 +38,7 @@ int main(int argc,char *argv[]){
     }
     verify = UmlCheckNickname(
         argv[1],argv[2],
-        UML_CHECK_NICKNAME_MIN_LENGTH,UML_CHECK_NICKNAME_MAX_LENGTH);
+        UML_NICKNAME_MIN_LENGTH,UML_NICKNAME_MAX_LENGTH);
     printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
     printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
     return UML_OK;

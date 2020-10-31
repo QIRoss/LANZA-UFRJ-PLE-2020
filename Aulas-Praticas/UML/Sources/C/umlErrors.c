@@ -8,8 +8,11 @@ Author: Lucas de Queiroz dos Reis
 Description: umlErrors.c
 
 $Author: lucasqueiroz $
-$Date: 2020/10/29 22:32:17 $
+$Date: 2020/10/31 20:58:57 $
 $Log: umlErrors.c,v $
+Revision 1.2  2020/10/31 20:58:57  lucasqueiroz
+*** empty log message ***
+
 Revision 1.1  2020/10/29 22:32:17  lucasqueiroz
 Initial revision
 
@@ -37,7 +40,13 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "No dot on nickname (maybe more dots too)",
         "Name before @ too long",
         "Name after @ too long",
-        "No @ on mail"
+        "No @ on mail",
+        "Output null",
+        "Fullname null",
+        "First Name null",
+        "Second Name null",
+        "Name too long",
+        "More or less space bars on fullname than it should be"
     },
     {
         "Sucesso",
@@ -53,7 +62,13 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Nenhum ponto no nickname (talvez mais que um)",
         "Nome antes do @ muito longo",
         "Nome depois do @ muito longo",
-        "Nenhum @ no email"
+        "Nenhum @ no email",
+        "Output nulo",
+        "Nome completo nulo",
+        "Primeiro nome nulo",
+        "Segundo nome nulo",
+        "Nome muito longo",
+        "Mais ou menos barras de espaco no nome completo do que deveria"
     }
 };
 
@@ -74,7 +89,13 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "No dot on nickname (maybe more dots too)",
         "Name before @ too long",
         "Name after @ too long",
-        "No @ on mail"
+        "No @ on mail",
+        "Output null",
+        "Fullname null",
+        "First Name null",
+        "Second Name null",
+        "Name too long",
+        "More or less space bars on fullname than it should be"
     },
     {
         "Sucesso",
@@ -90,7 +111,13 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Nenhum ponto no nickname (talvez mais que um)",
         "Nome antes do @ muito longo",
         "Nome depois do @ muito longo",
-        "Nenhum @ no email"
+        "Nenhum @ no email",
+        "Output nulo",
+        "Nome completo nulo",
+        "Primeiro nome nulo",
+        "Segundo nome nulo",
+        "Nome muito longo",
+        "Mais ou menos barras de espaco no nome completo do que deveria"
     }
 };
 

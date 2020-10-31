@@ -8,8 +8,11 @@ Author: Lucas de Queiroz dos Reis
 Description: umlConst.h
 
 $Author: lucasqueiroz $
-$Date: 2020/10/31 20:02:54 $
+$Date: 2020/10/31 20:58:42 $
 $Log: umlConst.h,v $
+Revision 1.2  2020/10/31 20:58:42  lucasqueiroz
+*** empty log message ***
+
 Revision 1.1  2020/10/31 20:02:54  lucasqueiroz
 Initial revision
 
@@ -28,7 +31,7 @@ Initial revision
 #endif
 
 #ifndef UML_CONST_H
-#define UML_CONST_H                     "@(#)umlConst.h $Revision: 1.1 $"
+#define UML_CONST_H                     "@(#)umlConst.h $Revision: 1.2 $"
 
 #define UML_PORTUGUESE                  "umlPortuguese"
 #define UML_ENGLISH                     "umlEnglish"
@@ -53,9 +56,13 @@ Initial revision
 #define UML_TEST_NICKNAME_ARGC                  3
 #define UML_TEST_CHECK_EMAIL_ARGC               5
 #define UML_TEST_CREATE_RANDOM_STRING_ARGC      3
+#define UML_TEST_CREATE_NICKNAME_ARGC           2
 
-#define UML_CHECK_NICKNAME_MIN_LENGTH           3
-#define UML_CHECK_NICKNAME_MAX_LENGTH           65
+#define UML_NICKNAME_MIN_LENGTH                 3
+#define UML_NICKNAME_MAX_LENGTH                 65
+
+#define UML_FULLNAME_MAX_LENGTH                 65
+
 
 #endif
 
