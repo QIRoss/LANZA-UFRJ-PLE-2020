@@ -49,6 +49,9 @@ $Log$
 #define UML_TEST_CHECKSTRINGFIELD_ARGC  5
 #define UML_TEST_NICKNAME_ARGC          5
 
+#define UML_CHECK_NICKNAME_MIN_LENGTH   3
+#define UML_CHECK_NICKNAME_MAX_LENGTH   65
+
 #endif
 
 /*$RCSfile$*/

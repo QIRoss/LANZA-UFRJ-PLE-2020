@@ -28,7 +28,9 @@ int main(int argc,char *argv[]){
     char *validate;
     umlErrorType verify;
     if(UML_TEST_NICKNAME_ARGC != argc){
-        printf("Use %s: <string> <valid chars set> <min length> <max length> \n",argv[0]);
+        printf(
+            "Use %s: <string> <valid chars set> <min length> <max length> \n",
+            argv[0]);
         exit(UML_INVALID_ARGC);
     }
     minSize = (size_t) strtoul(argv[3],&validate,10);
@@ -41,7 +43,9 @@ int main(int argc,char *argv[]){
         printf("Invalid argument.\n");
         exit(UML_INVALID_ARGUMENT);
     }
-    verify = UmlCheckNickname(argv[1],argv[2],minSize,maxSize);
+    verify = UmlCheckNickname(
+        argv[1],argv[2],
+        UML_CHECK_NICKNAME_MIN_LENGTH,UML_CHECK_NICKNAME_MAX_LENGTH);
     printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
     printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
     return UML_OK;

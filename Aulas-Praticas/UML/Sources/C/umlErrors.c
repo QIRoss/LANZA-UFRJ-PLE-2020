@@ -34,7 +34,10 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Validation set is null",
         "Invalid length for field",
         "Invalid character for field",
-        "No dot on nickname (maybe more dots too)"
+        "No dot on nickname (maybe more dots too)",
+        "Name before @ too long",
+        "Name after @ too long",
+        "No @ on mail"
     },
     {
         "Sucesso",
@@ -47,7 +50,10 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "validation set nulo",
         "comprimento invalido para campo",
         "caractere invalido para campo",
-        "Nenhum ponto no nickname (talvez mais que um)"
+        "Nenhum ponto no nickname (talvez mais que um)",
+        "Nome antes do @ muito longo",
+        "Nome depois do @ muito longo",
+        "Nenhum @ no email"
     }
 };
 
@@ -65,7 +71,10 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Validation set is null",
         "Invalid length for field",
         "Invalid character for field",
-        "No dot on nickname (maybe more dots too)"
+        "No dot on nickname (maybe more dots too)",
+        "Name before @ too long",
+        "Name after @ too long",
+        "No @ on mail"
     },
     {
         "Sucesso",
@@ -78,7 +87,10 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "validation set nulo",
         "comprimento invalido para campo",
         "caractere invalido para campo",
-        "Nenhum ponto no nickname (talvez mais que um)"
+        "Nenhum ponto no nickname (talvez mais que um)",
+        "Nome antes do @ muito longo",
+        "Nome depois do @ muito longo",
+        "Nenhum @ no email"
     }
 };
 

@@ -22,7 +22,9 @@ Initial revision
 
 typedef enum{umlOk,umlPathNull,umlFilenameNull,umlAbsoluteFilenameNull,
         umlInvalidFilenameLength,umlInvalidPathLength,stringNull,
-        validateSetNull,umlInvalidSize,umlInvalidChar,umlNoDotNickname,umlErrorsAmount} umlErrorType;
+        validateSetNull,umlInvalidSize,umlInvalidChar,umlNoDotNickname,
+        umlNameBeforeAtTooLong,umlNameAfterAtTooLong,umlNoAtOnMail,
+        umlOutputNull,umlErrorsAmount} umlErrorType;
 
 char *
 UmlGetCliErrorMessage (umlErrorType, umlLanguageType);

@@ -100,7 +100,7 @@ UmlCheckStringField (char *umlString, char *umlValidateSet, size_t umlMinLength,
 }
 
 umlErrorType
-UmlCheckNickname (char *umlString, char *umlValidateSet, size_t umlMinLength, size_t umlMaxLength){
+UmlCheckNickname (char *umlString, char *umlValidateSet, size_t umlMinLength , size_t umlMaxLength){
     unsigned umlLength;
     unsigned umlIndexString;
     unsigned umlIndexSet;
@@ -114,7 +114,7 @@ UmlCheckNickname (char *umlString, char *umlValidateSet, size_t umlMinLength, si
         return validateSetNull;
     }
     umlLength = strlen(umlString);
-    if(umlMinLength>umlLength || umlLength>umlMaxLength){
+    if(umlMinLength>umlLength || umlLength> umlMaxLength){
         return umlInvalidSize;
     }
     for(umlIndexString=0;umlString[umlIndexString] != UML_EOS;umlIndexString++){
@@ -126,7 +126,6 @@ UmlCheckNickname (char *umlString, char *umlValidateSet, size_t umlMinLength, si
         }
         if (umlString[umlIndexString]=='.'){
             umlDot++;
-
         } else if(umlIsValid==0){
             return umlInvalidChar;
         }
@@ -134,6 +133,73 @@ UmlCheckNickname (char *umlString, char *umlValidateSet, size_t umlMinLength, si
     if (umlDot!=1){
         return umlNoDotNickname;
     }
+    return umlOk;
+}
+
+umlErrorType
+UmlCheckEmail (char *umlString, char *umlValidateSet, size_t umlMinLength, size_t umlMaxLength){
+    unsigned umlLength;
+    unsigned umlIndexString;
+    unsigned umlIndexSet;
+    unsigned umlIsValid;
+    unsigned umlAt=0;
+    unsigned umlAfterAtIndex=0;
+
+    if(!umlString){
+        return stringNull;
+    }
+    if(!umlValidateSet){
+        return validateSetNull;
+    }
+    umlLength = strlen(umlString);
+    if(umlMinLength>umlLength || umlLength> umlMaxLength){
+        return umlInvalidSize;
+    }
+    for(umlIndexString=0;umlString[umlIndexString] != UML_EOS;umlIndexString++){
+        umlIsValid=0;
+        for(umlIndexSet=0;umlValidateSet[umlIndexSet] !=UML_EOS;umlIndexSet++){
+            if (umlString[umlIndexString]==umlValidateSet[umlIndexSet]){
+                umlIsValid=1;
+            }
+        }
+        if (umlString[umlIndexString]=='@'){
+            umlAt++;
+            if(umlIndexString>64){
+                return umlNameBeforeAtTooLong;
+            }
+        } else if(umlIsValid==0){
+            return umlInvalidChar;
+        } if(umlAt == 1){
+            umlAfterAtIndex++;
+        } if(umlAfterAtIndex > 255){
+            return umlNameAfterAtTooLong;
+        }
+    }
+    if (umlAt!=1){
+        return umlNoAtOnMail;
+    }
+    return umlOk;
+}
+
+umlErrorType
+UmlCreateRandomString (char *umlValidateSet, size_t umlLength, char *umlOutput){
+    unsigned umlIndex;
+    unsigned umlSetLength;
+    char umlBuffer[umlLength];
+
+    if(!umlValidateSet){
+        return validateSetNull;
+    }
+    if(!umlOutput){
+        return umlOutputNull;
+    }
+    srand((unsigned )time(NULL));
+    umlSetLength=strlen(umlValidateSet);
+    for(umlIndex=0;umlIndex<umlLength;umlIndex++){
+        umlBuffer[umlIndex]=umlValidateSet[rand()%umlSetLength];
+    }
+    umlBuffer[umlIndex]=UML_EOS;
+    strcpy(umlOutput,umlBuffer);
     return umlOk;
 }
 
