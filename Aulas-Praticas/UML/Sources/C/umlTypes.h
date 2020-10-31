@@ -28,8 +28,6 @@ typedef unsigned long long umlUserProfileType;
 
 typedef enum{umlDes=0,umlMd5=1,umlSha256=5,umlSha512=6}umlCryptAlgorithms;
 
-unsigned umlCrypts[4][2]={{2,11},{8,22},{16,43},{16,86}};
-
 #endif
 
 /*$RCSfile: umlTypes.h,v $*/

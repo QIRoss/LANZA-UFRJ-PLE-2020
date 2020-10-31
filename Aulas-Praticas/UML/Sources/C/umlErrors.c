@@ -54,7 +54,7 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Hash does not exist",
         "Invalid salt length",
         "Invalid hash length",
-        "Invalid des length"
+        "Invalid DES length"
     },
     {
         "Sucesso",
@@ -119,7 +119,7 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Hash does not exist",
         "Invalid salt length",
         "Invalid hash length",
-        "Invalid des length"
+        "Invalid DES length"
     },
     {
         "Sucesso",

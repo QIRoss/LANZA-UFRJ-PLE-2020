@@ -262,6 +262,7 @@ UmlGetCryptAlgorithm (char *umlHash, umlCryptAlgorithms *umlAlgoType, char *umlS
     unsigned umlHashCount=0;
     unsigned umlIndex;
     unsigned umlIsSalt=1;
+    unsigned umlCrypts[4][2]={{2,11},{8,22},{16,43},{16,86}};
 
     if(!umlHash){
         return umlHashNull;

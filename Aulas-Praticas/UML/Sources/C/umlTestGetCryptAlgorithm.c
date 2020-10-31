@@ -15,6 +15,7 @@ $Log$
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <crypt.h>
 #include "umlConst.h"
 #include "umlFunctions.h"
 #include "umlErrors.h"
@@ -30,10 +31,12 @@ int main(int argc,char *argv[]){
         printf("Use %s: <full name> \n",argv[0]);
         exit(UML_INVALID_ARGC);
     }
-    algoType = (char *) malloc(UML_NICKNAME_MAX_LENGTH);
-    salt = (char *) malloc(UML_NICKNAME_MAX_LENGTH);
+    algoType = (umlCryptAlgorithms *) malloc(10);
+    salt = (char *) malloc(2);
     verify = UmlGetCryptAlgorithm(argv[1],algoType,salt);
-    printf("Algo Type: %s\nSalt: %s\n",algoType,salt);
+    if(verify == umlOk){
+        printf("Algo Type: %s\nSalt: %s\n",algoType,salt);
+    }
     printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
     printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
     return UML_OK;
