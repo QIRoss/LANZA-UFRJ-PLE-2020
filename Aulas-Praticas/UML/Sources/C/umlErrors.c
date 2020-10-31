@@ -46,7 +46,15 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "First Name null",
         "Second Name null",
         "Name too long",
-        "More or less space bars on fullname than it should be"
+        "More or less space bars on fullname than it should be",
+        "Hash null",
+        "Crypt algo type null",
+        "Hash too short",
+        "Invalid algo type",
+        "Hash does not exist",
+        "Invalid salt length",
+        "Invalid hash length",
+        "Invalid des length"
     },
     {
         "Sucesso",
@@ -68,7 +76,15 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Primeiro nome nulo",
         "Segundo nome nulo",
         "Nome muito longo",
-        "Mais ou menos barras de espaco no nome completo do que deveria"
+        "Mais ou menos barras de espaco no nome completo do que deveria",
+        "Hash nula",
+        "Algoritmo de crypt nulo",
+        "Hash curta demais",
+        "Tipo de algoritmo invalido",
+        "Hash invalida",
+        "Comprimento do salt invalido",
+        "Comprimento da hash invalida",
+        "Comprimento para DES invalida"
     }
 };
 
@@ -95,7 +111,15 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "First Name null",
         "Second Name null",
         "Name too long",
-        "More or less space bars on fullname than it should be"
+        "More or less space bars on fullname than it should be",
+        "Hash null",
+        "Crypt algo type null",
+        "Hash too short",
+        "Invalid algo type",
+        "Hash does not exist",
+        "Invalid salt length",
+        "Invalid hash length",
+        "Invalid des length"
     },
     {
         "Sucesso",
@@ -117,7 +141,15 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Primeiro nome nulo",
         "Segundo nome nulo",
         "Nome muito longo",
-        "Mais ou menos barras de espaco no nome completo do que deveria"
+        "Mais ou menos barras de espaco no nome completo do que deveria",
+        "Hash nula",
+        "Algoritmo de crypt nulo",
+        "Hash curta demais",
+        "Tipo de algoritmo invalido",
+        "Hash invalida",
+        "Comprimento do salt invalido",
+        "Comprimento da hash invalida",
+        "Comprimento para DES invalida"
     }
 };
 

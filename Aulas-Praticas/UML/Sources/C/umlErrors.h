@@ -28,7 +28,10 @@ typedef enum{umlOk,umlPathNull,umlFilenameNull,umlAbsoluteFilenameNull,
         validateSetNull,umlInvalidSize,umlInvalidChar,umlNoDotNickname,
         umlNameBeforeAtTooLong,umlNameAfterAtTooLong,umlNoAtOnMail,
         umlOutputNull,umlFullNameNull,umlFirstNameNull,umlSecondNameNull,
-        umlNameTooLong,umlInvalidSpaceBarsNumber,umlErrorsAmount
+        umlNameTooLong,umlInvalidSpaceBarsNumber,umlHashNull,umlAlgoTypeNull,
+        umlShortHash,umlInvalidAlgoType,umlInvalidHash,umlInvalidSaltLength,
+        umlInvalidHashLength,umlInvalidDesLength,
+        umlErrorsAmount
         } umlErrorType;
 
 char *

@@ -42,10 +42,10 @@ UMLTESTCHECKNICKNAMEOBJ = umlFunctions.o umlErrors.o umlTestCheckNickname.o
 UMLTESTCHECKEMAILOBJ = umlFunctions.o umlErrors.o umlTestCheckEmail.o
 UMLTESTCREATERANDOMSTRINGOBJ = umlFunctions.o umlErrors.o umlTestCreateRandomString.o
 UMLTESTCREATENICKNAMEOBJ = umlFunctions.o umlErrors.o umlTestCreateNickname.o
-UMLTESTGETCRYPTALGORITHMOBJ	= umlFunctions.o umlTestGetCryptAlgorithm.o
-UMLTESTENCODEPASSWORDWITHSPECIFICALGORITHMOBJ = umlFunctions.o umlTestEncodePasswordWithSpecificAlgorithm.o
-UMLTESTENCODEPASSWORDWITHSPECIFICSALTOBJ = umlFunctions.o umlTestEncodePasswordWithSpecificSalt.o
-UMLTESTCHECKPASSWORDOBJ = umlFunctions.o umlTestCheckPassword.o
+UMLTESTGETCRYPTALGORITHMOBJ	= umlFunctions.o umlErrors.o umlTestGetCryptAlgorithm.o
+UMLTESTENCODEPASSWORDWITHSPECIFICALGORITHMOBJ = umlFunctions.o umlErrors.o umlTestEncodePasswordWithSpecificAlgorithm.o
+UMLTESTENCODEPASSWORDWITHSPECIFICSALTOBJ = umlFunctions.o umlErrors.o umlTestEncodePasswordWithSpecificSalt.o
+UMLTESTCHECKPASSWORDOBJ = umlFunctions.o umlErrors.o umlTestCheckPassword.o
 
 UMLTESTS = umltestgetlanguageindex\
 	umltestgetclierrormessage\

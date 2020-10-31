@@ -44,11 +44,11 @@ UmlCreateRandomString (char *, size_t, char *);
 umlErrorType
 UmlCreateNickname (char *, char *, char *);
 
-// umlErrorType
-// UmlGetCryptAlgorithm (char *, umlCryptAlgorithms *, char *);
+umlErrorType
+UmlGetCryptAlgorithm (char *, umlCryptAlgorithms *, char *);
 
-// umlErrorType
-// UmlEncodePasswordWithSpecificAlgorithm (char *, umlCryptAlgorithms, char *);
+umlErrorType
+UmlEncodePasswordWithSpecificAlgorithm (char *, umlCryptAlgorithms, char *);
 
 umlErrorType
 UmlEncodePasswordWithSpecificSalt (char *, char *, char *);

@@ -27,6 +27,7 @@ Initial revision
 
 #include "umlConst.h"
 #include "umlFunctions.h"
+#include "umlTypes.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -230,7 +231,6 @@ UmlCreateNickname(char *umlFullName , char *umlFirstName , char *umlSecondName){
     }
     strcpy(umlCopy,umlFullName);
     umlWord = strtok(umlCopy , " " );
-
     for(umlIndex=0;umlIndex<umlNameSize;umlIndex++){
         if(umlFullName[umlIndex]==' ' && umlFullName[umlIndex-1]!=' ')
         umlSpace++;
@@ -252,6 +252,81 @@ UmlCreateNickname(char *umlFullName , char *umlFirstName , char *umlSecondName){
     } else {
         snprintf(umlSecondName,UML_NICKNAME_MAX_LENGTH+1,"%s.%s",
         umlNameArray[0],umlNameArray[umlSpace-1]);
+    }
+    return umlOk;
+}
+
+umlErrorType
+UmlGetCryptAlgorithm (char *umlHash, umlCryptAlgorithms *umlAlgoType, char *umlSalt){
+    unsigned umlSaltCount=0;
+    unsigned umlHashCount=0;
+    unsigned umlIndex;
+    unsigned umlIsSalt=1;
+
+    if(!umlHash){
+        return umlHashNull;
+    }
+    if(!umlAlgoType){
+        return umlAlgoTypeNull;
+    }
+    *umlAlgoType=umlDes;
+
+    if(strlen(umlHash)<umlCrypts[0][1]){
+        return umlShortHash;
+    }
+    if(umlHash[0]!='$'){
+        *umlAlgoType=umlDes;
+    } else if(umlHash[1]=='1'){
+        *umlAlgoType=umlMd5;
+    } else if(umlHash[1]=='5'){
+        *umlAlgoType=umlSha256;
+    } else if(umlHash[1]=='6'){
+        *umlAlgoType=umlSha512;
+    } else{
+        *umlAlgoType=0;
+        return umlInvalidAlgoType;
+    }
+    if(*umlAlgoType!=umlDes){
+        if (umlHash[0]!='$' || umlHash[2]!='$'){
+            return umlInvalidHash;
+        }
+        for(umlIndex=3;umlHash[umlIndex];umlIndex++){
+            if(umlHash[umlIndex]=='$'){
+                umlIsSalt=0;
+            } else {
+                if(!((umlHash[umlIndex]>='A'&&umlHash[umlIndex]<='Z') ||
+                (umlHash[umlIndex]>='a'&&umlHash[umlIndex]<='z')||
+                (umlHash[umlIndex]>='.'&&umlHash[umlIndex]<='9'))){
+                    return umlInvalidChar;
+                }
+                if (umlSaltCount>=umlCrypts[*umlAlgoType][0]) {
+                    return umlInvalidSaltLength;
+                }
+                if (umlHashCount>=umlCrypts[*umlAlgoType][1]) {
+                    return umlInvalidHashLength;
+                }
+                if (umlIsSalt==1){
+                    umlSaltCount++;
+                } else if (umlIsSalt==0){
+                    umlHashCount++;
+                }
+            }
+
+        }
+        if(umlHashCount<umlCrypts[*umlAlgoType][1]){
+            return umlShortHash;
+        }
+    } else {			
+        if (strlen(umlHash)!=13){
+            return umlInvalidDesLength;
+        }
+        for(umlIndex=0;umlHash[umlIndex]!=UML_EOS;umlIndex++){
+            if(!((umlHash[umlIndex]>='A'&&umlHash[umlIndex]<='Z') ||
+            (umlHash[umlIndex]>='a'&&umlHash[umlIndex]<='z')||
+            (umlHash[umlIndex]>='.'&&umlHash[umlIndex]<='9'))){
+                return umlInvalidChar;
+            }
+        }
     }
     return umlOk;
 }
