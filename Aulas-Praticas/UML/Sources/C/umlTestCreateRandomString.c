@@ -20,19 +20,23 @@ $Log$
 #include "umlTypes.h"
 
 int main(int argc,char *argv[]){
-    size_t Length=0;
+    size_t length=0;
     char *validate;
+    char init;
+    char *output = &init;
     umlErrorType verify;
     if(UML_TEST_CREATE_RANDOM_STRING_ARGC != argc){
         printf("Use %s: <valid chars set> <length> \n",argv[0]);
         exit(UML_INVALID_ARGC);
     }
-    minSize = (size_t) strtoul(argv[3],&validate,10);
+    length= (size_t) strtoul(argv[2],&validate,10);
     if(*validate != UML_EOS){
         printf("Invalid argument.\n");
         exit(UML_INVALID_ARGUMENT);
     }
-    verify = UmlCheckEmail(argv[1],argv[2],minSize,maxSize);
+    output = (char *) malloc(length);
+    verify = UmlCreateRandomString(argv[1],length,output);
+    printf("%s\n",output);
     printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
     printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
     return UML_OK;

@@ -37,25 +37,25 @@ Initial revision
 #define UML_ERRORS_AMOUNT               umlErrorsAmount
 #define UML_STRINGS_AMOUNT              umlStringsAmount
 
-#define UML_OK                          0
-#define UML_EOS                         '\0'
+#define UML_OK                                  0
+#define UML_EOS                                 '\0'
 
-#define UML_INVALID_ARGC                1
-#define UML_INVALID_ARGUMENT            2
-#define UML_INVALID_CHARACTER           3
-#define UML_IMPOSSIBLE_POINT            4
-#define UML_NO_ERROR_FOUND              5
+#define UML_INVALID_ARGC                        1
+#define UML_INVALID_ARGUMENT                    2
+#define UML_INVALID_CHARACTER                   3
+#define UML_IMPOSSIBLE_POINT                    4
+#define UML_NO_ERROR_FOUND                      5
  
-#define UML_ABSOLUTE_PATH_MAX_LENGTH    PATH_MAX
-#define UML_FILENAME_MAX_LENGTH         NAME_MAX
+#define UML_ABSOLUTE_PATH_MAX_LENGTH            PATH_MAX
+#define UML_FILENAME_MAX_LENGTH                 NAME_MAX
 
-#define UML_TEST_CHECKSTRINGFIELD_ARGC  5
-#define UML_TEST_NICKNAME_ARGC          3
-#define UML_TEST_CHECK_EMAIL_ARGC       5
-#define UML_CREATE_RANDOM_STRING_ARGC   3
+#define UML_TEST_CHECKSTRINGFIELD_ARGC          5
+#define UML_TEST_NICKNAME_ARGC                  3
+#define UML_TEST_CHECK_EMAIL_ARGC               5
+#define UML_TEST_CREATE_RANDOM_STRING_ARGC      3
 
-#define UML_CHECK_NICKNAME_MIN_LENGTH   3
-#define UML_CHECK_NICKNAME_MAX_LENGTH   65
+#define UML_CHECK_NICKNAME_MIN_LENGTH           3
+#define UML_CHECK_NICKNAME_MAX_LENGTH           65
 
 #endif
 

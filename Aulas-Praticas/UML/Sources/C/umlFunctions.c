@@ -25,7 +25,9 @@ Initial revision
 #include "umlConst.h"
 #include "umlFunctions.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 umlLanguageType
 UmlGetLanguageIndex (char *umlLanguage){
