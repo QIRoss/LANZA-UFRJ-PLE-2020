@@ -31,6 +31,7 @@ typedef enum{umlOk,umlPathNull,umlFilenameNull,umlAbsoluteFilenameNull,
         umlNameTooLong,umlInvalidSpaceBarsNumber,umlHashNull,umlAlgoTypeNull,
         umlShortHash,umlInvalidAlgoType,umlInvalidHash,umlInvalidSaltLength,
         umlInvalidHashLength,umlInvalidDesLength,umlSaltNull,umlPasswordNull,
+        umlErrorCrypt,
         umlErrorsAmount
         } umlErrorType;
 

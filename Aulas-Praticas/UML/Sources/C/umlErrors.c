@@ -56,7 +56,8 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Invalid hash length",
         "Invalid DES length",
         "Salt null",
-        "Plain password null"
+        "Plain password null",
+        "Error crypting password"
     },
     {
         "Sucesso",
@@ -88,7 +89,8 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Comprimento da hash invalida",
         "Comprimento para DES invalida",
         "Salt nulo",
-        "Senha plana nula"
+        "Senha plana nula",
+        "Error durante criptografia"
     }
 };
 
@@ -125,7 +127,8 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Invalid hash length",
         "Invalid DES length",
         "Salt null",
-        "Plain password null"
+        "Plain password null",
+        "Error crypting password"
     },
     {
         "Sucesso",
@@ -157,7 +160,8 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Comprimento da hash invalida",
         "Comprimento para DES invalida",
         "Salt nulo",
-        "Senha plana nula"
+        "Senha plana nula",
+        "Error durante criptografia"
     }
 };
 

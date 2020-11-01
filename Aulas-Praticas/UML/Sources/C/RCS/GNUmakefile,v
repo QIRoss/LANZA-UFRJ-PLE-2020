@@ -1,4 +1,27 @@
-#Universidade Federal do Rio de Janeiro
+head	1.1;
+access;
+symbols;
+locks
+	lucasqueiroz:1.1; strict;
+comment	@# @;
+
+
+1.1
+date	2020.11.01.04.48.04;	author lucasqueiroz;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#Universidade Federal do Rio de Janeiro
 #Escola Politecnica
 #Departamento de Eletronica de Computacao
 #EEL270 - Computacao II - Turma 2020/4 - PLE-1
@@ -75,60 +98,60 @@ ALL = $(EXECS) $(LIBS)
 all: $(ALL)
 
 umltestgetlanguageindex: $(UMLTESTGETLANGUAGEINDEXOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETLANGUAGEINDEXOBJ)
-	cp $@ $@-$(OS)-$(CC)
+	$(LD) $(LFLAGS) -o $@@ $(UMLTESTGETLANGUAGEINDEXOBJ)
+	cp $@@ $@@-$(OS)-$(CC)
 
 umltestgetclierrormessage: $(UMLTESTGETCLIERRORMESSAGEOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETCLIERRORMESSAGEOBJ)
-	cp $@ $@-$(OS)-$(CC)
+	$(LD) $(LFLAGS) -o $@@ $(UMLTESTGETCLIERRORMESSAGEOBJ)
+	cp $@@ $@@-$(OS)-$(CC)
 
 umltestgetweberrormessage: $(UMLTESTGETWEBERRORMESSAGEOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETWEBERRORMESSAGEOBJ)
-	cp $@ $@-$(OS)-$(CC)
+	$(LD) $(LFLAGS) -o $@@ $(UMLTESTGETWEBERRORMESSAGEOBJ)
+	cp $@@ $@@-$(OS)-$(CC)
 
 umltestgetcliuserinterfacemessage: $(UMLTESTGETCLIUSERINTERFACEMESSAGEOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETCLIUSERINTERFACEMESSAGEOBJ)
-	cp $@ $@-$(OS)-$(CC)
+	$(LD) $(LFLAGS) -o $@@ $(UMLTESTGETCLIUSERINTERFACEMESSAGEOBJ)
+	cp $@@ $@@-$(OS)-$(CC)
 
 umltestgetwebuserinterfacemessage: $(UMLTESTGETWEBUSERINTERFACEMESSAGEOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETWEBUSERINTERFACEMESSAGEOBJ)
-	cp $@ $@-$(OS)-$(CC)
+	$(LD) $(LFLAGS) -o $@@ $(UMLTESTGETWEBUSERINTERFACEMESSAGEOBJ)
+	cp $@@ $@@-$(OS)-$(CC)
 
 umltestcheckstringfield: $(UMLTESTCHECKSTRINGFIELDOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKSTRINGFIELDOBJ)
-	cp $@ $@-$(OS)-$(CC)
+	$(LD) $(LFLAGS) -o $@@ $(UMLTESTCHECKSTRINGFIELDOBJ)
+	cp $@@ $@@-$(OS)-$(CC)
 
 umltestchecknickname: $(UMLTESTCHECKNICKNAMEOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKNICKNAMEOBJ)
-	cp $@ $@-$(OS)-$(CC)
+	$(LD) $(LFLAGS) -o $@@ $(UMLTESTCHECKNICKNAMEOBJ)
+	cp $@@ $@@-$(OS)-$(CC)
 
 umltestcheckemail: $(UMLTESTCHECKEMAILOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKEMAILOBJ)
-	cp $@ $@-$(OS)-$(CC)
+	$(LD) $(LFLAGS) -o $@@ $(UMLTESTCHECKEMAILOBJ)
+	cp $@@ $@@-$(OS)-$(CC)
 
 umltestcreaterandomstring: $(UMLTESTCREATERANDOMSTRINGOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTCREATERANDOMSTRINGOBJ)
-	cp $@ $@-$(OS)-$(CC)
+	$(LD) $(LFLAGS) -o $@@ $(UMLTESTCREATERANDOMSTRINGOBJ)
+	cp $@@ $@@-$(OS)-$(CC)
 
 umltestcreatenickname: $(UMLTESTCREATENICKNAMEOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTCREATENICKNAMEOBJ)
-	cp $@ $@-$(OS)-$(CC)
+	$(LD) $(LFLAGS) -o $@@ $(UMLTESTCREATENICKNAMEOBJ)
+	cp $@@ $@@-$(OS)-$(CC)
 
 umltestgetcryptalgorithm: $(UMLTESTGETCRYPTALGORITHMOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETCRYPTALGORITHMOBJ) -lcrypt
-	cp $@ $@-$(OS)-$(CC)
+	$(LD) $(LFLAGS) -o $@@ $(UMLTESTGETCRYPTALGORITHMOBJ) -lcrypt
+	cp $@@ $@@-$(OS)-$(CC)
 
 umltestencodepasswordwithspecificalgorithm: $(UMLTESTENCODEPASSWORDWITHSPECIFICALGORITHMOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTENCODEPASSWORDWITHSPECIFICALGORITHMOBJ) -lcrypt
-	cp $@ $@-$(OS)-$(CC)
+	$(LD) $(LFLAGS) -o $@@ $(UMLTESTENCODEPASSWORDWITHSPECIFICALGORITHMOBJ)
+	cp $@@ $@@-$(OS)-$(CC)
 
 umltestencodepasswordwithspecificsalt: $(UMLTESTENCODEPASSWORDWITHSPECIFICSALTOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTENCODEPASSWORDWITHSPECIFICSALTOBJ)
-	cp $@ $@-$(OS)-$(CC)
+	$(LD) $(LFLAGS) -o $@@ $(UMLTESTENCODEPASSWORDWITHSPECIFICSALTOBJ)
+	cp $@@ $@@-$(OS)-$(CC)
 
 umltestcheckpassword: $(UMLTESTCHECKPASSWORDOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKPASSWORDOBJ)
-	cp $@ $@-$(OS)-$(CC)
+	$(LD) $(LFLAGS) -o $@@ $(UMLTESTCHECKPASSWORDOBJ)
+	cp $@@ $@@-$(OS)-$(CC)
 
 
 
@@ -144,4 +167,4 @@ clean-freebsd:
 clean-linux:
 	rm -f *.o $(ALL) $(LIBS) *-Linux-*
 
-# $RCSfile: GNUmakefile,v $
+# $RCSfile$@

@@ -32,6 +32,7 @@ Initial revision
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <crypt.h>
 
 umlLanguageType
 UmlGetLanguageIndex (char *umlLanguage){
@@ -291,7 +292,7 @@ UmlGetCryptAlgorithm (char *umlHash, umlCryptAlgorithms *umlAlgoType, char *umlS
         if (umlHash[0]!='$' || umlHash[2]!='$'){
             return umlInvalidHash;
         }
-        for(umlIndex=0;umlHash[umlIndex+3]!='$';umlIndex++){
+        for(umlIndex=0;(umlHash[umlIndex+3]!='$') || (umlIndex=umlCrypts[*umlAlgoType][0]);umlIndex++){
             umlSalt[umlIndex] = umlHash[umlIndex+3];
         }
         umlSalt[umlIndex] = '\0';
@@ -339,16 +340,40 @@ UmlGetCryptAlgorithm (char *umlHash, umlCryptAlgorithms *umlAlgoType, char *umlS
 }
 
 umlErrorType
-umlEncodePasswordWithSpecificAlgorithm(char * umlPassword , 
+UmlEncodePasswordWithSpecificAlgorithm(char * umlPassword , 
     umlCryptAlgorithms umlType, char *umlHash){
-
+    unsigned umlCrypts[7][2]={{2,11},{8,22},{0,0},{0,0},{0,0},{16,43},{16,86}};
+    umlErrorType verify;
+    char myRandom[umlCrypts[umlType][0]];
+    char *myId[7]={NULL,"$1$",NULL,NULL,NULL,"$5$","$6$"};
+    char *mySalt = malloc(sizeof(myRandom)+sizeof(char[3]));
     if(!umlPassword){
         return umlPasswordNull;
     }
     if(!umlHash) {
         return umlHashNull;
     }
-
+    
+    if(umlType == umlDes){
+        verify = UmlCreateRandomString("0123456789",2,myRandom);
+        if (verify != umlOk ){
+            return verify;
+        }
+        strcat(mySalt,myRandom);
+    } else {
+        verify = UmlCreateRandomString("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-/.!",
+        umlCrypts[umlType][0],myRandom);
+        if (verify != umlOk ){
+            return verify;
+        }
+        strcat(mySalt,myId[umlType]);
+        strcat(mySalt,myRandom);
+    }
+    umlHash = crypt(umlPassword,mySalt);
+    printf("%s\n",umlHash);
+    if(!*umlHash){
+        return umlErrorCrypt;
+    }
     return umlOk;
 }
  
