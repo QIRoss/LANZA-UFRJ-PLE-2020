@@ -262,7 +262,7 @@ UmlGetCryptAlgorithm (char *umlHash, umlCryptAlgorithms *umlAlgoType, char *umlS
     unsigned umlHashCount=0;
     unsigned umlIndex;
     unsigned umlIsSalt=1;
-    unsigned umlCrypts[4][2]={{2,11},{8,22},{16,43},{16,86}};
+    unsigned umlCrypts[7][2]={{2,11},{8,22},{0,0},{0,0},{0,0},{16,43},{16,86}};
 
     if(!umlHash){
         return umlHashNull;
@@ -270,10 +270,8 @@ UmlGetCryptAlgorithm (char *umlHash, umlCryptAlgorithms *umlAlgoType, char *umlS
     if(!umlAlgoType){
         return umlAlgoTypeNull;
     }
-    *umlAlgoType=umlDes;
-
-    if(strlen(umlHash)<umlCrypts[0][1]){
-        return umlShortHash;
+    if(!umlSalt){
+        return umlSaltNull;
     }
     if(umlHash[0]!='$'){
         *umlAlgoType=umlDes;
@@ -283,14 +281,20 @@ UmlGetCryptAlgorithm (char *umlHash, umlCryptAlgorithms *umlAlgoType, char *umlS
         *umlAlgoType=umlSha256;
     } else if(umlHash[1]=='6'){
         *umlAlgoType=umlSha512;
-    } else{
-        *umlAlgoType=0;
+    } else {
         return umlInvalidAlgoType;
+    }
+    if(strlen(umlHash)<(umlCrypts[*umlAlgoType][0]+umlCrypts[*umlAlgoType][1])){
+        return umlShortHash;
     }
     if(*umlAlgoType!=umlDes){
         if (umlHash[0]!='$' || umlHash[2]!='$'){
             return umlInvalidHash;
         }
+        for(umlIndex=0;umlHash[umlIndex+3]!='$';umlIndex++){
+            umlSalt[umlIndex] = umlHash[umlIndex+3];
+        }
+        umlSalt[umlIndex] = '\0';
         for(umlIndex=3;umlHash[umlIndex];umlIndex++){
             if(umlHash[umlIndex]=='$'){
                 umlIsSalt=0;
@@ -300,10 +304,10 @@ UmlGetCryptAlgorithm (char *umlHash, umlCryptAlgorithms *umlAlgoType, char *umlS
                 (umlHash[umlIndex]>='.'&&umlHash[umlIndex]<='9'))){
                     return umlInvalidChar;
                 }
-                if (umlSaltCount>=umlCrypts[*umlAlgoType][0]) {
+                if (umlSaltCount>umlCrypts[*umlAlgoType][0]) {
                     return umlInvalidSaltLength;
                 }
-                if (umlHashCount>=umlCrypts[*umlAlgoType][1]) {
+                if (umlHashCount>umlCrypts[*umlAlgoType][1]) {
                     return umlInvalidHashLength;
                 }
                 if (umlIsSalt==1){
@@ -321,6 +325,8 @@ UmlGetCryptAlgorithm (char *umlHash, umlCryptAlgorithms *umlAlgoType, char *umlS
         if (strlen(umlHash)!=13){
             return umlInvalidDesLength;
         }
+        umlSalt[0]=umlHash[0];
+        umlSalt[1]=umlHash[1];
         for(umlIndex=0;umlHash[umlIndex]!=UML_EOS;umlIndex++){
             if(!((umlHash[umlIndex]>='A'&&umlHash[umlIndex]<='Z') ||
             (umlHash[umlIndex]>='a'&&umlHash[umlIndex]<='z')||
@@ -331,5 +337,5 @@ UmlGetCryptAlgorithm (char *umlHash, umlCryptAlgorithms *umlAlgoType, char *umlS
     }
     return umlOk;
 }
-
+ 
 /*$RCSfile: umlFunctions.c,v $*/

@@ -22,21 +22,35 @@ $Log$
 #include "umlTypes.h"
 
 int main(int argc,char *argv[]){
-    umlCryptAlgorithms initOne;
-    char initTwo;
-    umlCryptAlgorithms *algoType = &initOne;
-    char *salt = &initTwo;
+    char *types[7] = {"DES","Md5",NULL,NULL,NULL,"Sha256","Sha512"};
+    umlCryptAlgorithms algoType[1];
+    char salt[100];
     umlErrorType verify;
     if(UML_TEST_GET_CRYPT_ALGO_ARGC != argc){
-        printf("Use %s: <full name> \n",argv[0]);
+        printf("Use %s: <password to be converted> <salt> \n",argv[0]);
         exit(UML_INVALID_ARGC);
     }
-    algoType = (umlCryptAlgorithms *) malloc(10);
-    salt = (char *) malloc(2);
-    verify = UmlGetCryptAlgorithm(argv[1],algoType,salt);
-    if(verify == umlOk){
-        printf("Algo Type: %s\nSalt: %s\n",algoType,salt);
-    }
+    printf("\nDES TEST\n");
+    verify = UmlGetCryptAlgorithm(crypt(argv[1],"11"),algoType,salt);
+    printf("Algo Type: %u(%s)\nSalt: %s\n",*algoType,types[*algoType],salt);
+    printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
+    printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
+
+    printf("\nMD5 TEST\n");
+    verify = UmlGetCryptAlgorithm(crypt(argv[1],"$1$11"),algoType,salt);
+    printf("Algo Type: %u(%s)\nSalt: %s\n",*algoType,types[*algoType],salt);
+    printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
+    printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
+
+    printf("\nSHA-256 TEST\n");
+    verify = UmlGetCryptAlgorithm(crypt(argv[1],"$5$11"),algoType,salt);
+    printf("Algo Type: %u(%s)\nSalt: %s\n",*algoType,types[*algoType],salt);
+    printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
+    printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
+
+    printf("\nSHA-512 TEST\n");
+    verify = UmlGetCryptAlgorithm(crypt(argv[1],"$6$11"),algoType,salt);
+    printf("Algo Type: %u(%s)\nSalt: %s\n",*algoType,types[*algoType],salt);
     printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
     printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
     return UML_OK;

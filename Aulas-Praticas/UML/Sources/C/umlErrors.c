@@ -54,7 +54,8 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Hash does not exist",
         "Invalid salt length",
         "Invalid hash length",
-        "Invalid DES length"
+        "Invalid DES length",
+        "Salt null"
     },
     {
         "Sucesso",
@@ -84,7 +85,8 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Hash invalida",
         "Comprimento do salt invalido",
         "Comprimento da hash invalida",
-        "Comprimento para DES invalida"
+        "Comprimento para DES invalida",
+        "Salt nulo"
     }
 };
 
@@ -119,7 +121,8 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Hash does not exist",
         "Invalid salt length",
         "Invalid hash length",
-        "Invalid DES length"
+        "Invalid DES length",
+        "Salt null"
     },
     {
         "Sucesso",
@@ -149,7 +152,8 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Hash invalida",
         "Comprimento do salt invalido",
         "Comprimento da hash invalida",
-        "Comprimento para DES invalida"
+        "Comprimento para DES invalida",
+        "Salt nulo"
     }
 };
 

@@ -115,7 +115,7 @@ umltestcreatenickname: $(UMLTESTCREATENICKNAMEOBJ)
 	cp $@ $@-$(OS)-$(CC)
 
 umltestgetcryptalgorithm: $(UMLTESTGETCRYPTALGORITHMOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETCRYPTALGORITHMOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETCRYPTALGORITHMOBJ) -lcrypt
 	cp $@ $@-$(OS)-$(CC)
 
 umltestencodepasswordwithspecificalgorithm: $(UMLTESTENCODEPASSWORDWITHSPECIFICALGORITHMOBJ)
