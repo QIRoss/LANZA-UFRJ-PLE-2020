@@ -337,5 +337,19 @@ UmlGetCryptAlgorithm (char *umlHash, umlCryptAlgorithms *umlAlgoType, char *umlS
     }
     return umlOk;
 }
+
+umlErrorType
+umlEncodePasswordWithSpecificAlgorithm(char * umlPassword , 
+    umlCryptAlgorithms umlType, char *umlHash){
+
+    if(!umlPassword){
+        return umlPasswordNull;
+    }
+    if(!umlHash) {
+        return umlHashNull;
+    }
+
+    return umlOk;
+}
  
 /*$RCSfile: umlFunctions.c,v $*/
