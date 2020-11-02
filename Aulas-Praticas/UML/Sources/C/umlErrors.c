@@ -58,7 +58,8 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Salt null",
         "Plain password null",
         "Error crypting password",
-        "Password too long"
+        "Password too long",
+        "Password and hash does not match"
     },
     {
         "Sucesso",
@@ -92,7 +93,8 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Salt nulo",
         "Senha plana nula",
         "Error durante criptografia",
-        "Senha muito grande"
+        "Senha muito grande",
+        "Senha e hash nao conferem"
     }
 };
 
@@ -131,7 +133,8 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Salt null",
         "Plain password null",
         "Error crypting password",
-        "Password too long"
+        "Password too long",
+        "Password and hash does not match"
     },
     {
         "Sucesso",
@@ -165,7 +168,8 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Salt nulo",
         "Senha plana nula",
         "Error durante criptografia",
-        "Senha muito grande"
+        "Senha muito grande",
+        "Senha e hash nao conferem"
     }
 };
 

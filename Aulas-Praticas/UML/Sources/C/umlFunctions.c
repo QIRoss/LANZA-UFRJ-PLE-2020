@@ -412,4 +412,38 @@ UmlEncodePasswordWithSpecificSalt (char *umlPlainPassword, char *umlSalt, char *
     return umlOk;
 }
 
+umlErrorType
+UmlCheckPassword (char *umlPlainPassword, char *umlHash){
+    char umlSalt[20];
+    char *umlBuffer;
+    umlBuffer = (char *) malloc(87);
+    unsigned umlIndex;
+    umlErrorType verify=umlOk;
+    if(!umlPlainPassword){
+        return umlPasswordNull;
+    }
+    if(!umlHash){
+        return umlHashNull;
+    }
+    if(umlHash[0] == '$' && umlHash[2] == '$'){
+        umlSalt[0] = umlHash[0];
+        umlSalt[1] = umlHash[1];
+        umlSalt[2] = umlHash[2];
+        for(umlIndex=3;umlHash[umlIndex]!='$';umlIndex++){
+            umlSalt[umlIndex] = umlHash[umlIndex];
+        }
+    } else {
+        umlSalt[0] = umlHash[0];
+        umlSalt[1] = umlHash[1];
+    }
+    verify = UmlEncodePasswordWithSpecificSalt(umlPlainPassword,umlSalt,umlBuffer);
+    if(verify != umlOk){
+        return verify;
+    }
+    if(!strcmp(umlHash,umlBuffer)){
+        return umlOk;
+    }
+    return umlPasswordUnmatch;
+}
+
 /*$RCSfile: umlFunctions.c,v $*/

@@ -127,7 +127,7 @@ umltestencodepasswordwithspecificsalt: $(UMLTESTENCODEPASSWORDWITHSPECIFICSALTOB
 	cp $@ $@-$(OS)-$(CC)
 
 umltestcheckpassword: $(UMLTESTCHECKPASSWORDOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKPASSWORDOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKPASSWORDOBJ) -lcrypt
 	cp $@ $@-$(OS)-$(CC)
 
 
