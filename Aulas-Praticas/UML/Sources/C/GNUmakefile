@@ -75,43 +75,43 @@ ALL = $(EXECS) $(LIBS)
 all: $(ALL)
 
 umltestgetlanguageindex: $(UMLTESTGETLANGUAGEINDEXOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETLANGUAGEINDEXOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETLANGUAGEINDEXOBJ) -lcrypt
 	cp $@ $@-$(OS)-$(CC)
 
 umltestgetclierrormessage: $(UMLTESTGETCLIERRORMESSAGEOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETCLIERRORMESSAGEOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETCLIERRORMESSAGEOBJ) -lcrypt
 	cp $@ $@-$(OS)-$(CC)
 
 umltestgetweberrormessage: $(UMLTESTGETWEBERRORMESSAGEOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETWEBERRORMESSAGEOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETWEBERRORMESSAGEOBJ) -lcrypt
 	cp $@ $@-$(OS)-$(CC)
 
 umltestgetcliuserinterfacemessage: $(UMLTESTGETCLIUSERINTERFACEMESSAGEOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETCLIUSERINTERFACEMESSAGEOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETCLIUSERINTERFACEMESSAGEOBJ) -lcrypt
 	cp $@ $@-$(OS)-$(CC)
 
 umltestgetwebuserinterfacemessage: $(UMLTESTGETWEBUSERINTERFACEMESSAGEOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETWEBUSERINTERFACEMESSAGEOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETWEBUSERINTERFACEMESSAGEOBJ) -lcrypt
 	cp $@ $@-$(OS)-$(CC)
 
 umltestcheckstringfield: $(UMLTESTCHECKSTRINGFIELDOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKSTRINGFIELDOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKSTRINGFIELDOBJ) -lcrypt
 	cp $@ $@-$(OS)-$(CC)
 
 umltestchecknickname: $(UMLTESTCHECKNICKNAMEOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKNICKNAMEOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKNICKNAMEOBJ) -lcrypt
 	cp $@ $@-$(OS)-$(CC)
 
 umltestcheckemail: $(UMLTESTCHECKEMAILOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKEMAILOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTCHECKEMAILOBJ) -lcrypt
 	cp $@ $@-$(OS)-$(CC)
 
 umltestcreaterandomstring: $(UMLTESTCREATERANDOMSTRINGOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTCREATERANDOMSTRINGOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTCREATERANDOMSTRINGOBJ) -lcrypt
 	cp $@ $@-$(OS)-$(CC)
 
 umltestcreatenickname: $(UMLTESTCREATENICKNAMEOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTCREATENICKNAMEOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTCREATENICKNAMEOBJ) -lcrypt
 	cp $@ $@-$(OS)-$(CC)
 
 umltestgetcryptalgorithm: $(UMLTESTGETCRYPTALGORITHMOBJ)
@@ -123,7 +123,7 @@ umltestencodepasswordwithspecificalgorithm: $(UMLTESTENCODEPASSWORDWITHSPECIFICA
 	cp $@ $@-$(OS)-$(CC)
 
 umltestencodepasswordwithspecificsalt: $(UMLTESTENCODEPASSWORDWITHSPECIFICSALTOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLTESTENCODEPASSWORDWITHSPECIFICSALTOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLTESTENCODEPASSWORDWITHSPECIFICSALTOBJ) -lcrypt
 	cp $@ $@-$(OS)-$(CC)
 
 umltestcheckpassword: $(UMLTESTCHECKPASSWORDOBJ)

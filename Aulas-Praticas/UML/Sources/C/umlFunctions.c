@@ -389,4 +389,26 @@ UmlEncodePasswordWithSpecificAlgorithm(char * umlPassword ,
     return umlOk;
 }
 
+umlErrorType
+UmlEncodePasswordWithSpecificSalt (char *umlPlainPassword, char *umlSalt, char *umlHash){
+    if(!umlPlainPassword){
+        return umlPasswordNull;
+    }
+    if(!umlSalt){
+        return umlSaltNull;
+    }
+    if(!umlHash){
+        return umlHashNull;
+    }
+    if(strlen(umlPlainPassword)>UML_PASSWORD_MAX_LENGHT){
+        return umlLongPassword;
+    }
+    umlHash=crypt(umlPlainPassword,umlSalt);
+    if(!umlHash){
+        return umlErrorCrypt;
+    }
+    printf("%s\n",umlHash);
+    return umlOk;
+}
+
 /*$RCSfile: umlFunctions.c,v $*/
