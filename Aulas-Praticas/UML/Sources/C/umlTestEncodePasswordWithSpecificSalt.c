@@ -23,16 +23,16 @@ $Log$
 
 int main(int argc,char *argv[]){
     char init;
-    char *output = &init;
+    char *umlHash = &init;
     unsigned long vak = 100;
     umlErrorType verify;
     if(UML_TEST_SPECIFIC_SALT_ARGC != argc){
         printf("Use %s: <valid chars set> <salt> \n",argv[0]);
         exit(UML_INVALID_ARGC);
     }
-    output = (char *) malloc((size_t) vak);
-    verify = UmlEncodePasswordWithSpecificSalt(argv[1],argv[2],output);
-    printf("%s\n",output);
+    umlHash = (char *) malloc((size_t) vak);
+    verify = UmlEncodePasswordWithSpecificSalt(argv[1],argv[2],umlHash);
+    printf("%s\n",umlHash);
     printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
     printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
     return UML_OK;

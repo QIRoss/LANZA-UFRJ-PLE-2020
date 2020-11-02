@@ -391,6 +391,7 @@ UmlEncodePasswordWithSpecificAlgorithm(char * umlPassword ,
 
 umlErrorType
 UmlEncodePasswordWithSpecificSalt (char *umlPlainPassword, char *umlSalt, char *umlHash){
+    char *umlBuffer;
     if(!umlPlainPassword){
         return umlPasswordNull;
     }
@@ -403,11 +404,11 @@ UmlEncodePasswordWithSpecificSalt (char *umlPlainPassword, char *umlSalt, char *
     if(strlen(umlPlainPassword)>UML_PASSWORD_MAX_LENGHT){
         return umlLongPassword;
     }
-    umlHash=crypt(umlPlainPassword,umlSalt);
-    if(!umlHash){
+    umlBuffer=crypt(umlPlainPassword,umlSalt);
+    if(!umlBuffer){
         return umlErrorCrypt;
     }
-    printf("%s\n",umlHash);
+    strcpy(umlHash,umlBuffer);
     return umlOk;
 }
 
