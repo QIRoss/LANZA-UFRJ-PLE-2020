@@ -66,10 +66,13 @@ Initial revision
 #define UML_NICKNAME_MAX_LENGTH                 65
 
 #define UML_FULLNAME_MAX_LENGTH                 65
-
-#define UML_PASSWORD_MAX_LENGHT                 86
+#define UML_PASSWORD_MAX_LENGHT                 127
 #define UML_VALID_SALT_SET                      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789./"                  
 
+#define UML_ARG_FILENAME                        "umlConfigurationFilename"
+#define UML_ARG_LANGUAGE                        "umlLanguage"
+
+#define UML_FILENAME_LENGTH                     1000
 
 #endif
 

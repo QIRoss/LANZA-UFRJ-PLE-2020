@@ -59,7 +59,8 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Plain password null",
         "Error crypting password",
         "Password too long",
-        "Password and hash does not match"
+        "Password and hash does not match",
+        "Wrong Execution Enviroment"
     },
     {
         "Sucesso",
@@ -94,7 +95,8 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Senha plana nula",
         "Error durante criptografia",
         "Senha muito grande",
-        "Senha e hash nao conferem"
+        "Senha e hash nao conferem",
+        "Ambiente de execucao invalido"
     }
 };
 
@@ -134,7 +136,8 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Plain password null",
         "Error crypting password",
         "Password too long",
-        "Password and hash does not match"
+        "Password and hash does not match",
+        "Wrong Execution Enviroment"
     },
     {
         "Sucesso",
@@ -169,7 +172,8 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Senha plana nula",
         "Error durante criptografia",
         "Senha muito grande",
-        "Senha e hash nao conferem"
+        "Senha e hash nao conferem",
+        "Ambiente de execucao invalido"
     }
 };
 
