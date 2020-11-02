@@ -30,7 +30,7 @@ int main(int argc,char *argv[]){
     char salt[100];
     umlErrorType verify;
     if(UML_TEST_GET_CRYPT_ALGO_ARGC != argc){
-        printf("Use %s: <password to be converted> <salt> \n",argv[0]);
+        printf("Use %s: <password to be converted> <salt>\n",argv[0]);
         exit(UML_INVALID_ARGC);
     }
     printf("\nDES TEST\n");
@@ -39,23 +39,25 @@ int main(int argc,char *argv[]){
     printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
     printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
 
-    printf("\nMD5 TEST\n");
-    verify = UmlGetCryptAlgorithm(crypt(argv[1],"$1$11"),algoType,salt);
-    printf("Algo Type: %u(%s)\nSalt: %s\n",*algoType,types[*algoType],salt);
-    printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
-    printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
+    // GET BACK TO CORRECT OTHER ALGOS MEM MANAGEMENT LATER
 
-    printf("\nSHA-256 TEST\n");
-    verify = UmlGetCryptAlgorithm(crypt(argv[1],"$5$11"),algoType,salt);
-    printf("Algo Type: %u(%s)\nSalt: %s\n",*algoType,types[*algoType],salt);
-    printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
-    printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
+    // printf("\nMD5 TEST\n");
+    // verify = UmlGetCryptAlgorithm(crypt(argv[1],"$1$2m4sEQzn"),algoType,salt);
+    // printf("Algo Type: %u(%s)\nSalt: %s\n",*algoType,types[*algoType],salt);
+    // printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
+    // printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
 
-    printf("\nSHA-512 TEST\n");
-    verify = UmlGetCryptAlgorithm(crypt(argv[1],"$6$11"),algoType,salt);
-    printf("Algo Type: %u(%s)\nSalt: %s\n",*algoType,types[*algoType],salt);
-    printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
-    printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
+    // printf("\nSHA-256 TEST\n");
+    // verify = UmlGetCryptAlgorithm(crypt(argv[1],"$5$11"),algoType,salt);
+    // printf("Algo Type: %u(%s)\nSalt: %s\n",*algoType,types[*algoType],salt);
+    // printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
+    // printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
+
+    // printf("\nSHA-512 TEST\n");
+    // verify = UmlGetCryptAlgorithm(crypt(argv[1],"$6$11"),algoType,salt);
+    // printf("Algo Type: %u(%s)\nSalt: %s\n",*algoType,types[*algoType],salt);
+    // printf("%s\n",UmlGetCliErrorMessage(verify,umlEnglish));
+    // printf("%s\n",UmlGetCliErrorMessage(verify,umlPortuguese));
     return UML_OK;
 }
 

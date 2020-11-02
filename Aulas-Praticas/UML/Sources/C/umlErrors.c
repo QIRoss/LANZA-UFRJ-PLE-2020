@@ -57,7 +57,8 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Invalid DES length",
         "Salt null",
         "Plain password null",
-        "Error crypting password"
+        "Error crypting password",
+        "Password too long"
     },
     {
         "Sucesso",
@@ -90,7 +91,8 @@ umlCliErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Comprimento para DES invalida",
         "Salt nulo",
         "Senha plana nula",
-        "Error durante criptografia"
+        "Error durante criptografia",
+        "Senha muito grande"
     }
 };
 
@@ -128,7 +130,8 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Invalid DES length",
         "Salt null",
         "Plain password null",
-        "Error crypting password"
+        "Error crypting password",
+        "Password too long"
     },
     {
         "Sucesso",
@@ -161,7 +164,8 @@ umlWebErrorMessages[UML_LANGUAGES_AMOUNT][UML_ERRORS_AMOUNT]=
         "Comprimento para DES invalida",
         "Salt nulo",
         "Senha plana nula",
-        "Error durante criptografia"
+        "Error durante criptografia",
+        "Senha muito grande"
     }
 };
 

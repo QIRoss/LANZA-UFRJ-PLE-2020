@@ -263,7 +263,7 @@ UmlGetCryptAlgorithm (char *umlHash, umlCryptAlgorithms *umlAlgoType, char *umlS
     unsigned umlHashCount=0;
     unsigned umlIndex;
     unsigned umlIsSalt=1;
-    unsigned umlCrypts[7][2]={{2,11},{8,22},{0,0},{0,0},{0,0},{16,43},{16,86}};
+    unsigned umlCrypts[7][2]={{2,11},{12,22},{0,0},{0,0},{0,0},{16,43},{16,86}};
 
     if(!umlHash){
         return umlHashNull;
@@ -342,39 +342,51 @@ UmlGetCryptAlgorithm (char *umlHash, umlCryptAlgorithms *umlAlgoType, char *umlS
 umlErrorType
 UmlEncodePasswordWithSpecificAlgorithm(char * umlPassword , 
     umlCryptAlgorithms umlType, char *umlHash){
-    unsigned umlCrypts[7][2]={{2,11},{8,22},{0,0},{0,0},{0,0},{16,43},{16,86}};
     umlErrorType verify;
-    char myRandom[umlCrypts[umlType][0]];
-    char *myId[7]={NULL,"$1$",NULL,NULL,NULL,"$5$","$6$"};
-    char *mySalt = malloc(sizeof(myRandom)+sizeof(char[3]));
+    unsigned umlCrypts[7][2]={{2,11},{8,22},{0,0},{0,0},{0,0},{16,43},{16,86}};
+    unsigned umlSaltLenght=umlCrypts[umlType][0];
+    unsigned char umlRandomSalt[umlSaltLenght+1];
+    unsigned char umlRandomSaltEntry[umlSaltLenght+5];
+    unsigned char *umlBuffer;
+
     if(!umlPassword){
         return umlPasswordNull;
     }
-    if(!umlHash) {
+    if(!umlHash){
         return umlHashNull;
     }
-    
-    if(umlType == umlDes){
-        verify = UmlCreateRandomString("0123456789",2,myRandom);
-        if (verify != umlOk ){
-            return verify;
-        }
-        strcat(mySalt,myRandom);
-    } else {
-        verify = UmlCreateRandomString("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-/.!",
-        umlCrypts[umlType][0],myRandom);
-        if (verify != umlOk ){
-            return verify;
-        }
-        strcat(mySalt,myId[umlType]);
-        strcat(mySalt,myRandom);
+    if(!(umlType == umlDes || umlType==umlMd5 || umlType==umlSha256 || umlType==umlSha512)){
+        return umlInvalidAlgoType; 
     }
-    umlHash = crypt(umlPassword,mySalt);
-    printf("%s\n",umlHash);
-    if(!*umlHash){
-        return umlErrorCrypt;
+    if (strlen(umlPassword)>UML_PASSWORD_MAX_LENGHT){
+        return umlLongPassword;
+    }
+    verify = UmlCreateRandomString(UML_VALID_SALT_SET,(size_t) umlSaltLenght, umlRandomSalt);
+    if(verify!=umlOk){
+        return verify;
+    }
+    if(umlType==umlDes){
+        umlBuffer=crypt(umlPassword,umlRandomSalt);
+        if(!umlBuffer){
+            return umlErrorCrypt;
+        }
+        strcpy(umlHash,umlBuffer);
+    } else {
+        if(umlType==umlMd5){
+            snprintf(umlRandomSaltEntry,umlSaltLenght+5,"$%i$%s$",1,umlRandomSalt);
+        }
+        if(umlType==umlSha256){
+            snprintf(umlRandomSaltEntry,umlSaltLenght+5,"$%i$%s$",5,umlRandomSalt);
+        }
+        if(umlType==umlSha512){
+            snprintf(umlRandomSaltEntry,umlSaltLenght+5,"$%i$%s$",6,umlRandomSalt);
+        }
+        if(!(umlBuffer=crypt(umlPassword,umlRandomSalt))){
+            return umlErrorCrypt;
+        }
+        strcpy(umlHash,umlBuffer);
     }
     return umlOk;
 }
- 
+
 /*$RCSfile: umlFunctions.c,v $*/

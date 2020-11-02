@@ -57,13 +57,16 @@ Initial revision
 #define UML_TEST_CHECK_EMAIL_ARGC               5
 #define UML_TEST_CREATE_RANDOM_STRING_ARGC      3
 #define UML_TEST_CREATE_NICKNAME_ARGC           2
-#define UML_TEST_GET_CRYPT_ALGO_ARGC            2
+#define UML_TEST_GET_CRYPT_ALGO_ARGC            3
 #define UML_TEST_SPECIFIC_ALGO_ARGC             3
 
 #define UML_NICKNAME_MIN_LENGTH                 3
 #define UML_NICKNAME_MAX_LENGTH                 65
 
 #define UML_FULLNAME_MAX_LENGTH                 65
+
+#define UML_PASSWORD_MAX_LENGHT                 86
+#define UML_VALID_SALT_SET                      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789./"                  
 
 
 #endif
