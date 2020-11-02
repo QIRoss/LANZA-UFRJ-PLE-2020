@@ -1,4 +1,4 @@
- /*
+/*
 Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
@@ -27,7 +27,7 @@ int main(int argc,char *argv[]){
     char output[100];
     char *validate;
     if(UML_TEST_SPECIFIC_ALGO_ARGC != argc){
-        printf("Use %s: <password to be converted> <algoType enum> \n",argv[0]);
+        printf("Use %s: <password to be converted> <umlType>\n",argv[0]);
         exit(UML_INVALID_ARGC);
     }
     algoType = (umlCryptAlgorithms) strtoul(argv[2],&validate,10);

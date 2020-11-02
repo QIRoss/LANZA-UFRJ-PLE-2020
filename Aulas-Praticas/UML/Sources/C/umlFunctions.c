@@ -338,16 +338,16 @@ UmlGetCryptAlgorithm (char *umlHash, umlCryptAlgorithms *umlAlgoType, char *umlS
     }
     return umlOk;
 }
-
+ 
 umlErrorType
 UmlEncodePasswordWithSpecificAlgorithm(char * umlPassword , 
     umlCryptAlgorithms umlType, char *umlHash){
     umlErrorType verify;
     unsigned umlCrypts[7][2]={{2,11},{8,22},{0,0},{0,0},{0,0},{16,43},{16,86}};
     unsigned umlSaltLenght=umlCrypts[umlType][0];
-    unsigned char umlRandomSalt[umlSaltLenght+1];
-    unsigned char umlRandomSaltEntry[umlSaltLenght+5];
-    unsigned char *umlBuffer;
+    char umlRandomSalt[umlSaltLenght+1];
+    char umlRandomSaltEntry[umlSaltLenght+5];
+    char *umlBuffer;
 
     if(!umlPassword){
         return umlPasswordNull;
