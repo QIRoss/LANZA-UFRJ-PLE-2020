@@ -17,7 +17,7 @@ Revision 1.1  2020/10/29 22:32:39  lucasqueiroz
 Initial revision
 
 */
-
+ 
 #include "umlTypes.h"
 
 #ifndef UML_ERRORS_H
