@@ -52,7 +52,7 @@ int main(int argc,char *argv[]){
         exit(ARGUMENTO_INVALIDO);
     }
     byte input[2*numeroBytes];
-    *saida = &valorDaSaida;
+    saida = &valorDaSaida;
     for(index = 2;index<argc;index++){
         if(!((argv[index][0] >= 'A' && argv[index][0] <= 'Z') ||
         (argv[index][0] >= 'a' && argv[index][0] <= 'z') || 
