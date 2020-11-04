@@ -37,8 +37,23 @@ main(int argc,char *argv[]){
 		exit (umlInvalidEnviromenment);
 	}
 
-	mlCgiBeginHttpHeader ("text/html");
+	mlCgiBeginHttpHeader ("text/html");	
 	mlCgiEndHttpHeader ();
+
+	printf("<!DOCTYPE html>\n");
+	printf("<html>\n");
+	printf("	<head>\n");
+	printf("		<title>\n");
+	printf("			Gerenciamento de Usuarios\n");
+	printf("		</title>\n");
+	printf("	</head>\n");
+	printf("	<body>\n");
+	printf("		<header>\n");
+	printf("			<h1>Desenvolvido por Lucas de Queiroz dos Reis</h1>\n");
+	printf("			<h2>lucasqreis@poli.ufrj.br</h2>\n");
+	printf("		</header>\n");
+	printf("	</body>\n");
+	printf("</html>\n");
 
 	
 
