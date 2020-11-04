@@ -23,11 +23,13 @@ Initial revision
 #include "umlUserInterface.h"
 
 #ifdef __linux__
+#include <crypt.h>
 #include <linux/limits.h>
 #endif
 
 #ifdef __FreeBSD__
-#include <sys/syslimits.h>
+#include <unistd.h>
+#include <syslimits.h>
 #endif
 
 #ifndef UML_CONST_H

@@ -18,6 +18,7 @@ Initial revision
 
 */
 #include "umlTypes.h"
+#include "umlErrors.h"
 #include <stdio.h>
 
 #ifndef UML_FUNCTIONS_H

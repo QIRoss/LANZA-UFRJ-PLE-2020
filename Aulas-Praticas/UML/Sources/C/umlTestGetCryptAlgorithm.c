@@ -18,7 +18,15 @@ Initial revision
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#ifdef __linux__
 #include <crypt.h>
+#include <linux/limits.h>
+#endif
+
+#ifdef __FreeBSD__
+#include <unistd.h>
+#include <syslimits.h>
+#endif
 #include "umlConst.h"
 #include "umlFunctions.h"
 #include "umlErrors.h"

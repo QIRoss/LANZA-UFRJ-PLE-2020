@@ -40,6 +40,8 @@ main(int argc,char *argv[]){
 	mlCgiBeginHttpHeader ("text/html");
 	mlCgiEndHttpHeader ();
 
+	
+
 	return ML_CGI_OK;
 }
 
