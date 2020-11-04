@@ -47,6 +47,8 @@ UMLTESTENCODEPASSWORDWITHSPECIFICALGORITHMOBJ = umlFunctions.o umlErrors.o umlTe
 UMLTESTENCODEPASSWORDWITHSPECIFICSALTOBJ = umlFunctions.o umlErrors.o umlTestEncodePasswordWithSpecificSalt.o
 UMLTESTCHECKPASSWORDOBJ = umlFunctions.o umlErrors.o umlTestCheckPassword.o
 
+UMLCGIMAINOBJ = umlUserInterface.o umlErrors.o umlCgiMain.o
+
 UMLTESTS = umltestgetlanguageindex\
 	umltestgetclierrormessage\
 	umltestgetweberrormessage\
@@ -62,9 +64,13 @@ UMLTESTS = umltestgetlanguageindex\
 	umltestencodepasswordwithspecificsalt\
 	umltestcheckpassword\
 
-EXECS = $(UMLTESTS)
+UMLCGI = umlcgimain
 
-LIBS =
+MLLIB = libmlcgi.a
+
+EXECS = $(UMLTESTS) $(UMLCGI)
+
+LIBS = $(MLLIB)
 
 ALL = $(EXECS) $(LIBS)
 
@@ -131,17 +137,28 @@ umltestcheckpassword: $(UMLTESTCHECKPASSWORDOBJ)
 	cp $@ $@-$(OS)-$(CC)
 
 
+umlCgiMain.cgi: $(UMLCGIMAINOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLCGIMAINOBJ)
+	sudo cp $@ /usr/lib/cgi-bin/$@
+
 
 clean:
-	rm -f *.o $(ALL) $(LIBS)
+	rm -f *.o *.cgi $(ALL) $(LIBS)
 
 clean-all:
-	rm -f *.o $(ALL) $(LIBS) *-FreeBSD-* *-Linux-*
+	rm -f *.o *.cgi $(ALL) $(LIBS) *-FreeBSD-* *-Linux-*
 
 clean-freebsd:
-	rm -f *.o $(ALL) $(LIBS) *-FreeBSD-*
+	rm -f *.o *.cgi$(ALL) $(LIBS) *-FreeBSD-*
 
 clean-linux:
-	rm -f *.o $(ALL) $(LIBS) *-Linux-*
+	rm -f *.o *.cgi$(ALL) $(LIBS) *-Linux-*
+
+clean-apache:
+	sudo rm /usr/lib/cgi-bin/*.cgi  -f
+
+clean-troll:
+	rm -f *.o *.cgi $(ALL) $(LIBS) *-FreeBSD-* *-Linux-*
+	sudo rm /usr/lib/cgi-bin/*.cgi  -f
 
 # $RCSfile: GNUmakefile,v $
