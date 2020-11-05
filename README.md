@@ -9,3 +9,4 @@ Aula06 70% falta versões ponteiros;
 Aula07 Completa;
 Aula08 80% Completa falta Exibir Conteúdo e Getsubs;
 Aula09 Funções aux das CGIs com DES ok;
+ 
