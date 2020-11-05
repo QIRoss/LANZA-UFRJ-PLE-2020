@@ -6,7 +6,6 @@
 #Autor: Lucas de Queiroz dos Reis
 #Description: Makefile
 
-
 # $AUTHOR$
 # $DATE$
 # $LOG$
