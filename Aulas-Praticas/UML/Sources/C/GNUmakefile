@@ -32,6 +32,9 @@ AR = ar
 LFLAGS = -Wall -std=c11
 AFLAGS = -r
 
+UML_PRIVATE_ROOT_DIRECTORY = /users/lucas.reis/private/EEL270/2020-4/Aulas-Praticas/UML
+UML_PUBLIC_HTML_DIRECTORY = /users/lucas.reis/public/html
+
 UMLTESTGETLANGUAGEINDEXOBJ = umlFunctions.o umlTestGetLanguageIndex.o
 UMLTESTGETCLIERRORMESSAGEOBJ = umlErrors.o umlTestGetCliErrorMessage.o
 UMLTESTGETWEBERRORMESSAGEOBJ = umlErrors.o umlTestGetWebErrorMessage.o
@@ -66,7 +69,7 @@ UMLTESTS = umltestgetlanguageindex\
 
 UMLCGIS = umlMain.cgi
 
-MLLIB = Libraries/CentOS/libmlcgi.a
+MLCGI = libmlcgi.a
 
 EXECS = $(UMLTESTS) $(UMLCGI)
 
@@ -137,8 +140,8 @@ umltestcheckpassword: $(UMLTESTCHECKPASSWORDOBJ)
 	cp $@ $@-$(OS)-$(CC)
 
 
-umlMain.cgi: $(UMLCGIMAINOBJ) $(MLLIB)
-	$(LD) $(LFLAGS) -o $@ $(UMLCGIMAINOBJ)
+umlMain.cgi: $(UMLCGIMAINOBJ)
+	$(LD) $(LFLAGS) -o $@ $(UMLCGIMAINOBJ) -L Libraries/CentOS -lmlcgi
 	sudo cp $@ /usr/lib/cgi-bin/$@
 
 
@@ -160,5 +163,39 @@ clean-apache:
 clean-troll:
 	rm -f *.o *.cgi $(ALL) *-FreeBSD-* *-Linux-*
 	sudo rm /usr/lib/cgi-bin/*.cgi  -f
+
+install:
+	@echo -e "\nCreating directories...\n"
+	mkdir -p $(UML_PRIVATE_ROOT_DIRECTORY)/Binaries
+	mkdir -p $(UML_PRIVATE_ROOT_DIRECTORY)/Data
+	mkdir -p $(UML_PRIVATE_ROOT_DIRECTORY)/Data/Cookies
+	mkdir -p $(UML_PUBLIC_HTML_DIRECTORY)
+	@echo -e "\nCopying Web Interface files...\n"
+	cp $(UML_PRIVATE_ROOT_DIRECTORY)/Sources/HTML/index_pt-br.html $(UML_PUBLIC_HTML_DIRECTORY)
+	cp $(UML_PRIVATE_ROOT_DIRECTORY)/Sources/HTML/index_en-us.html $(UML_PUBLIC_HTML_DIRECTORY)
+	ln -s $(UML_PUBLIC_HTML_DIRECTORY)/index_en-us.html $(UML_PUBLIC_HTML_DIRECTORY)/index.html
+	@echo -e "\nCreating CLI Interface...\n"
+	make uml
+	@echo -e "\nCreating CGIs files...\n"
+	make umlCgis
+	@echo -e "\nCleaning object files...\n"
+	make clean
+	@echo -e "\nSuccessfully installed!\n"
+	@echo -e "\nExecute ./../../Binaries/uml -C to create first user.\n"
+
+# Deinstalls the library tests system
+deinstall:
+	@echo -e "\nCleaning object files...\n"
+	make clean
+	@echo -e "\nRemoving files and directories...\n"
+	rm -f $(UML_PUBLIC_HTML_DIRECTORY)/*
+	rmdir $(UML_PUBLIC_HTML_DIRECTORY)
+	rm -f $(UML_PRIVATE_ROOT_DIRECTORY)/Binaries/*
+	rmdir $(UML_PRIVATE_ROOT_DIRECTORY)/Binaries
+	rm -f $(UML_PRIVATE_ROOT_DIRECTORY)/Data/Cookies/*
+	rmdir $(UML_PRIVATE_ROOT_DIRECTORY)/Data/Cookies
+	rm -f $(UML_PRIVATE_ROOT_DIRECTORY)/Data/*
+	rmdir $(UML_PRIVATE_ROOT_DIRECTORY)/Data
+	@echo -e "\nSuccessfully deinstalled!\n"
 
 # $RCSfile: GNUmakefile,v $

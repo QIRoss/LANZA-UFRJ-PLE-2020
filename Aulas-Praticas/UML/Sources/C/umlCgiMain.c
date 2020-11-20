@@ -27,16 +27,16 @@ int main(int argc,char *argv[]){
 	umlLanguageType umlLanguage[umlLanguagesAmount];
 	char umlConfigurationFile[UML_FILENAME_LENGTH+1];
 
-	// if (mlCgiInitialize(&umlEnvironment) != ML_CGI_OK){
-	// 	exit (ML_CGI_OK);
-	// }
-	// if (umlEnvironment == commandLine){
-	// 	printf ("%d\n",umlInvalidEnviromenment);
-	// 	exit (umlInvalidEnviromenment);
-	// }
+	if (mlCgiInitialize(&umlEnvironment) != ML_CGI_OK){
+		exit (ML_CGI_OK);
+	}
+	if (umlEnvironment == commandLine){
+		printf ("%d\n",umlInvalidEnviromenment);
+		exit (umlInvalidEnviromenment);
+	}
 
-	// mlCgiBeginHttpHeader ("text/html");	
-	// mlCgiEndHttpHeader ();
+	mlCgiBeginHttpHeader ("text/html");	
+	mlCgiEndHttpHeader();
 
 	printf("Content-type: text/html\n\n");
 	printf("<!DOCTYPE html>\n");
