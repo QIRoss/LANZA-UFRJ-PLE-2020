@@ -64,21 +64,21 @@ UMLTESTS = umltestgetlanguageindex\
 	umltestencodepasswordwithspecificsalt\
 	umltestcheckpassword\
 
-UMLCGI = umlcgimain
+UMLCGIS = umlMain.cgi
 
-MLLIB = libmlcgi.a
+MLLIB = Libraries/CentOS/libmlcgi.a
 
 EXECS = $(UMLTESTS) $(UMLCGI)
 
 LIBS = $(MLLIB)
 
-ALL = $(EXECS) $(LIBS)
+ALL = $(EXECS)
 
 #Regra implicita
 .c.o:
 	$(CC) $(CFLAGS) -c $<
 
-all: $(ALL)
+all: $(ALL) $(UMLCGIS)
 
 umltestgetlanguageindex: $(UMLTESTGETLANGUAGEINDEXOBJ)
 	$(LD) $(LFLAGS) -o $@ $(UMLTESTGETLANGUAGEINDEXOBJ) -lcrypt
@@ -137,28 +137,28 @@ umltestcheckpassword: $(UMLTESTCHECKPASSWORDOBJ)
 	cp $@ $@-$(OS)-$(CC)
 
 
-umlCgiMain.cgi: $(UMLCGIMAINOBJ)
+umlMain.cgi: $(UMLCGIMAINOBJ) $(MLLIB)
 	$(LD) $(LFLAGS) -o $@ $(UMLCGIMAINOBJ)
 	sudo cp $@ /usr/lib/cgi-bin/$@
 
 
 clean:
-	rm -f *.o *.cgi $(ALL) $(LIBS)
+	rm -f *.o *.cgi $(ALL)
 
 clean-all:
-	rm -f *.o *.cgi $(ALL) $(LIBS) *-FreeBSD-* *-Linux-*
+	rm -f *.o *.cgi $(ALL) *-FreeBSD-* *-Linux-*
 
 clean-freebsd:
-	rm -f *.o *.cgi$(ALL) $(LIBS) *-FreeBSD-*
+	rm -f *.o *.cgi$(ALL) *-FreeBSD-*
 
 clean-linux:
-	rm -f *.o *.cgi$(ALL) $(LIBS) *-Linux-*
+	rm -f *.o *.cgi$(ALL) *-Linux-*
 
 clean-apache:
 	sudo rm /usr/lib/cgi-bin/*.cgi  -f
 
 clean-troll:
-	rm -f *.o *.cgi $(ALL) $(LIBS) *-FreeBSD-* *-Linux-*
+	rm -f *.o *.cgi $(ALL) *-FreeBSD-* *-Linux-*
 	sudo rm /usr/lib/cgi-bin/*.cgi  -f
 
 # $RCSfile: GNUmakefile,v $

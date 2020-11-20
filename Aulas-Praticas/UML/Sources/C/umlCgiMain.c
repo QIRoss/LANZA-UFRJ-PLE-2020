@@ -1,4 +1,4 @@
- /*
+/*
 Universidade Federal do Rio de Janeiro
 Escola Politecnica
 Departamento de Eletronica e de Computacao
@@ -20,20 +20,18 @@ $Log$
 #include "umlUserInterface.h"
 
 #include "Libraries/mlcgi.h"
- 
 
-int
-main(int argc,char *argv[]){
-	// environmentType umlEnvironment;
-	// unsigned umlReturnCode;
-	// umlLanguageType umlLanguage[umlLanguagesAmount];
-	// char umlConfigurationFile[UML_FILENAME_LENGTH+1];
+int main(int argc,char *argv[]){
+	environmentType umlEnvironment;
+	unsigned umlReturnCode;
+	umlLanguageType umlLanguage[umlLanguagesAmount];
+	char umlConfigurationFile[UML_FILENAME_LENGTH+1];
 
 	// if (mlCgiInitialize(&umlEnvironment) != ML_CGI_OK){
 	// 	exit (ML_CGI_OK);
 	// }
 	// if (umlEnvironment == commandLine){
-	// 	printf ("%s\n",umlInvalidEnviromenment);
+	// 	printf ("%d\n",umlInvalidEnviromenment);
 	// 	exit (umlInvalidEnviromenment);
 	// }
 
@@ -55,8 +53,6 @@ main(int argc,char *argv[]){
 	printf("		</header>\n");
 	printf("	</body>\n");
 	printf("</html>\n");
-
-	
 
 	return ML_CGI_OK;
 }

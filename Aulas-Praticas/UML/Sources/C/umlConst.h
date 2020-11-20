@@ -50,6 +50,7 @@ Initial revision
 #define UML_INVALID_CHARACTER                   3
 #define UML_IMPOSSIBLE_POINT                    4
 #define UML_NO_ERROR_FOUND                      5
+#define UML_WRONG_ENVIRONMENT                   6
  
 #define UML_ABSOLUTE_PATH_MAX_LENGTH            PATH_MAX
 #define UML_FILENAME_MAX_LENGTH                 NAME_MAX
