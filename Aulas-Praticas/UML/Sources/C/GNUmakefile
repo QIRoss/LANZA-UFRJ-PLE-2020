@@ -73,7 +73,7 @@ MLCGI = libmlcgi.a
 
 EXECS = $(UMLTESTS) $(UMLCGI)
 
-LIBS = $(MLLIB)
+LIBS = $(MLCGI)
 
 ALL = $(EXECS)
 
@@ -141,7 +141,7 @@ umltestcheckpassword: $(UMLTESTCHECKPASSWORDOBJ)
 
 
 umlMain.cgi: $(UMLCGIMAINOBJ)
-	$(LD) $(LFLAGS) -o $@ $(UMLCGIMAINOBJ) -L Libraries/CentOS -lmlcgi
+	$(LD) $(LFLAGS) -o $@ $(UMLCGIMAINOBJ) -L Libraries/Ubuntu -lmlcgi
 	sudo cp $@ /usr/lib/cgi-bin/$@
 
 
@@ -165,29 +165,20 @@ clean-troll:
 	sudo rm /usr/lib/cgi-bin/*.cgi  -f
 
 install:
-	@echo -e "\nCreating directories...\n"
 	mkdir -p $(UML_PRIVATE_ROOT_DIRECTORY)/Binaries
 	mkdir -p $(UML_PRIVATE_ROOT_DIRECTORY)/Data
 	mkdir -p $(UML_PRIVATE_ROOT_DIRECTORY)/Data/Cookies
 	mkdir -p $(UML_PUBLIC_HTML_DIRECTORY)
-	@echo -e "\nCopying Web Interface files...\n"
 	cp $(UML_PRIVATE_ROOT_DIRECTORY)/Sources/HTML/index_pt-br.html $(UML_PUBLIC_HTML_DIRECTORY)
 	cp $(UML_PRIVATE_ROOT_DIRECTORY)/Sources/HTML/index_en-us.html $(UML_PUBLIC_HTML_DIRECTORY)
 	ln -s $(UML_PUBLIC_HTML_DIRECTORY)/index_en-us.html $(UML_PUBLIC_HTML_DIRECTORY)/index.html
-	@echo -e "\nCreating CLI Interface...\n"
 	make uml
-	@echo -e "\nCreating CGIs files...\n"
 	make umlCgis
-	@echo -e "\nCleaning object files...\n"
 	make clean
-	@echo -e "\nSuccessfully installed!\n"
-	@echo -e "\nExecute ./../../Binaries/uml -C to create first user.\n"
 
 # Deinstalls the library tests system
 deinstall:
-	@echo -e "\nCleaning object files...\n"
 	make clean
-	@echo -e "\nRemoving files and directories...\n"
 	rm -f $(UML_PUBLIC_HTML_DIRECTORY)/*
 	rmdir $(UML_PUBLIC_HTML_DIRECTORY)
 	rm -f $(UML_PRIVATE_ROOT_DIRECTORY)/Binaries/*
@@ -196,6 +187,5 @@ deinstall:
 	rmdir $(UML_PRIVATE_ROOT_DIRECTORY)/Data/Cookies
 	rm -f $(UML_PRIVATE_ROOT_DIRECTORY)/Data/*
 	rmdir $(UML_PRIVATE_ROOT_DIRECTORY)/Data
-	@echo -e "\nSuccessfully deinstalled!\n"
 
 # $RCSfile: GNUmakefile,v $
